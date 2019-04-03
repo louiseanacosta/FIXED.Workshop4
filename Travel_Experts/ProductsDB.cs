@@ -106,6 +106,7 @@ namespace Travel_Experts
          * Date: March 27, 2019
          **/
 
+        // select products included in the package
         public static List<Products> GetProductsFromPackage(int packageID)
         {
             List<Products> products = new List<Products>();
@@ -128,13 +129,13 @@ namespace Travel_Experts
                 connection.Open();
 
                 // execute the SELECT query
-                SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.SingleRow); // SingleRow indicates only 1 row will return, helps to optimize execution
+                SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dr.Read()) // we have a customer
                 {
                     // create new object
                     prod = new Products();
                     prod.ProductId = (int)dr["ProductId"];
-                    prod.ProdName = (string)dr["ProdName"].ToString();
+                    prod.ProdName = (string)dr["ProdName"];
 
                     products.Add(prod);
      
@@ -148,5 +149,7 @@ namespace Travel_Experts
                 throw ex;
             }
         }
+
+
     }
 }

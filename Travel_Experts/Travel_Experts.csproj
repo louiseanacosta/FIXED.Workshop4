@@ -41,12 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AvailableProducts.cs" />
+    <Compile Include="AvailableProductsDB.cs" />
     <Compile Include="Package.cs" />
     <Compile Include="PackageDB.cs" />
     <Compile Include="Packages_products_suppliers.cs" />
     <Compile Include="Packages_products_suppliersDB.cs" />
     <Compile Include="Products.cs" />
     <Compile Include="ProductsDB.cs" />
+    <Compile Include="ProductsInPackage.cs" />
+    <Compile Include="ProductsInPackageDB.cs" />
     <Compile Include="Products_suppliers.cs" />
     <Compile Include="Products_suppliersDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
