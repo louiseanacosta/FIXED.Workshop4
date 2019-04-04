@@ -31,28 +31,28 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddProduct));
             this.btnAddToPackage = new System.Windows.Forms.Button();
-            this.availableProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.availableProductsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.availableProductsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.availableProductsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAvailableProducts = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingSource)).BeginInit();
+            this.availableProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingNavigator)).BeginInit();
             this.availableProductsBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.availableProductsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddToPackage
@@ -63,10 +63,7 @@
             this.btnAddToPackage.TabIndex = 34;
             this.btnAddToPackage.Text = "&Add";
             this.btnAddToPackage.UseVisualStyleBackColor = true;
-            // 
-            // availableProductsBindingSource
-            // 
-            this.availableProductsBindingSource.DataSource = typeof(Travel_Experts.AvailableProducts);
+            this.btnAddToPackage.Click += new System.EventHandler(this.btnAddToPackage_Click);
             // 
             // availableProductsBindingNavigator
             // 
@@ -97,6 +94,31 @@
             this.availableProductsBindingNavigator.Size = new System.Drawing.Size(936, 25);
             this.availableProductsBindingNavigator.TabIndex = 35;
             this.availableProductsBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -130,16 +152,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -162,26 +177,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // availableProductsBindingNavigatorSaveItem
             // 
@@ -192,37 +189,40 @@
             this.availableProductsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.availableProductsBindingNavigatorSaveItem.Text = "Save Data";
             // 
-            // availableProductsDataGridView
+            // dataGridViewAvailableProducts
             // 
-            this.availableProductsDataGridView.AllowUserToAddRows = false;
-            this.availableProductsDataGridView.AllowUserToDeleteRows = false;
-            this.availableProductsDataGridView.AutoGenerateColumns = false;
-            this.availableProductsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.availableProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.availableProductsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewAvailableProducts.AllowUserToAddRows = false;
+            this.dataGridViewAvailableProducts.AllowUserToDeleteRows = false;
+            this.dataGridViewAvailableProducts.AllowUserToOrderColumns = true;
+            this.dataGridViewAvailableProducts.AutoGenerateColumns = false;
+            this.dataGridViewAvailableProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewAvailableProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAvailableProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.availableProductsDataGridView.DataSource = this.availableProductsBindingSource;
-            this.availableProductsDataGridView.Location = new System.Drawing.Point(12, 62);
-            this.availableProductsDataGridView.Name = "availableProductsDataGridView";
-            this.availableProductsDataGridView.ReadOnly = true;
-            this.availableProductsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.availableProductsDataGridView.Size = new System.Drawing.Size(575, 445);
-            this.availableProductsDataGridView.TabIndex = 35;
+            this.dataGridViewAvailableProducts.DataSource = this.availableProductsBindingSource;
+            this.dataGridViewAvailableProducts.Location = new System.Drawing.Point(12, 62);
+            this.dataGridViewAvailableProducts.Name = "dataGridViewAvailableProducts";
+            this.dataGridViewAvailableProducts.ReadOnly = true;
+            this.dataGridViewAvailableProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAvailableProducts.Size = new System.Drawing.Size(575, 445);
+            this.dataGridViewAvailableProducts.TabIndex = 35;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductSupplierId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "PS ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 60;
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 43;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ProdName";
             this.dataGridViewTextBoxColumn2.HeaderText = "Product";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 69;
             // 
             // dataGridViewTextBoxColumn3
@@ -230,7 +230,12 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "SupName";
             this.dataGridViewTextBoxColumn3.HeaderText = "Supplier";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 70;
+            // 
+            // availableProductsBindingSource
+            // 
+            this.availableProductsBindingSource.DataSource = typeof(Travel_Experts.AvailableProducts);
             // 
             // frmAddProduct
             // 
@@ -238,17 +243,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(936, 578);
-            this.Controls.Add(this.availableProductsDataGridView);
+            this.Controls.Add(this.dataGridViewAvailableProducts);
             this.Controls.Add(this.availableProductsBindingNavigator);
             this.Controls.Add(this.btnAddToPackage);
             this.Name = "frmAddProduct";
             this.Text = "AddProduct";
             this.Load += new System.EventHandler(this.AddProduct_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingNavigator)).EndInit();
             this.availableProductsBindingNavigator.ResumeLayout(false);
             this.availableProductsBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.availableProductsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,7 +275,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton availableProductsBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView availableProductsDataGridView;
+        private System.Windows.Forms.DataGridView dataGridViewAvailableProducts;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
