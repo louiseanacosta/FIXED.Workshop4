@@ -47,8 +47,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnProdSupp = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSupplier = new System.Windows.Forms.Button();
+            this.btnPackages = new System.Windows.Forms.Button();
+            this.btnProducts = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tabMain = new System.Windows.Forms.TabControl();
+            this.tabPackages = new System.Windows.Forms.TabPage();
             this.tabPackageList = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -93,6 +103,9 @@
             this.pkgEndDateDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pkgNameTextBox1 = new System.Windows.Forms.TextBox();
             this.pkgStartDateDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.tabProdSupp = new System.Windows.Forms.TabPage();
+            this.tabProducts = new System.Windows.Forms.TabPage();
+            this.tabSupplier = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -113,6 +126,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tabMain.SuspendLayout();
+            this.tabPackages.SuspendLayout();
             this.tabPackageList.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -252,17 +267,147 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.label5);
+            this.splitContainer1.Panel1.Controls.Add(this.btnProdSupp);
+            this.splitContainer1.Panel1.Controls.Add(this.label6);
+            this.splitContainer1.Panel1.Controls.Add(this.label7);
+            this.splitContainer1.Panel1.Controls.Add(this.label4);
+            this.splitContainer1.Panel1.Controls.Add(this.btnSupplier);
+            this.splitContainer1.Panel1.Controls.Add(this.btnPackages);
+            this.splitContainer1.Panel1.Controls.Add(this.btnProducts);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
-            this.splitContainer1.Panel2.Controls.Add(this.tabPackageList);
+            this.splitContainer1.Panel2.Controls.Add(this.tabMain);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Size = new System.Drawing.Size(1273, 594);
             this.splitContainer1.SplitterDistance = 173;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(39, 301);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 45);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "PRODUCT SUPPLIER";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnProdSupp
+            // 
+            this.btnProdSupp.BackgroundImage = global::Workshop4.Properties.Resources.hot_air_balloon;
+            this.btnProdSupp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnProdSupp.FlatAppearance.BorderSize = 0;
+            this.btnProdSupp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProdSupp.ForeColor = System.Drawing.Color.Ivory;
+            this.btnProdSupp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnProdSupp.Location = new System.Drawing.Point(12, 207);
+            this.btnProdSupp.Name = "btnProdSupp";
+            this.btnProdSupp.Size = new System.Drawing.Size(149, 89);
+            this.btnProdSupp.TabIndex = 11;
+            this.btnProdSupp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProdSupp.UseVisualStyleBackColor = true;
+            this.btnProdSupp.Click += new System.EventHandler(this.btnProdSupp_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(47, 563);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "SUPPLIER";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(39, 181);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 20);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "PACKAGES";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(42, 446);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "PRODUCTS";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnSupplier
+            // 
+            this.btnSupplier.BackgroundImage = global::Workshop4.Properties.Resources.enterprise;
+            this.btnSupplier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSupplier.FlatAppearance.BorderSize = 0;
+            this.btnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupplier.ForeColor = System.Drawing.Color.Ivory;
+            this.btnSupplier.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSupplier.Location = new System.Drawing.Point(12, 469);
+            this.btnSupplier.Name = "btnSupplier";
+            this.btnSupplier.Size = new System.Drawing.Size(149, 89);
+            this.btnSupplier.TabIndex = 3;
+            this.btnSupplier.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSupplier.UseVisualStyleBackColor = true;
+            this.btnSupplier.Click += new System.EventHandler(this.btnSupplier_Click);
+            // 
+            // btnPackages
+            // 
+            this.btnPackages.BackgroundImage = global::Workshop4.Properties.Resources.donation;
+            this.btnPackages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPackages.FlatAppearance.BorderSize = 0;
+            this.btnPackages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPackages.ForeColor = System.Drawing.Color.Ivory;
+            this.btnPackages.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPackages.Location = new System.Drawing.Point(12, 87);
+            this.btnPackages.Name = "btnPackages";
+            this.btnPackages.Size = new System.Drawing.Size(149, 89);
+            this.btnPackages.TabIndex = 5;
+            this.btnPackages.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPackages.UseVisualStyleBackColor = true;
+            this.btnPackages.Click += new System.EventHandler(this.btnPackages_Click);
+            // 
+            // btnProducts
+            // 
+            this.btnProducts.BackgroundImage = global::Workshop4.Properties.Resources.supplies;
+            this.btnProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnProducts.FlatAppearance.BorderSize = 0;
+            this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducts.ForeColor = System.Drawing.Color.Ivory;
+            this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnProducts.Location = new System.Drawing.Point(15, 352);
+            this.btnProducts.Name = "btnProducts";
+            this.btnProducts.Size = new System.Drawing.Size(149, 89);
+            this.btnProducts.TabIndex = 6;
+            this.btnProducts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProducts.UseVisualStyleBackColor = true;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label1.Location = new System.Drawing.Point(12, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "TRAVEL EXPERTS";
             // 
             // button1
             // 
@@ -272,34 +417,45 @@
             this.button1.ForeColor = System.Drawing.Color.Ivory;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(0, 54);
+            this.button1.Location = new System.Drawing.Point(49, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 81);
+            this.button1.Size = new System.Drawing.Size(69, 66);
             this.button1.TabIndex = 1;
-            this.button1.Text = "PACKAGES";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // tabMain
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label1.Location = new System.Drawing.Point(10, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TRAVEL EXPERTS";
+            this.tabMain.Controls.Add(this.tabPackages);
+            this.tabMain.Controls.Add(this.tabProdSupp);
+            this.tabMain.Controls.Add(this.tabProducts);
+            this.tabMain.Controls.Add(this.tabSupplier);
+            this.tabMain.Location = new System.Drawing.Point(3, 50);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedIndex = 0;
+            this.tabMain.Size = new System.Drawing.Size(1062, 532);
+            this.tabMain.TabIndex = 2;
+            // 
+            // tabPackages
+            // 
+            this.tabPackages.Controls.Add(this.tabPackageList);
+            this.tabPackages.Location = new System.Drawing.Point(4, 28);
+            this.tabPackages.Name = "tabPackages";
+            this.tabPackages.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPackages.Size = new System.Drawing.Size(1054, 500);
+            this.tabPackages.TabIndex = 0;
+            this.tabPackages.Text = "PACKAGES";
+            this.tabPackages.UseVisualStyleBackColor = true;
             // 
             // tabPackageList
             // 
             this.tabPackageList.Controls.Add(this.tabPage1);
             this.tabPackageList.Controls.Add(this.tabPage2);
             this.tabPackageList.Controls.Add(this.tabPage3);
-            this.tabPackageList.Location = new System.Drawing.Point(0, 44);
+            this.tabPackageList.Location = new System.Drawing.Point(6, 3);
             this.tabPackageList.Name = "tabPackageList";
             this.tabPackageList.SelectedIndex = 0;
-            this.tabPackageList.Size = new System.Drawing.Size(1050, 538);
+            this.tabPackageList.Size = new System.Drawing.Size(1028, 491);
             this.tabPackageList.TabIndex = 1;
             // 
             // tabPage1
@@ -308,7 +464,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1042, 506);
+            this.tabPage1.Size = new System.Drawing.Size(1020, 459);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View List";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -453,10 +609,10 @@
             this.tabPage2.Controls.Add(pkgStartDateLabel);
             this.tabPage2.Controls.Add(this.txtPkgStart);
             this.tabPage2.Controls.Add(this.btnUpdate);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1042, 506);
+            this.tabPage2.Size = new System.Drawing.Size(1020, 465);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -656,10 +812,10 @@
             this.tabPage3.Controls.Add(this.pkgNameTextBox1);
             this.tabPage3.Controls.Add(pkgStartDateLabel1);
             this.tabPage3.Controls.Add(this.pkgStartDateDateTimePicker1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1042, 506);
+            this.tabPage3.Size = new System.Drawing.Size(1020, 465);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Create New";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -763,6 +919,36 @@
             this.pkgStartDateDateTimePicker1.Size = new System.Drawing.Size(184, 25);
             this.pkgStartDateDateTimePicker1.TabIndex = 13;
             // 
+            // tabProdSupp
+            // 
+            this.tabProdSupp.Location = new System.Drawing.Point(4, 22);
+            this.tabProdSupp.Name = "tabProdSupp";
+            this.tabProdSupp.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProdSupp.Size = new System.Drawing.Size(1054, 506);
+            this.tabProdSupp.TabIndex = 1;
+            this.tabProdSupp.Text = "PROD | SUPP";
+            this.tabProdSupp.UseVisualStyleBackColor = true;
+            // 
+            // tabProducts
+            // 
+            this.tabProducts.Location = new System.Drawing.Point(4, 22);
+            this.tabProducts.Name = "tabProducts";
+            this.tabProducts.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProducts.Size = new System.Drawing.Size(1054, 506);
+            this.tabProducts.TabIndex = 2;
+            this.tabProducts.Text = "PRODUCTS";
+            this.tabProducts.UseVisualStyleBackColor = true;
+            // 
+            // tabSupplier
+            // 
+            this.tabSupplier.Location = new System.Drawing.Point(4, 22);
+            this.tabSupplier.Name = "tabSupplier";
+            this.tabSupplier.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSupplier.Size = new System.Drawing.Size(1054, 506);
+            this.tabSupplier.TabIndex = 3;
+            this.tabSupplier.Text = "SUPPLIER";
+            this.tabSupplier.UseVisualStyleBackColor = true;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
@@ -803,13 +989,15 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmPackages";
-            this.Text = "Form1";
+            this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tabMain.ResumeLayout(false);
+            this.tabPackages.ResumeLayout(false);
             this.tabPackageList.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -879,6 +1067,19 @@
         private System.Windows.Forms.Button btnBackList;
         private System.Windows.Forms.Button btnDeletePackage;
         private System.Windows.Forms.Button btnBackList2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSupplier;
+        private System.Windows.Forms.Button btnPackages;
+        private System.Windows.Forms.Button btnProducts;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnProdSupp;
+        private System.Windows.Forms.TabControl tabMain;
+        private System.Windows.Forms.TabPage tabPackages;
+        private System.Windows.Forms.TabPage tabProdSupp;
+        private System.Windows.Forms.TabPage tabProducts;
+        private System.Windows.Forms.TabPage tabSupplier;
     }
 }
 

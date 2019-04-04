@@ -100,6 +100,29 @@ namespace Workshop4
         {
             tabPackageList.SelectTab(0);
         }
+
+        private void btnPackages_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 0;
+        }
+
+        private void btnProdSupp_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 1;
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 2;
+        }
+
+
+        private void btnSupplier_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 3;
+        }
+
+
     }
 }
 
