@@ -74,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\DataSources\Travel_Experts.AvailableProducts.datasource" />
     <None Include="Properties\DataSources\Travel_Experts.Package.datasource" />
@@ -99,6 +100,18 @@
       <Project>{9ad9d050-43d8-4a58-8b84-d0dde41a6ecd}</Project>
       <Name>Travel_Experts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\donation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enterprise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hot-air-balloon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplies.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
