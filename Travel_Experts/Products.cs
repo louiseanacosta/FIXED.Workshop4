@@ -10,5 +10,6 @@ namespace Travel_Experts
     {
         public int ProductId { get; set; }
         public string ProdName { get; set; }
+
     }
 }

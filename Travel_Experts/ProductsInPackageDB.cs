@@ -25,7 +25,7 @@ namespace Travel_Experts
                                  "WHERE p.ProductId = q.ProductId and s.SupplierId = q.SupplierId " +
                                  "and q.ProductSupplierId = u.ProductSupplierId and t.PackageId = u.PackageId " +
                                  "and t.PackageId = @PackageId " +
-                                 "ORDER BY ProductSupplierId";
+                                 "ORDER BY ProdName";
 
             SqlCommand cmd = new SqlCommand(selectQuery, connection);
             cmd.Parameters.AddWithValue("@PackageID", packageID);

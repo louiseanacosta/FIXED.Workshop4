@@ -142,13 +142,12 @@ namespace Travel_Experts
         /// <param name="oldPackage">data before update</param>
         /// <param name="newPackage">new data for the update</param>
         /// <returns>indicator of success</returns>
-        public static bool UpdateCustomer(Package oldPackage, Package newPackage)
+        public static bool UpdatePackage(Package oldPackage, Package newPackage)
         {
             bool success = true;
             // connect
             SqlConnection connection = TravelExpertsDB.GetConnection();
             string sqlUpdate = "UPDATE Packages SET " +
-                                    "PackageId = @PackageId, " +
                                     "PkgName = @PkgName, " +
                                     "PkgStartDate = @PkgStartDate, " +
                                     "PkgEndDate = @PkgEndDate, " +
@@ -156,11 +155,11 @@ namespace Travel_Experts
                                     "PkgBasePrice = @PkgBasePrice " +
                                     "PkgAgencyCommission = @PkgAgencyCommission " +
                                     "WHERE PackageID = @OldPackageID " + 
-                                    "AND PkgStartDate = @PkgStartDate " +
-                                    "AND PkgEndDate = @PkgEndDate " +
-                                    "AND PkgDesc = @PkgDesc " +
-                                    "AND PkgBasePrice = @PkgBasePrice " +
-                                    "AND PkgAgencyCommission = @PkgAgencyCommission";
+                                    "AND PkgStartDate = @OldPkgStartDate " +
+                                    "AND PkgEndDate = @OldPkgEndDate " +
+                                    "AND PkgDesc = @OldPkgDesc " +
+                                    "AND PkgBasePrice = @OldPkgBasePrice " +
+                                    "AND PkgAgencyCommission = @OldPkgAgencyCommission";
 
             SqlCommand cmd = new SqlCommand(sqlUpdate, connection);
             cmd.Parameters.AddWithValue("@NewPkgName", newPackage.PkgName);

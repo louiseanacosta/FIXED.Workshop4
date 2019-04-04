@@ -29,7 +29,7 @@ namespace Travel_Experts
                                 "WHERE p.ProductId = q.ProductId and " +
                                 "s.SupplierId = q.SupplierId and ProductSupplierId NOT IN " +
                                 "(SELECT ProductSupplierId FROM Packages_Products_Suppliers) " +
-                                "ORDER BY ProductSupplierId";
+                                "ORDER BY ProdName";
 
             SqlCommand cmd = new SqlCommand(selectQuery, connection);
 
