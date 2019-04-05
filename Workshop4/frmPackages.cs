@@ -28,6 +28,7 @@ namespace Workshop4
             InitializeComponent();
         }
 
+        // form load
         private void Form1_Load(object sender, EventArgs e)
         {
             packageBindingSource.DataSource = this.packages;
@@ -86,6 +87,12 @@ namespace Workshop4
             }
 
             MessageBox.Show("Changes saved for Package ID " + packageId);
+        }
+
+        // delete Package
+        private void btnDeletePackage_Click(object sender, EventArgs e)
+        {
+            //PackageDB.DeletePackage();
         }
 
 
@@ -186,10 +193,9 @@ namespace Workshop4
 
         }
 
-        // Delete Package
-        private void btnDeletePackage_Click(object sender, EventArgs e)
+        private void btnViewDetail_Click(object sender, EventArgs e)
         {
-
+            tabPackageList.SelectedIndex = 1;
         }
     }
 }
