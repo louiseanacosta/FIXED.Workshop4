@@ -92,7 +92,36 @@ namespace Workshop4
         // delete Package
         private void btnDeletePackage_Click(object sender, EventArgs e)
         {
-            //PackageDB.DeletePackage();
+            // get selected package
+            int packageId = Convert.ToInt32(cmbPackageId.SelectedValue);
+            List<Package> packageList = PackageDB.GetPackages(packageId);
+            Package package = packageList.First();
+
+            DialogResult result = MessageBox.Show("Delete Package " + package.PackageId + "?",
+                "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // get current product suppliers
+                List<int> productSupplierIds = new List<int>();
+                foreach (var product in ProductsInPackageDB.GetProductsFromPackage(packageId))
+                {
+                    productSupplierIds.Remove(product.ProductSupplierId);
+                }
+
+                // delete products suppliers linked to package
+                Packages_products_suppliersDB.Delete(packageId);
+
+                foreach (DataGridViewRow item in this.grdProductList.SelectedRows)
+                {
+                    grdProductList.Rows.RemoveAt(item.Index);
+                }
+                
+
+                // delete package
+                PackageDB.DeletePackage(package);
+                    MessageBox.Show("Package " + packageId + " deleted successfully");
+
+            }
         }
 
 
@@ -196,6 +225,11 @@ namespace Workshop4
         private void btnViewDetail_Click(object sender, EventArgs e)
         {
             tabPackageList.SelectedIndex = 1;
+        }
+
+        private void btnCreate1_Click(object sender, EventArgs e)
+        {
+            tabPackageList.SelectedIndex = 2;
         }
     }
 }
