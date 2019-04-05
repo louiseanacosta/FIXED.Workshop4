@@ -163,6 +163,16 @@ namespace Workshop4
             addNewProduct.ShowDialog();
         }
 
+
+        private void btnBackList_Click(object sender, EventArgs e)
+        {
+            tabPackageList.SelectTab(0);
+        }
+
+        private void btnNewPackage_Click(object sender, EventArgs e)
+        {
+            tabPackageList.SelectTab(2);
+        }
         private void btnSaveNewPackage_Click(object sender, EventArgs e)
         {
 
