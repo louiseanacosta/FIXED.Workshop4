@@ -43,9 +43,9 @@
             System.Windows.Forms.Label pkgNameLabel;
             System.Windows.Forms.Label pkgStartDateLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPackages));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -63,13 +63,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.grdProductList = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgEndDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgDescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgBasePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnNewPackage = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -111,6 +104,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgEndDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgDescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgBasePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             pkgAgencyCommissionLabel1 = new System.Windows.Forms.Label();
             pkgBasePriceLabel1 = new System.Windows.Forms.Label();
             pkgDescLabel1 = new System.Windows.Forms.Label();
@@ -496,22 +496,22 @@
             this.grdProductList.AllowUserToAddRows = false;
             this.grdProductList.AllowUserToDeleteRows = false;
             this.grdProductList.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.grdProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.grdProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grdProductList.AutoGenerateColumns = false;
             this.grdProductList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdProductList.BackgroundColor = System.Drawing.Color.White;
             this.grdProductList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grdProductList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdProductList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grdProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProductList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -522,14 +522,14 @@
             this.pkgBasePriceDataGridViewTextBoxColumn,
             this.pkgAgencyCommissionDataGridViewTextBoxColumn});
             this.grdProductList.DataSource = this.packageBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdProductList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdProductList.DefaultCellStyle = dataGridViewCellStyle6;
             this.grdProductList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdProductList.EnableHeadersVisualStyles = false;
             this.grdProductList.Location = new System.Drawing.Point(3, 37);
@@ -539,62 +539,6 @@
             this.grdProductList.Size = new System.Drawing.Size(1062, 434);
             this.grdProductList.TabIndex = 33;
             this.grdProductList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProductList_CellContentDoubleClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "PackageId";
-            this.Column1.FillWeight = 34.32074F;
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // pkgNameDataGridViewTextBoxColumn
-            // 
-            this.pkgNameDataGridViewTextBoxColumn.DataPropertyName = "PkgName";
-            this.pkgNameDataGridViewTextBoxColumn.FillWeight = 63.9096F;
-            this.pkgNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.pkgNameDataGridViewTextBoxColumn.Name = "pkgNameDataGridViewTextBoxColumn";
-            this.pkgNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pkgStartDateDataGridViewTextBoxColumn
-            // 
-            this.pkgStartDateDataGridViewTextBoxColumn.DataPropertyName = "PkgStartDate";
-            this.pkgStartDateDataGridViewTextBoxColumn.FillWeight = 88.97629F;
-            this.pkgStartDateDataGridViewTextBoxColumn.HeaderText = "Start Date";
-            this.pkgStartDateDataGridViewTextBoxColumn.Name = "pkgStartDateDataGridViewTextBoxColumn";
-            this.pkgStartDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pkgEndDateDataGridViewTextBoxColumn
-            // 
-            this.pkgEndDateDataGridViewTextBoxColumn.DataPropertyName = "PkgEndDate";
-            this.pkgEndDateDataGridViewTextBoxColumn.FillWeight = 91.60652F;
-            this.pkgEndDateDataGridViewTextBoxColumn.HeaderText = "End Date";
-            this.pkgEndDateDataGridViewTextBoxColumn.Name = "pkgEndDateDataGridViewTextBoxColumn";
-            this.pkgEndDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pkgDescDataGridViewTextBoxColumn
-            // 
-            this.pkgDescDataGridViewTextBoxColumn.DataPropertyName = "PkgDesc";
-            this.pkgDescDataGridViewTextBoxColumn.FillWeight = 122.4418F;
-            this.pkgDescDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.pkgDescDataGridViewTextBoxColumn.Name = "pkgDescDataGridViewTextBoxColumn";
-            this.pkgDescDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pkgBasePriceDataGridViewTextBoxColumn
-            // 
-            this.pkgBasePriceDataGridViewTextBoxColumn.DataPropertyName = "PkgBasePrice";
-            this.pkgBasePriceDataGridViewTextBoxColumn.FillWeight = 109.884F;
-            this.pkgBasePriceDataGridViewTextBoxColumn.HeaderText = "Base Price";
-            this.pkgBasePriceDataGridViewTextBoxColumn.Name = "pkgBasePriceDataGridViewTextBoxColumn";
-            this.pkgBasePriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pkgAgencyCommissionDataGridViewTextBoxColumn
-            // 
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.DataPropertyName = "PkgAgencyCommission";
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.FillWeight = 188.861F;
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.HeaderText = "Agency Commission";
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.Name = "pkgAgencyCommissionDataGridViewTextBoxColumn";
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // packageBindingSource
             // 
@@ -637,10 +581,10 @@
             this.tabPage2.Controls.Add(pkgStartDateLabel);
             this.tabPage2.Controls.Add(this.txtPkgStart);
             this.tabPage2.Controls.Add(this.btnUpdate);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1074, 486);
+            this.tabPage2.Size = new System.Drawing.Size(1074, 480);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -667,6 +611,7 @@
             this.btnDeletePackage.TabIndex = 36;
             this.btnDeletePackage.Text = "&Delete Package";
             this.btnDeletePackage.UseVisualStyleBackColor = false;
+            this.btnDeletePackage.Click += new System.EventHandler(this.btnDeletePackage_Click);
             // 
             // btnBackList
             // 
@@ -1016,6 +961,65 @@
             // productsBindingSource
             // 
             this.productsBindingSource.DataSource = typeof(Travel_Experts.Products);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.DataPropertyName = "PackageId";
+            this.Column1.DividerWidth = 1;
+            this.Column1.FillWeight = 34.32074F;
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 49;
+            // 
+            // pkgNameDataGridViewTextBoxColumn
+            // 
+            this.pkgNameDataGridViewTextBoxColumn.DataPropertyName = "PkgName";
+            this.pkgNameDataGridViewTextBoxColumn.FillWeight = 63.9096F;
+            this.pkgNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.pkgNameDataGridViewTextBoxColumn.Name = "pkgNameDataGridViewTextBoxColumn";
+            this.pkgNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pkgStartDateDataGridViewTextBoxColumn
+            // 
+            this.pkgStartDateDataGridViewTextBoxColumn.DataPropertyName = "PkgStartDate";
+            this.pkgStartDateDataGridViewTextBoxColumn.FillWeight = 88.97629F;
+            this.pkgStartDateDataGridViewTextBoxColumn.HeaderText = "Start Date";
+            this.pkgStartDateDataGridViewTextBoxColumn.Name = "pkgStartDateDataGridViewTextBoxColumn";
+            this.pkgStartDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pkgEndDateDataGridViewTextBoxColumn
+            // 
+            this.pkgEndDateDataGridViewTextBoxColumn.DataPropertyName = "PkgEndDate";
+            this.pkgEndDateDataGridViewTextBoxColumn.FillWeight = 91.60652F;
+            this.pkgEndDateDataGridViewTextBoxColumn.HeaderText = "End Date";
+            this.pkgEndDateDataGridViewTextBoxColumn.Name = "pkgEndDateDataGridViewTextBoxColumn";
+            this.pkgEndDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pkgDescDataGridViewTextBoxColumn
+            // 
+            this.pkgDescDataGridViewTextBoxColumn.DataPropertyName = "PkgDesc";
+            this.pkgDescDataGridViewTextBoxColumn.FillWeight = 122.4418F;
+            this.pkgDescDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.pkgDescDataGridViewTextBoxColumn.Name = "pkgDescDataGridViewTextBoxColumn";
+            this.pkgDescDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pkgBasePriceDataGridViewTextBoxColumn
+            // 
+            this.pkgBasePriceDataGridViewTextBoxColumn.DataPropertyName = "PkgBasePrice";
+            this.pkgBasePriceDataGridViewTextBoxColumn.FillWeight = 109.884F;
+            this.pkgBasePriceDataGridViewTextBoxColumn.HeaderText = "Base Price";
+            this.pkgBasePriceDataGridViewTextBoxColumn.Name = "pkgBasePriceDataGridViewTextBoxColumn";
+            this.pkgBasePriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pkgAgencyCommissionDataGridViewTextBoxColumn
+            // 
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.DataPropertyName = "PkgAgencyCommission";
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.FillWeight = 188.861F;
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.HeaderText = "Agency Commission";
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.Name = "pkgAgencyCommissionDataGridViewTextBoxColumn";
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmPackages
             // 
