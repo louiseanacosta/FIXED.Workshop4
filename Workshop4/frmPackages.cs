@@ -119,7 +119,10 @@ namespace Workshop4
         {
             tabPackageList.SelectTab(0);
         }
-        
+
+
+        // 4 Main Navigation Buttons
+
         private void btnPackages_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 0;
