@@ -959,30 +959,30 @@
             // 
             // tabProdSupp
             // 
-            this.tabProdSupp.Location = new System.Drawing.Point(4, 22);
+            this.tabProdSupp.Location = new System.Drawing.Point(4, 28);
             this.tabProdSupp.Name = "tabProdSupp";
             this.tabProdSupp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProdSupp.Size = new System.Drawing.Size(1088, 524);
+            this.tabProdSupp.Size = new System.Drawing.Size(1088, 518);
             this.tabProdSupp.TabIndex = 1;
             this.tabProdSupp.Text = "PROD | SUPP";
             this.tabProdSupp.UseVisualStyleBackColor = true;
             // 
             // tabProducts
             // 
-            this.tabProducts.Location = new System.Drawing.Point(4, 22);
+            this.tabProducts.Location = new System.Drawing.Point(4, 28);
             this.tabProducts.Name = "tabProducts";
             this.tabProducts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProducts.Size = new System.Drawing.Size(1088, 524);
+            this.tabProducts.Size = new System.Drawing.Size(1088, 518);
             this.tabProducts.TabIndex = 2;
             this.tabProducts.Text = "PRODUCTS";
             this.tabProducts.UseVisualStyleBackColor = true;
             // 
             // tabSupplier
             // 
-            this.tabSupplier.Location = new System.Drawing.Point(4, 22);
+            this.tabSupplier.Location = new System.Drawing.Point(4, 28);
             this.tabSupplier.Name = "tabSupplier";
             this.tabSupplier.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSupplier.Size = new System.Drawing.Size(1088, 524);
+            this.tabSupplier.Size = new System.Drawing.Size(1088, 518);
             this.tabSupplier.TabIndex = 3;
             this.tabSupplier.Text = "SUPPLIER";
             this.tabSupplier.UseVisualStyleBackColor = true;
