@@ -4,10 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/**
-* Author: : Louise Acosta
-* Date: March 27, 2019
-**/
+//--------------------------- LOUISE ACOSTA ------------------------------
 namespace Travel_Experts
 {
     public class ProductsInPackage

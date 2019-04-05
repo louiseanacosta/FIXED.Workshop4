@@ -43,9 +43,9 @@
             System.Windows.Forms.Label pkgNameLabel;
             System.Windows.Forms.Label pkgStartDateLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPackages));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -113,6 +113,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             pkgAgencyCommissionLabel1 = new System.Windows.Forms.Label();
             pkgBasePriceLabel1 = new System.Windows.Forms.Label();
             pkgDescLabel1 = new System.Windows.Forms.Label();
@@ -145,6 +155,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsToAddDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pkgAgencyCommissionLabel1
@@ -204,7 +216,7 @@
             // packageIdLabel
             // 
             packageIdLabel.AutoSize = true;
-            packageIdLabel.Location = new System.Drawing.Point(17, 65);
+            packageIdLabel.Location = new System.Drawing.Point(15, 95);
             packageIdLabel.Name = "packageIdLabel";
             packageIdLabel.Size = new System.Drawing.Size(100, 20);
             packageIdLabel.TabIndex = 15;
@@ -213,7 +225,7 @@
             // pkgAgencyCommissionLabel
             // 
             pkgAgencyCommissionLabel.AutoSize = true;
-            pkgAgencyCommissionLabel.Location = new System.Drawing.Point(17, 249);
+            pkgAgencyCommissionLabel.Location = new System.Drawing.Point(15, 279);
             pkgAgencyCommissionLabel.Name = "pkgAgencyCommissionLabel";
             pkgAgencyCommissionLabel.Size = new System.Drawing.Size(160, 20);
             pkgAgencyCommissionLabel.TabIndex = 17;
@@ -222,7 +234,7 @@
             // pkgBasePriceLabel
             // 
             pkgBasePriceLabel.AutoSize = true;
-            pkgBasePriceLabel.Location = new System.Drawing.Point(17, 219);
+            pkgBasePriceLabel.Location = new System.Drawing.Point(15, 249);
             pkgBasePriceLabel.Name = "pkgBasePriceLabel";
             pkgBasePriceLabel.Size = new System.Drawing.Size(89, 20);
             pkgBasePriceLabel.TabIndex = 19;
@@ -231,7 +243,7 @@
             // pkgDescLabel
             // 
             pkgDescLabel.AutoSize = true;
-            pkgDescLabel.Location = new System.Drawing.Point(17, 128);
+            pkgDescLabel.Location = new System.Drawing.Point(15, 158);
             pkgDescLabel.Name = "pkgDescLabel";
             pkgDescLabel.Size = new System.Drawing.Size(95, 20);
             pkgDescLabel.TabIndex = 21;
@@ -240,7 +252,7 @@
             // pkgEndDateLabel
             // 
             pkgEndDateLabel.AutoSize = true;
-            pkgEndDateLabel.Location = new System.Drawing.Point(17, 190);
+            pkgEndDateLabel.Location = new System.Drawing.Point(15, 220);
             pkgEndDateLabel.Name = "pkgEndDateLabel";
             pkgEndDateLabel.Size = new System.Drawing.Size(80, 20);
             pkgEndDateLabel.TabIndex = 23;
@@ -249,7 +261,7 @@
             // pkgNameLabel
             // 
             pkgNameLabel.AutoSize = true;
-            pkgNameLabel.Location = new System.Drawing.Point(17, 97);
+            pkgNameLabel.Location = new System.Drawing.Point(15, 127);
             pkgNameLabel.Name = "pkgNameLabel";
             pkgNameLabel.Size = new System.Drawing.Size(57, 20);
             pkgNameLabel.TabIndex = 25;
@@ -258,7 +270,7 @@
             // pkgStartDateLabel
             // 
             pkgStartDateLabel.AutoSize = true;
-            pkgStartDateLabel.Location = new System.Drawing.Point(17, 161);
+            pkgStartDateLabel.Location = new System.Drawing.Point(15, 191);
             pkgStartDateLabel.Name = "pkgStartDateLabel";
             pkgStartDateLabel.Size = new System.Drawing.Size(85, 20);
             pkgStartDateLabel.TabIndex = 27;
@@ -499,22 +511,22 @@
             this.grdProductList.AllowUserToAddRows = false;
             this.grdProductList.AllowUserToDeleteRows = false;
             this.grdProductList.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.grdProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.grdProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grdProductList.AutoGenerateColumns = false;
             this.grdProductList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdProductList.BackgroundColor = System.Drawing.Color.White;
             this.grdProductList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grdProductList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdProductList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.grdProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProductList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -525,14 +537,14 @@
             this.pkgBasePriceDataGridViewTextBoxColumn,
             this.pkgAgencyCommissionDataGridViewTextBoxColumn});
             this.grdProductList.DataSource = this.packageBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdProductList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdProductList.DefaultCellStyle = dataGridViewCellStyle6;
             this.grdProductList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdProductList.EnableHeadersVisualStyles = false;
             this.grdProductList.Location = new System.Drawing.Point(3, 39);
@@ -647,6 +659,7 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.bindingNavigator1);
             this.tabPage2.Controls.Add(this.cmbPackageId);
             this.tabPage2.Controls.Add(this.btnDeletePackage);
             this.tabPage2.Controls.Add(this.btnBackList);
@@ -684,7 +697,7 @@
             this.cmbPackageId.DataSource = this.packageBindingSource;
             this.cmbPackageId.DisplayMember = "PackageId";
             this.cmbPackageId.FormattingEnabled = true;
-            this.cmbPackageId.Location = new System.Drawing.Point(208, 58);
+            this.cmbPackageId.Location = new System.Drawing.Point(206, 88);
             this.cmbPackageId.Name = "cmbPackageId";
             this.cmbPackageId.Size = new System.Drawing.Size(121, 27);
             this.cmbPackageId.TabIndex = 37;
@@ -693,7 +706,7 @@
             // btnDeletePackage
             // 
             this.btnDeletePackage.BackColor = System.Drawing.Color.LightCoral;
-            this.btnDeletePackage.Location = new System.Drawing.Point(163, 18);
+            this.btnDeletePackage.Location = new System.Drawing.Point(161, 48);
             this.btnDeletePackage.Name = "btnDeletePackage";
             this.btnDeletePackage.Size = new System.Drawing.Size(153, 28);
             this.btnDeletePackage.TabIndex = 36;
@@ -703,7 +716,7 @@
             // 
             // btnBackList
             // 
-            this.btnBackList.Location = new System.Drawing.Point(618, 18);
+            this.btnBackList.Location = new System.Drawing.Point(616, 48);
             this.btnBackList.Name = "btnBackList";
             this.btnBackList.Size = new System.Drawing.Size(103, 28);
             this.btnBackList.TabIndex = 35;
@@ -724,7 +737,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.productsInPackageDataGridView.DataSource = this.productsInPackageBindingSource;
-            this.productsInPackageDataGridView.Location = new System.Drawing.Point(19, 312);
+            this.productsInPackageDataGridView.Location = new System.Drawing.Point(17, 342);
             this.productsInPackageDataGridView.Name = "productsInPackageDataGridView";
             this.productsInPackageDataGridView.ReadOnly = true;
             this.productsInPackageDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -760,7 +773,7 @@
             // 
             // btnAddOld
             // 
-            this.btnAddOld.Location = new System.Drawing.Point(637, 312);
+            this.btnAddOld.Location = new System.Drawing.Point(635, 342);
             this.btnAddOld.Name = "btnAddOld";
             this.btnAddOld.Size = new System.Drawing.Size(84, 32);
             this.btnAddOld.TabIndex = 33;
@@ -771,7 +784,7 @@
             // btnCreate
             // 
             this.btnCreate.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnCreate.Location = new System.Drawing.Point(322, 18);
+            this.btnCreate.Location = new System.Drawing.Point(320, 48);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(136, 28);
             this.btnCreate.TabIndex = 31;
@@ -782,7 +795,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 284);
+            this.label3.Location = new System.Drawing.Point(13, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 30;
@@ -790,7 +803,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(637, 350);
+            this.btnDelete.Location = new System.Drawing.Point(635, 380);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(84, 32);
             this.btnDelete.TabIndex = 29;
@@ -801,7 +814,7 @@
             // txtPkgCommission
             // 
             this.txtPkgCommission.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PkgAgencyCommission", true));
-            this.txtPkgCommission.Location = new System.Drawing.Point(208, 247);
+            this.txtPkgCommission.Location = new System.Drawing.Point(206, 277);
             this.txtPkgCommission.Name = "txtPkgCommission";
             this.txtPkgCommission.Size = new System.Drawing.Size(174, 25);
             this.txtPkgCommission.TabIndex = 18;
@@ -809,7 +822,7 @@
             // txtPkgPrice
             // 
             this.txtPkgPrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PkgBasePrice", true));
-            this.txtPkgPrice.Location = new System.Drawing.Point(208, 216);
+            this.txtPkgPrice.Location = new System.Drawing.Point(206, 246);
             this.txtPkgPrice.Name = "txtPkgPrice";
             this.txtPkgPrice.Size = new System.Drawing.Size(174, 25);
             this.txtPkgPrice.TabIndex = 20;
@@ -817,7 +830,7 @@
             // txtPkgDesc
             // 
             this.txtPkgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PkgDesc", true));
-            this.txtPkgDesc.Location = new System.Drawing.Point(208, 125);
+            this.txtPkgDesc.Location = new System.Drawing.Point(206, 155);
             this.txtPkgDesc.Name = "txtPkgDesc";
             this.txtPkgDesc.Size = new System.Drawing.Size(409, 25);
             this.txtPkgDesc.TabIndex = 22;
@@ -825,7 +838,7 @@
             // txtPkgEnd
             // 
             this.txtPkgEnd.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packageBindingSource, "PkgEndDate", true));
-            this.txtPkgEnd.Location = new System.Drawing.Point(208, 186);
+            this.txtPkgEnd.Location = new System.Drawing.Point(206, 216);
             this.txtPkgEnd.Name = "txtPkgEnd";
             this.txtPkgEnd.Size = new System.Drawing.Size(174, 25);
             this.txtPkgEnd.TabIndex = 24;
@@ -833,7 +846,7 @@
             // txtPkgName
             // 
             this.txtPkgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PkgName", true));
-            this.txtPkgName.Location = new System.Drawing.Point(208, 94);
+            this.txtPkgName.Location = new System.Drawing.Point(206, 124);
             this.txtPkgName.Name = "txtPkgName";
             this.txtPkgName.Size = new System.Drawing.Size(409, 25);
             this.txtPkgName.TabIndex = 26;
@@ -841,7 +854,7 @@
             // txtPkgStart
             // 
             this.txtPkgStart.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packageBindingSource, "PkgStartDate", true));
-            this.txtPkgStart.Location = new System.Drawing.Point(208, 157);
+            this.txtPkgStart.Location = new System.Drawing.Point(206, 187);
             this.txtPkgStart.Name = "txtPkgStart";
             this.txtPkgStart.Size = new System.Drawing.Size(174, 25);
             this.txtPkgStart.TabIndex = 28;
@@ -850,7 +863,7 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(21, 18);
+            this.btnUpdate.Location = new System.Drawing.Point(19, 48);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(136, 28);
             this.btnUpdate.TabIndex = 14;
@@ -879,10 +892,10 @@
             this.tabPage3.Controls.Add(this.pkgNameTextBox1);
             this.tabPage3.Controls.Add(pkgStartDateLabel1);
             this.tabPage3.Controls.Add(this.pkgStartDateDateTimePicker1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1074, 486);
+            this.tabPage3.Size = new System.Drawing.Size(1074, 480);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Create New";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1050,6 +1063,100 @@
             // 
             this.productsBindingSource.DataSource = typeof(Travel_Experts.Products);
             // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.BindingSource = this.packageBindingSource;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2});
+            this.bindingNavigator1.Location = new System.Drawing.Point(3, 3);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigator1.Size = new System.Drawing.Size(1051, 25);
+            this.bindingNavigator1.TabIndex = 38;
+            this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // frmPackages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -1084,6 +1191,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsToAddDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1157,6 +1267,16 @@
         private System.Windows.Forms.Button btnCreate1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnViewDetail;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
     }
 }
 

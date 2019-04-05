@@ -102,7 +102,7 @@ namespace Travel_Experts
         }
 
 
-        // Author: Louise
+        //--------------------------- LOUISE ACOSTA ------------------------------
         // Delete products from packages
         public static int Delete(int packageId)
         {
@@ -132,7 +132,7 @@ namespace Travel_Experts
             }
             return count;
         }
-        // Author: Louise
+
         // add products to packages
         public static void Add(int packageId, int productSupplierId)
         {

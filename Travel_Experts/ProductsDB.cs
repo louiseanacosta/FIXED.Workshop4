@@ -101,10 +101,7 @@ namespace Travel_Experts
             return count;
         }
 
-        /**
-         * Author: : Louise Acosta
-         * Date: March 27, 2019
-         **/
+//--------------------------- LOUISE ACOSTA ------------------------------
 
         // select products included in the package
         public static List<Products> GetProductsFromPackage(int packageID)

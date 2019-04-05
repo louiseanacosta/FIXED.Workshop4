@@ -1,8 +1,4 @@
-﻿/**
- * Author: : Louise Acosta
- * Date: March 27, 2019
- **/
-
+﻿//--------------------------- LOUISE ACOSTA ------------------------------
 
 using System;
 using System.Collections.Generic;

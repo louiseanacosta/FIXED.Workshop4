@@ -1,7 +1,4 @@
-﻿/**
- * Author: : Louise Acosta
- * Date: March 27, 2019
- **/
+﻿
 
 using System;
 using System.Collections.Generic;
@@ -16,6 +13,8 @@ using Travel_Experts;
 
 namespace Workshop4
 {
+    //--------------------------- LOUISE ACOSTA ------------------------------
+
     public partial class frmPackages : Form
     {
         List<Package> packages;
@@ -233,6 +232,6 @@ namespace Workshop4
         }
     }
 }
-
+//--------------------------- END - LOUISE ACOSTA ------------------------------
 
 

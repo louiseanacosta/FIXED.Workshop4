@@ -11,6 +11,7 @@ using Travel_Experts;
 
 namespace Workshop4
 {
+    //--------------------------- LOUISE ACOSTA ------------------------------
     public partial class frmAddProduct : Form
     {
         public Package package;
@@ -47,9 +48,7 @@ namespace Workshop4
             }
 
             this.Close();
-
         }
-
-
     }
 }
+//--------------------------- LOUISE ACOSTA - END ------------------------------
