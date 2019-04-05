@@ -13,10 +13,9 @@ using Travel_Experts;
 
 namespace Workshop4
 {
-    //--------------------------- LOUISE ACOSTA ------------------------------
-
     public partial class frmPackages : Form
     {
+    //--------------------------- LOUISE ACOSTA ------------------------------
         List<Package> packages;
         public Package package; // current package
 
@@ -33,11 +32,11 @@ namespace Workshop4
             packageBindingSource.DataSource = this.packages;
             //cmbPackageId.SelectedIndex = 0;
 
-            // get first object
-            Package firstPackage = this.packages.First();
+            if (cmbPackageId.Text == "") { return; }
+            int packageID = Convert.ToInt32(cmbPackageId.Text);
 
-            List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(firstPackage.PackageId);
-            productsInPackageBindingSource.DataSource = products;
+            List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(packageID);
+
 
         }
 
@@ -45,7 +44,7 @@ namespace Workshop4
         private void packageBindingSource_CurrentChanged(object sender, EventArgs e)
         {
             if (cmbPackageId.Text == "") { return; }
-            int packageID = Convert.ToInt32(cmbPackageId.SelectedValue);
+            int packageID = Convert.ToInt32(cmbPackageId.Text);
 
             List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(packageID);
             productsInPackageBindingSource.DataSource = products;
@@ -55,7 +54,7 @@ namespace Workshop4
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // get current package from database
-            int packageId = Convert.ToInt32(cmbPackageId.SelectedValue);
+            int packageId = Convert.ToInt32(cmbPackageId.Text);
             List <Package> oldPackageList = PackageDB.GetPackages(packageId);
             Package oldPackage = oldPackageList.First();
 
@@ -92,7 +91,7 @@ namespace Workshop4
         private void btnDeletePackage_Click(object sender, EventArgs e)
         {
             // get selected package
-            int packageId = Convert.ToInt32(cmbPackageId.SelectedValue);
+            int packageId = Convert.ToInt32(cmbPackageId.Text);
             List<Package> packageList = PackageDB.GetPackages(packageId);
             Package package = packageList.First();
 
@@ -123,14 +122,47 @@ namespace Workshop4
             }
         }
 
+        // create new package
+        private void btnSaveNewPackage_Click(object sender, EventArgs e)
+        {
+            //// set new values
+            //Package package = new Package();
+            //this.NewPackageData(package);
 
-        // Show Add Product form
+            //MessageBox.Show("New package added succesfully");
+
+            //// add products suppliers to new package
+            //List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)productsInNewPackageBindingSource.DataSource;
+            //int packageId = 0;
+            //foreach (var productsInPackage in productsInPackages)
+            //{
+            //    Packages_products_suppliersDB.AddProductsToNewPackage(packageId, productsInPackage.ProductSupplierId);
+            //}
+
+            //// save package
+            //PackageDB.AddPackage(package);
+        }
+
+        // Show available products to add form
         private void btnAddOld_Click(object sender, EventArgs e)
         {
             frmAddProduct addNewProduct = new frmAddProduct(productsInPackageBindingSource);
             addNewProduct.ShowDialog();
         }
 
+        // values for adding new package
+        private void NewPackageData(Package package)
+        {
+            package.PkgName = txtPkgName2.Text;
+            package.PkgDesc = txtPkgDesc2.Text;
+            package.PkgStartDate = Convert.ToDateTime(txtPkgStart2.Value);
+            package.PkgEndDate = Convert.ToDateTime(txtPkgEnd2.Value);
+            package.PkgBasePrice = Convert.ToDecimal(txtPkgPrice2.Text);
+            package.PkgAgencyCommission = Convert.ToDecimal(txtPkgCommission2.Text);
+        }
+
+
+        // values for modifying package
         private void PutPackageData(Package package)
         {
             package.PkgName = txtPkgName.Text;
@@ -193,8 +225,8 @@ namespace Workshop4
         // add product in package
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            frmAddProduct addNewProduct = new frmAddProduct(productsInPackageBindingSource);
-            addNewProduct.ShowDialog();
+            //frmAddProduct addNewProduct = new frmAddProduct(productsInPackageBindingSource);
+            //addNewProduct.ShowDialog();
         }
 
         // go back to list
@@ -208,10 +240,8 @@ namespace Workshop4
         {
             tabPackageList.SelectTab(2);
         }
-        private void btnSaveNewPackage_Click(object sender, EventArgs e)
-        {
 
-        }
+
     
 
         // go to details of selected package on double click
@@ -230,8 +260,9 @@ namespace Workshop4
         {
             tabPackageList.SelectedIndex = 2;
         }
+
+        //--------------------------- END - LOUISE ACOSTA ------------------------------
     }
 }
-//--------------------------- END - LOUISE ACOSTA ------------------------------
 
 

@@ -111,14 +111,13 @@ namespace Travel_Experts
             SqlConnection connection = TravelExpertsDB.GetConnection();
 
             //create command object
-            string sqlInsert = "INSERT INTO Packages (PackageId, PkgName, PkgStartDate, " +
+            string sqlInsert = "INSERT INTO Packages (PkgName, PkgStartDate, " +
                                     "PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission) " +
                                     "OUTPUT inserted.[PackageId] " +
                                     "VALUES(@PkgName, @PkgStartDate, @PkgEndDate, @PkgDesc, " +
                                     "@PkgBasePrice, @PkgAgencyCommission)";
             SqlCommand cmd = new SqlCommand(sqlInsert, connection);
 
-            cmd.Parameters.AddWithValue("@PackageId", package.PackageId);
             cmd.Parameters.AddWithValue("@PkgName", package.PkgName);
             cmd.Parameters.AddWithValue("@PkgStartDate", package.PkgStartDate);
             cmd.Parameters.AddWithValue("@PkgEndDate", package.PkgEndDate);

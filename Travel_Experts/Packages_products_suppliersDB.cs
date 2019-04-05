@@ -103,7 +103,7 @@ namespace Travel_Experts
 
 
         //--------------------------- LOUISE ACOSTA ------------------------------
-        // Delete products from packages
+        // Delete products from existing packages
         public static int Delete(int packageId)
         {
             int count = 0;
@@ -133,7 +133,7 @@ namespace Travel_Experts
             return count;
         }
 
-        // add products to packages
+        // add products to existing packages
         public static void Add(int packageId, int productSupplierId)
         {
             // create connection
@@ -156,6 +156,47 @@ namespace Travel_Experts
 
                 // execute
                 cmd.ExecuteScalar();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        // add products to new package
+        public static void AddProductsToNewPackage(int packageId, int productSupplierId)
+        {
+            int packageID = 0;
+            // create connection
+            SqlConnection connection = TravelExpertsDB.GetConnection();
+
+            //create command object
+            string sqlInsert = "INSERT INTO Packages_Products_Suppliers (ProductSupplierId) " +
+                                    "VALUES(@ProductSupplierId)";
+
+            SqlCommand cmd = new SqlCommand(sqlInsert, connection);
+
+
+            cmd.Parameters.AddWithValue("@ProductSupplierId", productSupplierId);
+
+            // check
+            try
+            {
+                // open connection
+                connection.Open();
+                packageID = (int)cmd.ExecuteScalar();
+
+                // run select query that gets Package ID
+                string selectQuery = "SELECT IDENT_CURRENT('Packages') FROM Packages";
+                SqlCommand selectCommand = new SqlCommand(selectQuery, connection);
+                // run
+                packageID = Convert.ToInt32(selectCommand.ExecuteScalar());
+
 
             }
             catch (Exception ex)
