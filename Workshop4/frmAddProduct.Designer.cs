@@ -57,9 +57,10 @@
             // 
             // btnAddToPackage
             // 
-            this.btnAddToPackage.Location = new System.Drawing.Point(609, 119);
+            this.btnAddToPackage.Location = new System.Drawing.Point(909, 95);
+            this.btnAddToPackage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddToPackage.Name = "btnAddToPackage";
-            this.btnAddToPackage.Size = new System.Drawing.Size(148, 35);
+            this.btnAddToPackage.Size = new System.Drawing.Size(137, 35);
             this.btnAddToPackage.TabIndex = 34;
             this.btnAddToPackage.Text = "&Add";
             this.btnAddToPackage.UseVisualStyleBackColor = true;
@@ -90,8 +91,9 @@
             this.availableProductsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.availableProductsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.availableProductsBindingNavigator.Name = "availableProductsBindingNavigator";
+            this.availableProductsBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.availableProductsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.availableProductsBindingNavigator.Size = new System.Drawing.Size(936, 25);
+            this.availableProductsBindingNavigator.Size = new System.Drawing.Size(1404, 25);
             this.availableProductsBindingNavigator.TabIndex = 35;
             this.availableProductsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -148,7 +150,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
@@ -195,35 +197,37 @@
             this.dataGridViewAvailableProducts.AllowUserToDeleteRows = false;
             this.dataGridViewAvailableProducts.AllowUserToOrderColumns = true;
             this.dataGridViewAvailableProducts.AutoGenerateColumns = false;
-            this.dataGridViewAvailableProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewAvailableProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewAvailableProducts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewAvailableProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAvailableProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dataGridViewAvailableProducts.DataSource = this.availableProductsBindingSource;
-            this.dataGridViewAvailableProducts.Location = new System.Drawing.Point(12, 62);
+            this.dataGridViewAvailableProducts.Location = new System.Drawing.Point(18, 95);
+            this.dataGridViewAvailableProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridViewAvailableProducts.Name = "dataGridViewAvailableProducts";
             this.dataGridViewAvailableProducts.ReadOnly = true;
             this.dataGridViewAvailableProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAvailableProducts.Size = new System.Drawing.Size(575, 445);
+            this.dataGridViewAvailableProducts.Size = new System.Drawing.Size(867, 586);
             this.dataGridViewAvailableProducts.TabIndex = 35;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductSupplierId";
+            this.dataGridViewTextBoxColumn1.FillWeight = 30F;
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 43;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ProdName";
+            this.dataGridViewTextBoxColumn2.FillWeight = 75F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Product";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 69;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -231,7 +235,6 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Supplier";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 70;
             // 
             // availableProductsBindingSource
             // 
@@ -239,13 +242,15 @@
             // 
             // frmAddProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(936, 578);
+            this.ClientSize = new System.Drawing.Size(1404, 889);
             this.Controls.Add(this.dataGridViewAvailableProducts);
             this.Controls.Add(this.availableProductsBindingNavigator);
             this.Controls.Add(this.btnAddToPackage);
+            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAddProduct";
             this.Text = "AddProduct";
             this.Load += new System.EventHandler(this.AddProduct_Load);

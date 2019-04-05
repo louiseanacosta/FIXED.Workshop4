@@ -100,5 +100,73 @@ namespace Travel_Experts
             }
             return count;
         }
+
+
+        // Author: Louise
+        // Delete products from packages
+        public static int Delete(int packageId)
+        {
+            int count = 0;
+            string deleteStatement = "DELETE FROM Packages_Products_Suppliers WHERE PackageId=@PackageId";
+
+            using (SqlConnection con = TravelExpertsDB.GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand(deleteStatement, con))
+                {
+                    cmd.Parameters.AddWithValue("@PackageId", packageId);
+
+                    try
+                    {
+                        con.Open();
+                        count = cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+            }
+            return count;
+        }
+        // Author: Louise
+        // add products to packages
+        public static void Add(int packageId, int productSupplierId)
+        {
+            // create connection
+            SqlConnection connection = TravelExpertsDB.GetConnection();
+
+            //create command object
+            string sqlInsert = "INSERT INTO Packages_Products_Suppliers (PackageId, ProductSupplierId) " +
+                                    "VALUES(@PackageId, @ProductSupplierId)";
+
+            SqlCommand cmd = new SqlCommand(sqlInsert, connection);
+
+            cmd.Parameters.AddWithValue("@PackageId", packageId);
+            cmd.Parameters.AddWithValue("@ProductSupplierId", productSupplierId);
+
+            // check
+            try
+            {
+                // open connection
+                connection.Open();
+
+                // execute
+                cmd.ExecuteScalar();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
     }
 }

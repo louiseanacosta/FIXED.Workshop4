@@ -19,17 +19,34 @@ namespace Travel_Experts
         /// Get Package List from Travel Experts database
         /// </summary>
         /// <returns>A list of all packages</returns>
-        public static List<Package> GetPackages()
+        public static List<Package> GetPackages(int packageId = 0)
         {
             List<Package> packages = new List<Package>();
-            Package package = null;
 
             SqlConnection connection = TravelExpertsDB.GetConnection();
 
             var sqlSelect = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc, "+
                             "PkgBasePrice, PkgAgencyCommission " + 
                             "FROM Packages";
+
+
+            // check package id
+            if(packageId != 0)
+            {
+                // update sql
+                sqlSelect += " WHERE PackageId=@PackageId";
+
+            }
+
             SqlCommand selectCmd = new SqlCommand(sqlSelect, connection);
+
+            // check package id
+            if (packageId != 0)
+            {
+                // bind
+                selectCmd.Parameters.AddWithValue("@PackageId", packageId);
+
+            }
 
             // execute
             try
@@ -40,7 +57,7 @@ namespace Travel_Experts
                 SqlDataReader dr = selectCmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dr.Read())
                 {
-                    package = new Package();
+                    var package = new Package();
                     package.PackageId = (int)dr["PackageId"];
                     package.PkgName = (string)dr["PkgName"];
 
@@ -142,19 +159,21 @@ namespace Travel_Experts
         /// <param name="oldPackage">data before update</param>
         /// <param name="newPackage">new data for the update</param>
         /// <returns>indicator of success</returns>
-        public static bool UpdatePackage(Package oldPackage, Package newPackage)
+        public static int UpdatePackage(Package oldPackage, Package newPackage)
         {
-            bool success = true;
             // connect
+            int count = 0;
             SqlConnection connection = TravelExpertsDB.GetConnection();
+
             string sqlUpdate = "UPDATE Packages SET " +
-                                    "PkgName = @PkgName, " +
-                                    "PkgStartDate = @PkgStartDate, " +
-                                    "PkgEndDate = @PkgEndDate, " +
-                                    "PkgDesc = @PkgDesc " +
-                                    "PkgBasePrice = @PkgBasePrice " +
-                                    "PkgAgencyCommission = @PkgAgencyCommission " +
-                                    "WHERE PackageID = @OldPackageID " + 
+                                    "PkgName = @NewPkgName, " +
+                                    "PkgStartDate = @NewPkgStartDate, " +
+                                    "PkgEndDate = @NewPkgEndDate, " +
+                                    "PkgDesc = @NewPkgDesc, " +
+                                    "PkgBasePrice = @NewPkgBasePrice, " +
+                                    "PkgAgencyCommission = @NewPkgAgencyCommission " +
+
+                                    "WHERE PackageID = @OldPackageID " +
                                     "AND PkgStartDate = @OldPkgStartDate " +
                                     "AND PkgEndDate = @OldPkgEndDate " +
                                     "AND PkgDesc = @OldPkgDesc " +
@@ -182,8 +201,7 @@ namespace Travel_Experts
             {
                 // open connection
                 connection.Open();
-                int rowsUpdated = cmd.ExecuteNonQuery();
-                if (rowsUpdated == 0) success = false; 
+                count = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -193,7 +211,7 @@ namespace Travel_Experts
             {
                 connection.Close();
             }
-            return success;
+            return count;
         } // end update package
 
         /// <summary>
