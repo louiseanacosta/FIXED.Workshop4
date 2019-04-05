@@ -48,6 +48,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnProdSupp = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.btnPackages = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabPackages = new System.Windows.Forms.TabPage();
             this.tabPackageList = new System.Windows.Forms.TabControl();
@@ -71,6 +71,7 @@
             this.pkgAgencyCommissionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cmbPackageId = new System.Windows.Forms.ComboBox();
             this.btnDeletePackage = new System.Windows.Forms.Button();
             this.btnBackList = new System.Windows.Forms.Button();
             this.productsInPackageDataGridView = new System.Windows.Forms.DataGridView();
@@ -82,7 +83,6 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.cmbPackageId = new System.Windows.Forms.ComboBox();
             this.txtPkgCommission = new System.Windows.Forms.TextBox();
             this.txtPkgPrice = new System.Windows.Forms.TextBox();
             this.txtPkgDesc = new System.Windows.Forms.TextBox();
@@ -92,10 +92,10 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnBackList2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnSaveNewPackage = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
-            this.productsInPackageDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.productsToAddDataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.pkgAgencyCommissionTextBox1 = new System.Windows.Forms.TextBox();
             this.pkgBasePriceTextBox1 = new System.Windows.Forms.TextBox();
@@ -136,7 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsInPackageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsInPackageBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsInPackageDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsToAddDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -146,63 +146,63 @@
             pkgAgencyCommissionLabel1.AutoSize = true;
             pkgAgencyCommissionLabel1.Location = new System.Drawing.Point(19, 208);
             pkgAgencyCommissionLabel1.Name = "pkgAgencyCommissionLabel1";
-            pkgAgencyCommissionLabel1.Size = new System.Drawing.Size(191, 20);
+            pkgAgencyCommissionLabel1.Size = new System.Drawing.Size(160, 20);
             pkgAgencyCommissionLabel1.TabIndex = 2;
-            pkgAgencyCommissionLabel1.Text = "Pkg Agency Commission:";
+            pkgAgencyCommissionLabel1.Text = "Agency Commission:";
             // 
             // pkgBasePriceLabel1
             // 
             pkgBasePriceLabel1.AutoSize = true;
             pkgBasePriceLabel1.Location = new System.Drawing.Point(19, 175);
             pkgBasePriceLabel1.Name = "pkgBasePriceLabel1";
-            pkgBasePriceLabel1.Size = new System.Drawing.Size(120, 20);
+            pkgBasePriceLabel1.Size = new System.Drawing.Size(89, 20);
             pkgBasePriceLabel1.TabIndex = 4;
-            pkgBasePriceLabel1.Text = "Pkg Base Price:";
+            pkgBasePriceLabel1.Text = "Base Price:";
             // 
             // pkgDescLabel1
             // 
             pkgDescLabel1.AutoSize = true;
             pkgDescLabel1.Location = new System.Drawing.Point(19, 85);
             pkgDescLabel1.Name = "pkgDescLabel1";
-            pkgDescLabel1.Size = new System.Drawing.Size(81, 20);
+            pkgDescLabel1.Size = new System.Drawing.Size(95, 20);
             pkgDescLabel1.TabIndex = 6;
-            pkgDescLabel1.Text = "Pkg Desc:";
+            pkgDescLabel1.Text = "Description:";
             // 
             // pkgEndDateLabel1
             // 
             pkgEndDateLabel1.AutoSize = true;
             pkgEndDateLabel1.Location = new System.Drawing.Point(19, 146);
             pkgEndDateLabel1.Name = "pkgEndDateLabel1";
-            pkgEndDateLabel1.Size = new System.Drawing.Size(111, 20);
+            pkgEndDateLabel1.Size = new System.Drawing.Size(80, 20);
             pkgEndDateLabel1.TabIndex = 8;
-            pkgEndDateLabel1.Text = "Pkg End Date:";
+            pkgEndDateLabel1.Text = "End Date:";
             // 
             // pkgNameLabel1
             // 
             pkgNameLabel1.AutoSize = true;
             pkgNameLabel1.Location = new System.Drawing.Point(19, 55);
             pkgNameLabel1.Name = "pkgNameLabel1";
-            pkgNameLabel1.Size = new System.Drawing.Size(88, 20);
+            pkgNameLabel1.Size = new System.Drawing.Size(57, 20);
             pkgNameLabel1.TabIndex = 10;
-            pkgNameLabel1.Text = "Pkg Name:";
+            pkgNameLabel1.Text = "Name:";
             // 
             // pkgStartDateLabel1
             // 
             pkgStartDateLabel1.AutoSize = true;
             pkgStartDateLabel1.Location = new System.Drawing.Point(19, 116);
             pkgStartDateLabel1.Name = "pkgStartDateLabel1";
-            pkgStartDateLabel1.Size = new System.Drawing.Size(116, 20);
+            pkgStartDateLabel1.Size = new System.Drawing.Size(85, 20);
             pkgStartDateLabel1.TabIndex = 12;
-            pkgStartDateLabel1.Text = "Pkg Start Date:";
+            pkgStartDateLabel1.Text = "Start Date:";
             // 
             // packageIdLabel
             // 
             packageIdLabel.AutoSize = true;
             packageIdLabel.Location = new System.Drawing.Point(17, 65);
             packageIdLabel.Name = "packageIdLabel";
-            packageIdLabel.Size = new System.Drawing.Size(99, 20);
+            packageIdLabel.Size = new System.Drawing.Size(100, 20);
             packageIdLabel.TabIndex = 15;
-            packageIdLabel.Text = "Package Id:";
+            packageIdLabel.Text = "Package ID:";
             // 
             // pkgAgencyCommissionLabel
             // 
@@ -268,6 +268,7 @@
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.splitContainer1.Panel1.Controls.Add(this.label5);
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.btnProdSupp);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
@@ -276,7 +277,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnPackages);
             this.splitContainer1.Panel1.Controls.Add(this.btnProducts);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
             // 
             // splitContainer1.Panel2
             // 
@@ -297,6 +297,21 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "PRODUCT SUPPLIER";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Ivory;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(43, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(70, 66);
+            this.button1.TabIndex = 1;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnProdSupp
             // 
@@ -374,9 +389,9 @@
             this.btnPackages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPackages.ForeColor = System.Drawing.Color.Ivory;
             this.btnPackages.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPackages.Location = new System.Drawing.Point(12, 87);
+            this.btnPackages.Location = new System.Drawing.Point(16, 99);
             this.btnPackages.Name = "btnPackages";
-            this.btnPackages.Size = new System.Drawing.Size(149, 89);
+            this.btnPackages.Size = new System.Drawing.Size(133, 70);
             this.btnPackages.TabIndex = 5;
             this.btnPackages.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPackages.UseVisualStyleBackColor = true;
@@ -409,21 +424,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "TRAVEL EXPERTS";
             // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Ivory;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(49, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 66);
-            this.button1.TabIndex = 1;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // tabMain
             // 
             this.tabMain.Controls.Add(this.tabPackages);
@@ -434,6 +434,7 @@
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
             this.tabMain.Size = new System.Drawing.Size(1062, 532);
+            this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabMain.TabIndex = 2;
             // 
             // tabPackages
@@ -456,6 +457,7 @@
             this.tabPackageList.Name = "tabPackageList";
             this.tabPackageList.SelectedIndex = 0;
             this.tabPackageList.Size = new System.Drawing.Size(1028, 491);
+            this.tabPackageList.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabPackageList.TabIndex = 1;
             // 
             // tabPage1
@@ -515,6 +517,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1020, 441);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // Column1
             // 
@@ -587,6 +590,7 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.cmbPackageId);
             this.tabPage2.Controls.Add(this.btnDeletePackage);
             this.tabPage2.Controls.Add(this.btnBackList);
             this.tabPage2.Controls.Add(this.productsInPackageDataGridView);
@@ -595,7 +599,6 @@
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.btnDelete);
             this.tabPage2.Controls.Add(packageIdLabel);
-            this.tabPage2.Controls.Add(this.cmbPackageId);
             this.tabPage2.Controls.Add(pkgAgencyCommissionLabel);
             this.tabPage2.Controls.Add(this.txtPkgCommission);
             this.tabPage2.Controls.Add(pkgBasePriceLabel);
@@ -609,17 +612,30 @@
             this.tabPage2.Controls.Add(pkgStartDateLabel);
             this.tabPage2.Controls.Add(this.txtPkgStart);
             this.tabPage2.Controls.Add(this.btnUpdate);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1020, 465);
+            this.tabPage2.Size = new System.Drawing.Size(1020, 459);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Details";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cmbPackageId
+            // 
+            this.cmbPackageId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbPackageId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbPackageId.DataSource = this.packageBindingSource;
+            this.cmbPackageId.DisplayMember = "PackageId";
+            this.cmbPackageId.FormattingEnabled = true;
+            this.cmbPackageId.Location = new System.Drawing.Point(208, 58);
+            this.cmbPackageId.Name = "cmbPackageId";
+            this.cmbPackageId.Size = new System.Drawing.Size(121, 27);
+            this.cmbPackageId.TabIndex = 37;
+            this.cmbPackageId.ValueMember = "PackageId";
+            // 
             // btnDeletePackage
             // 
-            this.btnDeletePackage.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDeletePackage.BackColor = System.Drawing.Color.LightCoral;
             this.btnDeletePackage.Location = new System.Drawing.Point(173, 18);
             this.btnDeletePackage.Name = "btnDeletePackage";
             this.btnDeletePackage.Size = new System.Drawing.Size(153, 28);
@@ -629,11 +645,11 @@
             // 
             // btnBackList
             // 
-            this.btnBackList.Location = new System.Drawing.Point(591, 18);
+            this.btnBackList.Location = new System.Drawing.Point(618, 18);
             this.btnBackList.Name = "btnBackList";
-            this.btnBackList.Size = new System.Drawing.Size(130, 28);
+            this.btnBackList.Size = new System.Drawing.Size(103, 28);
             this.btnBackList.TabIndex = 35;
-            this.btnBackList.Text = "&Go Back To List";
+            this.btnBackList.Text = "&Back To List";
             this.btnBackList.UseVisualStyleBackColor = true;
             // 
             // productsInPackageDataGridView
@@ -642,6 +658,7 @@
             this.productsInPackageDataGridView.AllowUserToDeleteRows = false;
             this.productsInPackageDataGridView.AutoGenerateColumns = false;
             this.productsInPackageDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.productsInPackageDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.productsInPackageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productsInPackageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -658,6 +675,7 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductSupplierId";
+            this.dataGridViewTextBoxColumn1.FillWeight = 30F;
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -665,6 +683,7 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ProdName";
+            this.dataGridViewTextBoxColumn2.FillWeight = 50F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Product";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -692,7 +711,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnCreate.BackColor = System.Drawing.Color.LightGreen;
             this.btnCreate.Location = new System.Drawing.Point(346, 18);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(136, 28);
@@ -718,18 +737,7 @@
             this.btnDelete.TabIndex = 29;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // cmbPackageId
-            // 
-            this.cmbPackageId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PackageId", true));
-            this.cmbPackageId.DataSource = this.packageBindingSource;
-            this.cmbPackageId.DisplayMember = "PackageId";
-            this.cmbPackageId.FormattingEnabled = true;
-            this.cmbPackageId.Location = new System.Drawing.Point(208, 62);
-            this.cmbPackageId.Name = "cmbPackageId";
-            this.cmbPackageId.Size = new System.Drawing.Size(87, 27);
-            this.cmbPackageId.TabIndex = 16;
-            this.cmbPackageId.ValueMember = "PackageId";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtPkgCommission
             // 
@@ -795,10 +803,10 @@
             // 
             this.tabPage3.AutoScroll = true;
             this.tabPage3.Controls.Add(this.btnBackList2);
-            this.tabPage3.Controls.Add(this.button6);
+            this.tabPage3.Controls.Add(this.btnSaveNewPackage);
             this.tabPage3.Controls.Add(this.button5);
             this.tabPage3.Controls.Add(this.btnAddNew);
-            this.tabPage3.Controls.Add(this.productsInPackageDataGridView1);
+            this.tabPage3.Controls.Add(this.productsToAddDataGridView);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(pkgAgencyCommissionLabel1);
             this.tabPage3.Controls.Add(this.pkgAgencyCommissionTextBox1);
@@ -812,32 +820,34 @@
             this.tabPage3.Controls.Add(this.pkgNameTextBox1);
             this.tabPage3.Controls.Add(pkgStartDateLabel1);
             this.tabPage3.Controls.Add(this.pkgStartDateDateTimePicker1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1020, 465);
+            this.tabPage3.Size = new System.Drawing.Size(1020, 459);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Create New";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnBackList2
             // 
-            this.btnBackList2.Location = new System.Drawing.Point(577, 15);
+            this.btnBackList2.Location = new System.Drawing.Point(612, 15);
             this.btnBackList2.Name = "btnBackList2";
-            this.btnBackList2.Size = new System.Drawing.Size(136, 28);
+            this.btnBackList2.Size = new System.Drawing.Size(101, 28);
             this.btnBackList2.TabIndex = 37;
-            this.btnBackList2.Text = "&Go Back To List";
+            this.btnBackList2.Text = "&Back To List";
             this.btnBackList2.UseVisualStyleBackColor = true;
             this.btnBackList2.Click += new System.EventHandler(this.btnBackList2_Click);
             // 
-            // button6
+            // btnSaveNewPackage
             // 
-            this.button6.Location = new System.Drawing.Point(23, 15);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(136, 28);
-            this.button6.TabIndex = 36;
-            this.button6.Text = "&SavePackage";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSaveNewPackage.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnSaveNewPackage.Location = new System.Drawing.Point(23, 15);
+            this.btnSaveNewPackage.Name = "btnSaveNewPackage";
+            this.btnSaveNewPackage.Size = new System.Drawing.Size(136, 28);
+            this.btnSaveNewPackage.TabIndex = 36;
+            this.btnSaveNewPackage.Text = "&SavePackage";
+            this.btnSaveNewPackage.UseVisualStyleBackColor = false;
+            this.btnSaveNewPackage.Click += new System.EventHandler(this.btnSaveNewPackage_Click);
             // 
             // button5
             // 
@@ -856,17 +866,19 @@
             this.btnAddNew.TabIndex = 34;
             this.btnAddNew.Text = "&Add";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
-            // productsInPackageDataGridView1
+            // productsToAddDataGridView
             // 
-            this.productsInPackageDataGridView1.AllowUserToAddRows = false;
-            this.productsInPackageDataGridView1.AllowUserToDeleteRows = false;
-            this.productsInPackageDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productsInPackageDataGridView1.Location = new System.Drawing.Point(23, 279);
-            this.productsInPackageDataGridView1.Name = "productsInPackageDataGridView1";
-            this.productsInPackageDataGridView1.ReadOnly = true;
-            this.productsInPackageDataGridView1.Size = new System.Drawing.Size(577, 201);
-            this.productsInPackageDataGridView1.TabIndex = 18;
+            this.productsToAddDataGridView.AllowUserToAddRows = false;
+            this.productsToAddDataGridView.AllowUserToDeleteRows = false;
+            this.productsToAddDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.productsToAddDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsToAddDataGridView.Location = new System.Drawing.Point(23, 279);
+            this.productsToAddDataGridView.Name = "productsToAddDataGridView";
+            this.productsToAddDataGridView.ReadOnly = true;
+            this.productsToAddDataGridView.Size = new System.Drawing.Size(577, 201);
+            this.productsToAddDataGridView.TabIndex = 18;
             // 
             // label2
             // 
@@ -1008,7 +1020,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsInPackageBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsInPackageDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsToAddDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -1043,7 +1055,6 @@
         private System.Windows.Forms.TextBox pkgNameTextBox1;
         private System.Windows.Forms.DateTimePicker pkgStartDateDateTimePicker1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbPackageId;
         private System.Windows.Forms.TextBox txtPkgCommission;
         private System.Windows.Forms.TextBox txtPkgPrice;
         private System.Windows.Forms.TextBox txtPkgDesc;
@@ -1056,14 +1067,11 @@
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnAddOld;
         private System.Windows.Forms.DataGridView productsInPackageDataGridView;
-        private System.Windows.Forms.DataGridView productsInPackageDataGridView1;
+        private System.Windows.Forms.DataGridView productsToAddDataGridView;
         public System.Windows.Forms.BindingSource productsInPackageBindingSource;
         private System.Windows.Forms.Button btnAddNew;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnSaveNewPackage;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Button btnBackList;
         private System.Windows.Forms.Button btnDeletePackage;
         private System.Windows.Forms.Button btnBackList2;
@@ -1080,6 +1088,10 @@
         private System.Windows.Forms.TabPage tabProdSupp;
         private System.Windows.Forms.TabPage tabProducts;
         private System.Windows.Forms.TabPage tabSupplier;
+        private System.Windows.Forms.ComboBox cmbPackageId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
 

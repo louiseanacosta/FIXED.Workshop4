@@ -18,58 +18,74 @@ namespace Workshop4
 {
     public partial class frmPackages : Form
     {
-        List<Package> packages = PackageDB.GetPackages();
-        Package package; // current package
+        List<Package> packages;
+        public Package package; // current package
 
 
         public frmPackages()
         {
+            this.packages = PackageDB.GetPackages();
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            packageBindingSource.DataSource = packages;
+            packageBindingSource.DataSource = this.packages;
+            //cmbPackageId.SelectedIndex = 0;
+
+            // get first object
+            Package firstPackage = this.packages.First();
+
+            List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(firstPackage.PackageId);
+            productsInPackageBindingSource.DataSource = products;
+
         }
 
         // display list of products included in selected package
         private void packageBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            
             if (cmbPackageId.Text == "") { return; }
-            int packageID = Convert.ToInt32(cmbPackageId.Text);
-            //List<Products> listProducts = ProductsDB.GetProductsFromPackage(packageID);
+            int packageID = Convert.ToInt32(cmbPackageId.SelectedValue);
+
             List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(packageID);
             productsInPackageBindingSource.DataSource = products;
-
         }
 
         // Update changes
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Package newPackage = new Package(); // new package
-            
-            newPackage.PackageId = package.PackageId;
+            // get current package from database
+            int packageId = Convert.ToInt32(cmbPackageId.SelectedValue);
+            List <Package> oldPackageList = PackageDB.GetPackages(packageId);
+            Package oldPackage = oldPackageList.First();
+
+            // set new values
+            Package newPackage = new Package();
+            newPackage.PackageId = packageId;
             this.PutPackageData(newPackage);
 
-            try
+            // save package
+            package = newPackage;
+            PackageDB.UpdatePackage(oldPackage, newPackage);
+
+            // get current product suppliers
+            List <int> productSupplierIds = new List<int>();
+            foreach (var product in ProductsInPackageDB.GetProductsFromPackage(packageId))
             {
-                if (!PackageDB.UpdatePackage(package, newPackage))
-                {
-                    MessageBox.Show("Another user has updated or " +
-                        "deleted that customer.", "Database Error");
-                    this.DialogResult = DialogResult.Retry;
-                }
-                else // successfully updated
-                {
-                    package = newPackage;
-                    this.DialogResult = DialogResult.OK;
-                }
+                productSupplierIds.Add(product.ProductSupplierId);
             }
-            catch (Exception ex)
+
+            // delete products suppliers linked to package
+            Packages_products_suppliersDB.Delete(packageId);
+
+            // add products supliers to package
+            List <ProductsInPackage> productsInPackages = (List<ProductsInPackage>)productsInPackageBindingSource.DataSource;
+            foreach (var productsInPackage in productsInPackages)
             {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
             }
+
+            MessageBox.Show("Changes saved for Package ID " + packageId);
         }
 
 
@@ -83,13 +99,16 @@ namespace Workshop4
         private void PutPackageData(Package package)
         {
             package.PkgName = txtPkgName.Text;
+            package.PkgDesc = txtPkgDesc.Text;
             package.PkgStartDate = Convert.ToDateTime(txtPkgStart.Value);
             package.PkgEndDate = Convert.ToDateTime(txtPkgEnd.Value);
-            package.PkgDesc = txtPkgDesc.Text;
             package.PkgBasePrice = Convert.ToDecimal(txtPkgPrice.Text);
             package.PkgAgencyCommission = Convert.ToDecimal(txtPkgCommission.Text);
+
         }
 
+
+        // Design Views
         private void btnCreate_Click(object sender, EventArgs e)
         {
             tabPackageList.SelectTab(2);
@@ -122,7 +141,32 @@ namespace Workshop4
             tabMain.SelectedIndex = 3;
         }
 
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tabPackageList.SelectedIndex = 1;
+        }
 
+        // delete selected products
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in productsInPackageDataGridView.SelectedRows)
+            {
+                int rowIndex = productsInPackageDataGridView.CurrentCell.RowIndex;
+                productsInPackageDataGridView.Rows.RemoveAt(rowIndex);
+
+            }
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            frmAddProduct addNewProduct = new frmAddProduct(productsInPackageBindingSource);
+            addNewProduct.ShowDialog();
+        }
+
+        private void btnSaveNewPackage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
