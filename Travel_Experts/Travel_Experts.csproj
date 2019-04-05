@@ -41,22 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AvailableProducts.cs" />
-    <Compile Include="AvailableProductsDB.cs" />
-    <Compile Include="Package.cs" />
-    <Compile Include="PackageDB.cs" />
-    <Compile Include="Packages_products_suppliers.cs" />
-    <Compile Include="Packages_products_suppliersDB.cs" />
-    <Compile Include="Products.cs" />
-    <Compile Include="ProductsDB.cs" />
-    <Compile Include="ProductsInPackage.cs" />
-    <Compile Include="ProductsInPackageDB.cs" />
-    <Compile Include="Products_suppliers.cs" />
-    <Compile Include="Products_suppliersDB.cs" />
+    <Compile Include="Convenient Class\AvailableProducts.cs" />
+    <Compile Include="Convenient Class\ProductSupplierWithName.cs" />
+    <Compile Include="DB\AvailableProductsDB.cs" />
+    <Compile Include="Domain Entities\Package.cs" />
+    <Compile Include="DB\PackageDB.cs" />
+    <Compile Include="Domain Entities\Packages_products_suppliers.cs" />
+    <Compile Include="DB\Packages_products_suppliersDB.cs" />
+    <Compile Include="Domain Entities\Products.cs" />
+    <Compile Include="DB\ProductsDB.cs" />
+    <Compile Include="Convenient Class\ProductsInPackage.cs" />
+    <Compile Include="DB\ProductsInPackageDB.cs" />
+    <Compile Include="Domain Entities\Products_suppliers.cs" />
+    <Compile Include="DB\Products_suppliersDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Suppliers.cs" />
-    <Compile Include="SuppliersDB.cs" />
-    <Compile Include="TravelExpertsDB.cs" />
+    <Compile Include="Domain Entities\Suppliers.cs" />
+    <Compile Include="DB\SuppliersDB.cs" />
+    <Compile Include="DB\TravelExpertsDB.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

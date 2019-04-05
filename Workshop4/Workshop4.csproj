@@ -77,9 +77,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\DataSources\Travel_Experts.AvailableProducts.datasource" />
+    <None Include="Properties\DataSources\Travel_Experts.Convenient_Class.ProductSupplierWithName.datasource" />
     <None Include="Properties\DataSources\Travel_Experts.Package.datasource" />
     <None Include="Properties\DataSources\Travel_Experts.PackageDB.datasource" />
-    <None Include="Properties\DataSources\Travel_Experts.Product.datasource" />
     <None Include="Properties\DataSources\Travel_Experts.Products.datasource" />
     <None Include="Properties\DataSources\Travel_Experts.ProductsInPackage.datasource" />
     <None Include="Properties\Settings.settings">

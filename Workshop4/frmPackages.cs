@@ -126,31 +126,7 @@ namespace Workshop4
         {
             tabPackageList.SelectTab(0);
         }
-
-
-        // 4 Main Navigation Buttons
-
-        private void btnPackages_Click(object sender, EventArgs e)
-        {
-            tabMain.SelectedIndex = 0;
-        }
-
-        private void btnProdSupp_Click(object sender, EventArgs e)
-        {
-            tabMain.SelectedIndex = 1;
-        }
-
-        private void btnProducts_Click(object sender, EventArgs e)
-        {
-            tabMain.SelectedIndex = 2;
-        }
-
-
-        private void btnSupplier_Click(object sender, EventArgs e)
-        {
-            tabMain.SelectedIndex = 3;
-        }
-
+        
         // delete selected products
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -197,6 +173,40 @@ namespace Workshop4
         {
             tabPackageList.SelectedIndex = 1;
         }
+
+        // ----------------------- DongMing Hu ------------------------
+        // 4 Main Navigation Buttons
+
+        private void btnPackages_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 0;
+        }
+
+        private void btnProdSupp_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 1;
+            // load Product Supplier data and fill DataSource
+            var psList = Products_suppliersDB.GetAllProductSupplierWithNames();
+            productSupplierWithNameBindingSource.DataSource = psList;
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 2;
+        }
+
+
+        private void btnSupplier_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 3;
+        }
+
+        private void tabProSup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
 
