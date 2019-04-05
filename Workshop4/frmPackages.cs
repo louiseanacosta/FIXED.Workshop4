@@ -51,7 +51,7 @@ namespace Workshop4
             productsInPackageBindingSource.DataSource = products;
         }
 
-        // Update changes
+        // update Package
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // get current package from database
@@ -114,12 +114,12 @@ namespace Workshop4
             tabPackageList.SelectTab(2);
         }
 
-
+        // go back to list
         private void btnBackList2_Click(object sender, EventArgs e)
         {
             tabPackageList.SelectTab(0);
         }
-
+        
         private void btnPackages_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 0;
@@ -141,8 +141,6 @@ namespace Workshop4
             tabMain.SelectedIndex = 3;
         }
 
-
-
         // delete selected products
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -154,18 +152,20 @@ namespace Workshop4
             }
         }
 
+        // add product in package
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             frmAddProduct addNewProduct = new frmAddProduct(productsInPackageBindingSource);
             addNewProduct.ShowDialog();
         }
 
-
+        // go back to list
         private void btnBackList_Click(object sender, EventArgs e)
         {
             tabPackageList.SelectTab(0);
         }
 
+        // go to create new package tab
         private void btnNewPackage_Click(object sender, EventArgs e)
         {
             tabPackageList.SelectTab(2);
@@ -180,6 +180,12 @@ namespace Workshop4
         private void grdProductList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             tabPackageList.SelectedIndex = 1;
+
+        }
+
+        // Delete Package
+        private void btnDeletePackage_Click(object sender, EventArgs e)
+        {
 
         }
     }
