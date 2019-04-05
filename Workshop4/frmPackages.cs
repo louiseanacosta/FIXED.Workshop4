@@ -141,10 +141,7 @@ namespace Workshop4
             tabMain.SelectedIndex = 3;
         }
 
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            tabPackageList.SelectedIndex = 1;
-        }
+
 
         // delete selected products
         private void btnDelete_Click(object sender, EventArgs e)
@@ -175,6 +172,14 @@ namespace Workshop4
         }
         private void btnSaveNewPackage_Click(object sender, EventArgs e)
         {
+
+        }
+    
+
+        // go to details of selected package on double click
+        private void grdProductList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tabPackageList.SelectedIndex = 1;
 
         }
     }
