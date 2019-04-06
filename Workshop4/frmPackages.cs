@@ -212,7 +212,7 @@ namespace Workshop4
 
         //--------------------------- DongMing Hu -----------------------------------
 
-        // 4 MAIN Nav Buttons
+        // ----- 4 MAIN Nav Buttons -----
         // Nav Btn 1: move to Packages
         private void btnPackages_Click(object sender, EventArgs e)
         {
@@ -227,13 +227,17 @@ namespace Workshop4
             // tab index changed to 0 (view all), show all data
             twoTab_SelectedIndexChanged(sender, e);
             // databinding for combo boxes
-            suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers();
+            suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers().OrderBy(s=>s.SupName);
             productsBindingSource.DataSource = ProductsDB.GetProducts();
         }
         // Nav Btn 3: move to Products
         private void btnProducts_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 2;
+            // click ALL btn, change tab index to 0
+            threeBtnAll_Click(sender, e);
+            // tab index changed to 0 (view all), show all products
+            threeTab_SelectedIndexChanged(sender, e);
         }
         // Nav Btn 4: move to Suppliers
         private void btnSupplier_Click(object sender, EventArgs e)
@@ -242,7 +246,7 @@ namespace Workshop4
         }
 
 
-        // 2ND NAV ITEM: Product_Supplier
+        // ----- 2ND NAV ITEM: Product_Supplier -----
         private List<ProductSupplierWithName> _psList = new List<ProductSupplierWithName>();
 
         private void twoTab_SelectedIndexChanged(object sender, EventArgs e)
@@ -263,7 +267,7 @@ namespace Workshop4
             }
             // 'EDIT' tab, show details
         }
-        // nav btn ALL
+        // nav btn ALL, click change color
         private void twoBtnViewAll_Click(object sender, EventArgs e)
         {
             twoTab.SelectedIndex = 0;
@@ -309,7 +313,7 @@ namespace Workshop4
                     MessageBox.Show("No change were found.", "Please make changes");
                 else
                 {
-                    //  have change, update database
+                    //  have change, try to update database
                     try
                     {
                         var rowsAffected = Products_suppliersDB.UpdateProductSupplier(currentPS, newProdSupp);
@@ -317,7 +321,7 @@ namespace Workshop4
                     }
                     catch (Exception ex)
                     {
-                        throw ex;
+                        MessageBox.Show(ex.Message);
                     }
                 }
             }
@@ -339,6 +343,7 @@ namespace Workshop4
                     ProductId = Convert.ToInt32(twoCmbAddProdName.SelectedValue),
                     SupplierId = Convert.ToInt32(twoCmbAddSuppName.SelectedValue)
                 };
+                // try to insert new obj
                 try
                 {
                     var newId = Products_suppliersDB.AddProductSupplier(newProdSupp);
@@ -346,7 +351,100 @@ namespace Workshop4
                 }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        // ----- 3RD NAV ITEM: Products -----
+        // nav btn ALL, click change color
+        private void threeBtnAll_Click(object sender, EventArgs e)
+        {
+            threeTab.SelectedIndex = 0;
+            threeBtnAll.BackColor = Color.DarkOrange;
+            threeBtnEdit.BackColor = Color.Transparent;
+            threeBtnAdd.BackColor = Color.Transparent;
+        }
+        // nav btn EDIT
+        private void threeBtnEdit_Click(object sender, EventArgs e)
+        {
+            threeTab.SelectedIndex = 1;
+            threeBtnAll.BackColor = Color.Transparent;
+            threeBtnEdit.BackColor = Color.DarkOrange;
+            threeBtnAdd.BackColor = Color.Transparent;
+        }
+        // nav btn ADD
+        private void threeBtnAdd_Click(object sender, EventArgs e)
+        {
+            threeTab.SelectedIndex = 2;
+            threeBtnAll.BackColor = Color.Transparent;
+            threeBtnEdit.BackColor = Color.Transparent;
+            threeBtnAdd.BackColor = Color.DarkOrange;
+        }
+
+        private void threeTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            threeBtnSave.Visible = true;
+            if (threeTab.SelectedIndex == 0)
+            {
+                // hide save button when in view all mode
+                threeBtnSave.Visible = false;
+                // bind data to grid view
+                productsBindingSource.DataSource = ProductsDB.GetProducts();
+            }
+        }
+
+        private void threeBtnSave_Click(object sender, EventArgs e)
+        {
+            if (threeTab.SelectedIndex == 1) // edit mode
+            {
+                // get current displaying product obj
+                var currentProd = ProductsDB.GetProducts().
+                    SingleOrDefault(p=>p.ProductId==Convert.ToInt32(threeTxtEditProdId.Text));
+                // initiate new product obj
+                Products newProd;
+                if (Validator.TBIsEmpty(threeTxtProdName, "Product Name") ||
+                    threeTxtProdName.Text == currentProd.ProdName)
+                {
+                    // name is empty or same as old, do not perform update
+                    threeTxtProdName.Text = currentProd.ProdName;
+                    threeTxtProdName.SelectAll();
+                    return;
+                }
+                else
+                    // name is valid, create new Product obj
+                    newProd = new Products{ ProdName = threeTxtProdName.Text };
+                // try to perform update
+                try
+                {
+                    Console.WriteLine("Old prod name is: " + currentProd.ProdName);
+                    var rowsAffected = ProductsDB.UpdateProduct(currentProd, newProd);
+                    MessageBox.Show($"{rowsAffected} record was updated.", "Congratulations");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else if (threeTab.SelectedIndex == 2) // add mode
+            {
+                // validate input, check if empty or have same name of an existing product
+                if (!Validator.TBIsEmpty(threeTxtAddProdName, "Product Name") &&
+                    ProductsDB.GetProducts().Find(p => p.ProdName == threeTxtAddProdName.Text) == null)
+                {
+                    // validation passed, create new product using user input
+                    var newProd = new Products{ ProdName = threeTxtAddProdName.Text};
+                    // try to insert into DB
+                    try
+                    {
+                        var id = ProductsDB.AddProduct(newProd);
+                        MessageBox.Show($"New product {newProd.ProdName} is added, product id is: {id}.", "Congratulations");
+                        threeTxtAddProdName.Clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
         }

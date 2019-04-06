@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace Travel_Experts
 {
+    /*
+     * Author: Ibraheem
+     * Collaborator: DongMing
+     */
     public static class ProductsDB
     {
         public static List<Products> GetProducts()
@@ -66,6 +70,7 @@ namespace Travel_Experts
             return prodId;
         }
 
+        // ----- UPDATE -----
         public static int UpdateProduct(Products oldProduct, Products newProduct)
         {
             int count = 0;

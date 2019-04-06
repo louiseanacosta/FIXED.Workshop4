@@ -47,10 +47,13 @@
             System.Windows.Forms.Label supNameLabel;
             System.Windows.Forms.Label prodNameLabel1;
             System.Windows.Forms.Label supNameLabel1;
+            System.Windows.Forms.Label prodNameLabel2;
+            System.Windows.Forms.Label productIdLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPackages));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label label8;
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -146,9 +149,25 @@
             this.twoCmbAddProdName = new System.Windows.Forms.ComboBox();
             this.twoCmbAddSuppName = new System.Windows.Forms.ComboBox();
             this.tabProducts = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.threeTab = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.productsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.threeTxtProdName = new System.Windows.Forms.TextBox();
+            this.threeTxtEditProdId = new System.Windows.Forms.TextBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.threeBtnAll = new System.Windows.Forms.Button();
+            this.threeBtnEdit = new System.Windows.Forms.Button();
+            this.threeBtnAdd = new System.Windows.Forms.Button();
+            this.threeBtnSave = new System.Windows.Forms.Button();
             this.tabSupplier = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
+            this.threeTxtAddProdName = new System.Windows.Forms.TextBox();
             pkgAgencyCommissionLabel1 = new System.Windows.Forms.Label();
             pkgBasePriceLabel1 = new System.Windows.Forms.Label();
             pkgDescLabel1 = new System.Windows.Forms.Label();
@@ -167,6 +186,9 @@
             supNameLabel = new System.Windows.Forms.Label();
             prodNameLabel1 = new System.Windows.Forms.Label();
             supNameLabel1 = new System.Windows.Forms.Label();
+            prodNameLabel2 = new System.Windows.Forms.Label();
+            productIdLabel = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -197,6 +219,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
             this.twoTabAdd.SuspendLayout();
+            this.tabProducts.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.threeTab.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -361,6 +391,24 @@
             supNameLabel1.Size = new System.Drawing.Size(70, 20);
             supNameLabel1.TabIndex = 4;
             supNameLabel1.Text = "Supplier:";
+            // 
+            // prodNameLabel2
+            // 
+            prodNameLabel2.AutoSize = true;
+            prodNameLabel2.Location = new System.Drawing.Point(60, 62);
+            prodNameLabel2.Name = "prodNameLabel2";
+            prodNameLabel2.Size = new System.Drawing.Size(95, 20);
+            prodNameLabel2.TabIndex = 0;
+            prodNameLabel2.Text = "Prod Name:";
+            // 
+            // productIdLabel
+            // 
+            productIdLabel.AutoSize = true;
+            productIdLabel.Location = new System.Drawing.Point(60, 20);
+            productIdLabel.Name = "productIdLabel";
+            productIdLabel.Size = new System.Drawing.Size(90, 20);
+            productIdLabel.TabIndex = 2;
+            productIdLabel.Text = "Product Id:";
             // 
             // splitContainer1
             // 
@@ -597,22 +645,22 @@
             this.grdProductList.AllowUserToAddRows = false;
             this.grdProductList.AllowUserToDeleteRows = false;
             this.grdProductList.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.grdProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.grdProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdProductList.AutoGenerateColumns = false;
             this.grdProductList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdProductList.BackgroundColor = System.Drawing.Color.White;
             this.grdProductList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grdProductList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdProductList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grdProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProductList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -623,14 +671,14 @@
             this.pkgBasePriceDataGridViewTextBoxColumn,
             this.pkgAgencyCommissionDataGridViewTextBoxColumn});
             this.grdProductList.DataSource = this.packageBindingSource;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdProductList.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdProductList.DefaultCellStyle = dataGridViewCellStyle3;
             this.grdProductList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdProductList.EnableHeadersVisualStyles = false;
             this.grdProductList.Location = new System.Drawing.Point(3, 39);
@@ -1325,21 +1373,24 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "ProductSupplierId";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ProductSupplierId";
+            this.dataGridViewTextBoxColumn4.FillWeight = 60F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "ID";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "ProdName";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ProdName";
+            this.dataGridViewTextBoxColumn5.FillWeight = 104.3147F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Product Name";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "SupName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "SupName";
+            this.dataGridViewTextBoxColumn6.FillWeight = 104.3147F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Supplier Name";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
@@ -1394,7 +1445,7 @@
             // 
             // twoCmbSupName
             // 
-            this.twoCmbSupName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.twoCmbSupName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.twoCmbSupName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.twoCmbSupName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productSupplierWithNameBindingSource, "SupName", true));
             this.twoCmbSupName.DataSource = this.suppliersBindingSource;
@@ -1427,7 +1478,7 @@
             // 
             // twoCmbAddProdName
             // 
-            this.twoCmbAddProdName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.twoCmbAddProdName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.twoCmbAddProdName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.twoCmbAddProdName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productSupplierWithNameBindingSource, "ProdName", true));
             this.twoCmbAddProdName.DataSource = this.productsBindingSource;
@@ -1441,7 +1492,7 @@
             // 
             // twoCmbAddSuppName
             // 
-            this.twoCmbAddSuppName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.twoCmbAddSuppName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.twoCmbAddSuppName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.twoCmbAddSuppName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productSupplierWithNameBindingSource, "SupName", true));
             this.twoCmbAddSuppName.DataSource = this.suppliersBindingSource;
@@ -1455,13 +1506,194 @@
             // 
             // tabProducts
             // 
-            this.tabProducts.Location = new System.Drawing.Point(4, 22);
+            this.tabProducts.Controls.Add(this.tableLayoutPanel5);
+            this.tabProducts.Location = new System.Drawing.Point(4, 28);
             this.tabProducts.Name = "tabProducts";
             this.tabProducts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProducts.Size = new System.Drawing.Size(1088, 524);
+            this.tabProducts.Size = new System.Drawing.Size(1088, 518);
             this.tabProducts.TabIndex = 2;
             this.tabProducts.Text = "PRODUCTS";
             this.tabProducts.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.threeTab, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1082, 512);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // threeTab
+            // 
+            this.threeTab.Controls.Add(this.tabPage4);
+            this.threeTab.Controls.Add(this.tabPage5);
+            this.threeTab.Controls.Add(this.tabPage6);
+            this.threeTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.threeTab.Location = new System.Drawing.Point(3, 53);
+            this.threeTab.Name = "threeTab";
+            this.threeTab.SelectedIndex = 0;
+            this.threeTab.Size = new System.Drawing.Size(1076, 456);
+            this.threeTab.TabIndex = 0;
+            this.threeTab.SelectedIndexChanged += new System.EventHandler(this.threeTab_SelectedIndexChanged);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.productsDataGridView);
+            this.tabPage4.Location = new System.Drawing.Point(4, 28);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1068, 424);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "ALL";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // productsDataGridView
+            // 
+            this.productsDataGridView.AllowUserToAddRows = false;
+            this.productsDataGridView.AllowUserToDeleteRows = false;
+            this.productsDataGridView.AutoGenerateColumns = false;
+            this.productsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.productsDataGridView.DataSource = this.productsBindingSource;
+            this.productsDataGridView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.productsDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.productsDataGridView.MultiSelect = false;
+            this.productsDataGridView.Name = "productsDataGridView";
+            this.productsDataGridView.ReadOnly = true;
+            this.productsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.productsDataGridView.Size = new System.Drawing.Size(552, 418);
+            this.productsDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "ProductId";
+            this.dataGridViewTextBoxColumn7.FillWeight = 50.76142F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Product Id";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "ProdName";
+            this.dataGridViewTextBoxColumn8.FillWeight = 149.2386F;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(prodNameLabel2);
+            this.tabPage5.Controls.Add(this.threeTxtProdName);
+            this.tabPage5.Controls.Add(productIdLabel);
+            this.tabPage5.Controls.Add(this.threeTxtEditProdId);
+            this.tabPage5.Location = new System.Drawing.Point(4, 28);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1068, 424);
+            this.tabPage5.TabIndex = 1;
+            this.tabPage5.Text = "EDIT";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // threeTxtProdName
+            // 
+            this.threeTxtProdName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
+            this.threeTxtProdName.Location = new System.Drawing.Point(161, 59);
+            this.threeTxtProdName.Name = "threeTxtProdName";
+            this.threeTxtProdName.Size = new System.Drawing.Size(100, 25);
+            this.threeTxtProdName.TabIndex = 1;
+            // 
+            // threeTxtEditProdId
+            // 
+            this.threeTxtEditProdId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProductId", true));
+            this.threeTxtEditProdId.Enabled = false;
+            this.threeTxtEditProdId.Location = new System.Drawing.Point(161, 17);
+            this.threeTxtEditProdId.Name = "threeTxtEditProdId";
+            this.threeTxtEditProdId.Size = new System.Drawing.Size(100, 25);
+            this.threeTxtEditProdId.TabIndex = 3;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(label8);
+            this.tabPage6.Controls.Add(this.threeTxtAddProdName);
+            this.tabPage6.Location = new System.Drawing.Point(4, 28);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1068, 424);
+            this.tabPage6.TabIndex = 2;
+            this.tabPage6.Text = "ADD";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 4;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.Controls.Add(this.threeBtnAll, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.threeBtnEdit, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.threeBtnAdd, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.threeBtnSave, 3, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(402, 44);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // threeBtnAll
+            // 
+            this.threeBtnAll.AutoSize = true;
+            this.threeBtnAll.Location = new System.Drawing.Point(3, 3);
+            this.threeBtnAll.Name = "threeBtnAll";
+            this.threeBtnAll.Size = new System.Drawing.Size(75, 30);
+            this.threeBtnAll.TabIndex = 0;
+            this.threeBtnAll.Text = "ALL";
+            this.threeBtnAll.UseVisualStyleBackColor = true;
+            this.threeBtnAll.Click += new System.EventHandler(this.threeBtnAll_Click);
+            // 
+            // threeBtnEdit
+            // 
+            this.threeBtnEdit.AutoSize = true;
+            this.threeBtnEdit.Location = new System.Drawing.Point(84, 3);
+            this.threeBtnEdit.Name = "threeBtnEdit";
+            this.threeBtnEdit.Size = new System.Drawing.Size(75, 30);
+            this.threeBtnEdit.TabIndex = 0;
+            this.threeBtnEdit.Text = "EDIT";
+            this.threeBtnEdit.UseVisualStyleBackColor = true;
+            this.threeBtnEdit.Click += new System.EventHandler(this.threeBtnEdit_Click);
+            // 
+            // threeBtnAdd
+            // 
+            this.threeBtnAdd.AutoSize = true;
+            this.threeBtnAdd.Location = new System.Drawing.Point(165, 3);
+            this.threeBtnAdd.Name = "threeBtnAdd";
+            this.threeBtnAdd.Size = new System.Drawing.Size(75, 30);
+            this.threeBtnAdd.TabIndex = 0;
+            this.threeBtnAdd.Text = "ADD";
+            this.threeBtnAdd.UseVisualStyleBackColor = true;
+            this.threeBtnAdd.Click += new System.EventHandler(this.threeBtnAdd_Click);
+            // 
+            // threeBtnSave
+            // 
+            this.threeBtnSave.AutoSize = true;
+            this.threeBtnSave.Location = new System.Drawing.Point(246, 3);
+            this.threeBtnSave.Name = "threeBtnSave";
+            this.threeBtnSave.Size = new System.Drawing.Size(75, 30);
+            this.threeBtnSave.TabIndex = 0;
+            this.threeBtnSave.Text = "SAVE";
+            this.threeBtnSave.UseVisualStyleBackColor = true;
+            this.threeBtnSave.Click += new System.EventHandler(this.threeBtnSave_Click);
             // 
             // tabSupplier
             // 
@@ -1498,6 +1730,22 @@
             this.button2.Text = "SIGN OUT";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(76, 38);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(95, 20);
+            label8.TabIndex = 2;
+            label8.Text = "Prod Name:";
+            // 
+            // threeTxtAddProdName
+            // 
+            this.threeTxtAddProdName.Location = new System.Drawing.Point(191, 35);
+            this.threeTxtAddProdName.Name = "threeTxtAddProdName";
+            this.threeTxtAddProdName.Size = new System.Drawing.Size(126, 25);
+            this.threeTxtAddProdName.TabIndex = 3;
             // 
             // frmPackages
             // 
@@ -1548,6 +1796,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
             this.twoTabAdd.ResumeLayout(false);
             this.twoTabAdd.PerformLayout();
+            this.tabProducts.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.threeTab.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1643,9 +1902,6 @@
         private System.Windows.Forms.BindingSource productSupplierWithNameBindingSource;
         private System.Windows.Forms.TabPage twoTabAdd;
         private System.Windows.Forms.DataGridView twoGrdAll;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.ComboBox twoCmbProdName;
         private System.Windows.Forms.TextBox twoTxtProdSuppId;
         private System.Windows.Forms.ComboBox twoCmbSupName;
@@ -1653,6 +1909,25 @@
         private System.Windows.Forms.Button twoBtnSave;
         private System.Windows.Forms.ComboBox twoCmbAddProdName;
         private System.Windows.Forms.ComboBox twoCmbAddSuppName;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TabControl threeTab;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button threeBtnAll;
+        private System.Windows.Forms.Button threeBtnEdit;
+        private System.Windows.Forms.Button threeBtnAdd;
+        private System.Windows.Forms.Button threeBtnSave;
+        private System.Windows.Forms.DataGridView productsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.TextBox threeTxtProdName;
+        private System.Windows.Forms.TextBox threeTxtEditProdId;
+        private System.Windows.Forms.TextBox threeTxtAddProdName;
     }
 }
 
