@@ -74,10 +74,7 @@ namespace Travel_Experts
                     package.PkgDesc = (string)dr["PkgDesc"];
 
 
-                    if (dr["PkgBasePrice"] == DBNull.Value)
-                        package.PkgBasePrice = null;
-                    else
-                        package.PkgBasePrice = (decimal)dr["PkgBasePrice"];
+                    package.PkgBasePrice = (decimal)dr["PkgBasePrice"];
 
 
                     if (dr["PkgAgencyCommission"] == DBNull.Value)

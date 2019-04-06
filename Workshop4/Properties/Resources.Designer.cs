@@ -63,6 +63,26 @@ namespace Workshop4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _378d4d37_5017_4e71_b16f_d42e04544f9e {
+            get {
+                object obj = ResourceManager.GetObject("378d4d37-5017-4e71-b16f-d42e04544f9e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap db9cdf9d_7ad6_4cca_87f2_577b80318ead {
+            get {
+                object obj = ResourceManager.GetObject("db9cdf9d-7ad6-4cca-87f2-577b80318ead", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap donation {
             get {
                 object obj = ResourceManager.GetObject("donation", resourceCulture);

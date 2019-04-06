@@ -33,6 +33,7 @@
             this.btnAddToPackage = new System.Windows.Forms.Button();
             this.availableProductsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.availableProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -48,22 +49,25 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.availableProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingNavigator)).BeginInit();
             this.availableProductsBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddToPackage
             // 
+            this.btnAddToPackage.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnAddToPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddToPackage.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddToPackage.ForeColor = System.Drawing.Color.White;
             this.btnAddToPackage.Location = new System.Drawing.Point(909, 95);
             this.btnAddToPackage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddToPackage.Name = "btnAddToPackage";
             this.btnAddToPackage.Size = new System.Drawing.Size(137, 35);
             this.btnAddToPackage.TabIndex = 34;
             this.btnAddToPackage.Text = "&Add";
-            this.btnAddToPackage.UseVisualStyleBackColor = true;
+            this.btnAddToPackage.UseVisualStyleBackColor = false;
             this.btnAddToPackage.Click += new System.EventHandler(this.btnAddToPackage_Click);
             // 
             // availableProductsBindingNavigator
@@ -105,6 +109,10 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // availableProductsBindingSource
+            // 
+            this.availableProductsBindingSource.DataSource = typeof(Travel_Experts.AvailableProducts);
             // 
             // bindingNavigatorCountItem
             // 
@@ -236,10 +244,6 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // availableProductsBindingSource
-            // 
-            this.availableProductsBindingSource.DataSource = typeof(Travel_Experts.AvailableProducts);
-            // 
             // frmAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -257,8 +261,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingNavigator)).EndInit();
             this.availableProductsBindingNavigator.ResumeLayout(false);
             this.availableProductsBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
