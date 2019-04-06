@@ -155,30 +155,6 @@ namespace Workshop4
             tabPackageList.SelectTab(0);
         }
 
-
-        // 4 Main Navigation Buttons
-
-        private void btnPackages_Click(object sender, EventArgs e)
-        {
-            tabMain.SelectedIndex = 0;
-        }
-
-        private void btnProdSupp_Click(object sender, EventArgs e)
-        {
-            tabMain.SelectedIndex = 1;
-        }
-
-        private void btnProducts_Click(object sender, EventArgs e)
-        {
-            tabMain.SelectedIndex = 2;
-        }
-
-
-        private void btnSupplier_Click(object sender, EventArgs e)
-        {
-            tabMain.SelectedIndex = 3;
-        }
-
         // delete selected products
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -230,8 +206,125 @@ namespace Workshop4
         {
             tabPackageList.SelectedIndex = 2;
         }
+        //--------------------------- END - LOUISE ACOSTA ------------------------------
+
+
+
+        //--------------------------- DongMing Hu -----------------------------------
+
+        // 4 MAIN Nav Buttons
+
+        private void btnPackages_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 0;
+        }
+
+        private void btnProdSupp_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 1;
+            twoTab_SelectedIndexChanged(sender, e);
+            suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers();
+            productsBindingSource.DataSource = ProductsDB.GetProducts();
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 2;
+        }
+
+
+        private void btnSupplier_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 3;
+        }
+
+
+        // 2ND NAV ITEM: Product_Supplier
+        private List<ProductSupplierWithName> _psList = new List<ProductSupplierWithName>();
+
+        private void twoTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            twoBtnSave.Visible = true;
+            if (twoTab.SelectedIndex == 0)
+            {
+                twoBtnSave.Visible = false;
+                // 'ALL' tab, load all Product Supplier data and fill DataSource
+                _psList = Products_suppliersDB.GetAllProductSupplierWithNames();
+                productSupplierWithNameBindingSource.DataSource = _psList;
+            }
+            else if (twoTab.SelectedIndex == 1)
+            {
+                // 'EDIT' tab, show details
+                Console.WriteLine(_psList[twoGrdAll.SelectedRows[0].Index].SupName);
+            }
+            else
+            {
+                // 'ADD' tab, show create new
+
+            }
+        }
+
+        private void twoBtnViewAll_Click(object sender, EventArgs e)
+        {
+            twoTab.SelectedIndex = 0;
+        }
+
+        private void twoBtnEdit_Click(object sender, EventArgs e)
+        {
+            twoTab.SelectedIndex = 1;
+        }
+
+        private void twoBtnAdd_Click(object sender, EventArgs e)
+        {
+            twoTab.SelectedIndex = 2;
+        }
+
+        // save btn clicked: update or add new
+        private void twoBtnSave_Click(object sender, EventArgs e)
+        {
+            if (twoTab.SelectedIndex == 1)  // edit mode
+            {
+                // get the current Product_supplier obj
+                var currentPS = Products_suppliersDB.GetProductsSuppliers()
+                    .SingleOrDefault(ps => ps.ProductSupplierId == Convert.ToInt32(twoTxtProdSuppId.Text));
+                // create new Product_supplier obj using user's change
+                var newProdSupp = new Products_suppliers
+                {
+                    ProductId = Convert.ToInt32(twoCmbProdName.SelectedValue),
+                    SupplierId = Convert.ToInt32(twoCmbSupName.SelectedValue)
+                };
+                // compare them, see if there is any change
+                if (currentPS.ProductId == newProdSupp.ProductId &&
+                    currentPS.SupplierId == newProdSupp.SupplierId)
+                    // no change, show message
+                    MessageBox.Show("No change were found.", "Please make changes");
+                else
+                {
+                    //  have change, update database
+                    try
+                    {
+                        var rowsAffected = Products_suppliersDB.UpdateProductSupplier(currentPS, newProdSupp);
+                        MessageBox.Show(rowsAffected + " record is successfully updated.");
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                }
+            }
+            else if (twoTab.SelectedIndex == 2) // add mode
+            {
+                
+            }
+        }
+
+
+
+
+
+        //--------------------------- END - DongMing Hu ------------------------------
+
     }
 }
-//--------------------------- END - LOUISE ACOSTA ------------------------------
 
 

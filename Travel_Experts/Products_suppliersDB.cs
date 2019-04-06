@@ -10,6 +10,12 @@ namespace Travel_Experts
 {
     public class Products_suppliersDB
     {
+        /*
+         * Author: Ibraheem
+         * Collaborator: DongMing Hu
+         */
+
+        // ----- READ -----
         public static List<Products_suppliers> GetProductsSuppliers()
         {
             List<Products_suppliers> prod_suppliers = new List<Products_suppliers>();
@@ -50,6 +56,43 @@ namespace Travel_Experts
             return prod_suppliers;
         }
 
+        /// <summary>
+        /// Query all Product Suppliers with names instead of ids
+        /// </summary>
+        /// <returns>A list of ProductSupplierWithName object.</returns>
+        public static List<ProductSupplierWithName> GetAllProductSupplierWithNames()
+        {
+            // setting
+            var psList = new List<ProductSupplierWithName>();
+            var sqlText = "SELECT ps.ProductSupplierId, p.ProdName, s.SupName " +
+                          "FROM Products p, Products_Suppliers ps, Suppliers s " +
+                          "WHERE p.ProductId = ps.ProductId " +
+                          "AND s.SupplierId = ps.SupplierId";
+            var connection = TravelExpertsDB.GetConnection();
+            var cmd = new SqlCommand(sqlText, connection);
+            // execute
+            connection.Open();
+            using (var dr = cmd.ExecuteReader(CommandBehavior.CloseConnection))
+            {
+                while (dr.Read())
+                {
+                    var ps = new ProductSupplierWithName
+                    {
+                        ProductSupplierId = Convert.ToInt32(dr[0]),
+                        ProdName = dr[1].ToString(),
+                        // SupName is a nullable column in DB
+                        SupName = dr[2] == DBNull.Value ? null : dr[2].ToString()
+                    };
+                    psList.Add(ps);
+                }
+            }
+            // reader is close when exit using statement, meanwhile connection is closed by CommandBehavior
+
+            return psList;
+        }
+
+
+        // ----- CREATE -----
         public static int AddProductSupplier(Products_suppliers prod_sup)
         {
             int prodSupId = 0;
@@ -87,17 +130,19 @@ namespace Travel_Experts
             return prodSupId;
         }
 
+
+        // ----- UPDATE -----
         public static int UpdateProductSupplier(Products_suppliers oldProdSupplier, Products_suppliers newProdSupplier)
         {
             int count = 0;
             string updateStatement = "UPDATE Products_Suppliers SET " +
-                                     "ProductId = @ProductId, " +
-                                     "SupplierId = @SupplierId " +
-                                     "WHERE ProductSupplierId = @ProductSupplierId " +
-                                     "AND (ProductId = @ProductId " +
+                                     "ProductId = @NewProductId, " +
+                                     "SupplierId = @NewSupplierId " +
+                                     "WHERE ProductSupplierId = @OldProductSupplierId " +
+                                     "AND (ProductId = @OldProductId " +
                                      " OR ProductId IS NULL AND @OldProductId IS NULL)" +
-                                     "AND (SupplierId = @SupplierId " +
-                                     " OR SupplierId IS NULL AND @SupplierId IS NULL)";
+                                     "AND (SupplierId = @OldSupplierId " +
+                                     " OR SupplierId IS NULL AND @OldSupplierId IS NULL)";
 
             using (SqlConnection con = TravelExpertsDB.GetConnection())
             {
@@ -113,7 +158,7 @@ namespace Travel_Experts
                     else
                         cmd.Parameters.AddWithValue("@NewSupplierId", newProdSupplier.SupplierId);
 
-                    cmd.Parameters.AddWithValue("@ProductSupplierId", oldProdSupplier.ProductSupplierId); // PK is not null
+                    cmd.Parameters.AddWithValue("@OldProductSupplierId", oldProdSupplier.ProductSupplierId); // PK is not null
 
                     if (oldProdSupplier.ProductId == null)
                         cmd.Parameters.AddWithValue("@OldProductId", DBNull.Value);
