@@ -48,9 +48,9 @@
             System.Windows.Forms.Label prodNameLabel1;
             System.Windows.Forms.Label supNameLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPackages));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -143,12 +143,12 @@
             this.twoCmbSupName = new System.Windows.Forms.ComboBox();
             this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.twoTabAdd = new System.Windows.Forms.TabPage();
+            this.twoCmbAddProdName = new System.Windows.Forms.ComboBox();
+            this.twoCmbAddSuppName = new System.Windows.Forms.ComboBox();
             this.tabProducts = new System.Windows.Forms.TabPage();
             this.tabSupplier = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.twoCmbAddProdName = new System.Windows.Forms.ComboBox();
-            this.twoCmbAddSuppName = new System.Windows.Forms.ComboBox();
             pkgAgencyCommissionLabel1 = new System.Windows.Forms.Label();
             pkgBasePriceLabel1 = new System.Windows.Forms.Label();
             pkgDescLabel1 = new System.Windows.Forms.Label();
@@ -320,11 +320,11 @@
             // prodNameLabel
             // 
             prodNameLabel.AutoSize = true;
-            prodNameLabel.Location = new System.Drawing.Point(88, 75);
+            prodNameLabel.Location = new System.Drawing.Point(112, 75);
             prodNameLabel.Name = "prodNameLabel";
-            prodNameLabel.Size = new System.Drawing.Size(95, 20);
+            prodNameLabel.Size = new System.Drawing.Size(71, 20);
             prodNameLabel.TabIndex = 0;
-            prodNameLabel.Text = "Prod Name:";
+            prodNameLabel.Text = "Product:";
             // 
             // productSupplierIdLabel
             // 
@@ -338,29 +338,29 @@
             // supNameLabel
             // 
             supNameLabel.AutoSize = true;
-            supNameLabel.Location = new System.Drawing.Point(96, 126);
+            supNameLabel.Location = new System.Drawing.Point(113, 126);
             supNameLabel.Name = "supNameLabel";
-            supNameLabel.Size = new System.Drawing.Size(87, 20);
+            supNameLabel.Size = new System.Drawing.Size(70, 20);
             supNameLabel.TabIndex = 4;
-            supNameLabel.Text = "Sup Name:";
+            supNameLabel.Text = "Supplier:";
             // 
             // prodNameLabel1
             // 
             prodNameLabel1.AutoSize = true;
             prodNameLabel1.Location = new System.Drawing.Point(79, 38);
             prodNameLabel1.Name = "prodNameLabel1";
-            prodNameLabel1.Size = new System.Drawing.Size(95, 20);
+            prodNameLabel1.Size = new System.Drawing.Size(71, 20);
             prodNameLabel1.TabIndex = 0;
-            prodNameLabel1.Text = "Prod Name:";
+            prodNameLabel1.Text = "Product:";
             // 
             // supNameLabel1
             // 
             supNameLabel1.AutoSize = true;
-            supNameLabel1.Location = new System.Drawing.Point(87, 90);
+            supNameLabel1.Location = new System.Drawing.Point(79, 90);
             supNameLabel1.Name = "supNameLabel1";
-            supNameLabel1.Size = new System.Drawing.Size(87, 20);
+            supNameLabel1.Size = new System.Drawing.Size(70, 20);
             supNameLabel1.TabIndex = 4;
-            supNameLabel1.Text = "Sup Name:";
+            supNameLabel1.Text = "Supplier:";
             // 
             // splitContainer1
             // 
@@ -597,22 +597,22 @@
             this.grdProductList.AllowUserToAddRows = false;
             this.grdProductList.AllowUserToDeleteRows = false;
             this.grdProductList.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.grdProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.grdProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.grdProductList.AutoGenerateColumns = false;
             this.grdProductList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdProductList.BackgroundColor = System.Drawing.Color.White;
             this.grdProductList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grdProductList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdProductList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.grdProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProductList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -623,14 +623,14 @@
             this.pkgBasePriceDataGridViewTextBoxColumn,
             this.pkgAgencyCommissionDataGridViewTextBoxColumn});
             this.grdProductList.DataSource = this.packageBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdProductList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdProductList.DefaultCellStyle = dataGridViewCellStyle12;
             this.grdProductList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdProductList.EnableHeadersVisualStyles = false;
             this.grdProductList.Location = new System.Drawing.Point(3, 39);
@@ -1275,30 +1275,36 @@
             // 
             // twoTab
             // 
+            this.twoTab.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.twoTab.Controls.Add(this.twoTabAll);
             this.twoTab.Controls.Add(this.twoTabEdit);
             this.twoTab.Controls.Add(this.twoTabAdd);
             this.twoTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.twoTab.ItemSize = new System.Drawing.Size(50, 25);
             this.twoTab.Location = new System.Drawing.Point(3, 43);
+            this.twoTab.Multiline = true;
             this.twoTab.Name = "twoTab";
             this.twoTab.SelectedIndex = 0;
             this.twoTab.Size = new System.Drawing.Size(1076, 466);
+            this.twoTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.twoTab.TabIndex = 2;
             this.twoTab.SelectedIndexChanged += new System.EventHandler(this.twoTab_SelectedIndexChanged);
             // 
             // twoTabAll
             // 
             this.twoTabAll.Controls.Add(this.twoGrdAll);
-            this.twoTabAll.Location = new System.Drawing.Point(4, 28);
+            this.twoTabAll.Location = new System.Drawing.Point(4, 29);
             this.twoTabAll.Name = "twoTabAll";
             this.twoTabAll.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabAll.Size = new System.Drawing.Size(1068, 434);
+            this.twoTabAll.Size = new System.Drawing.Size(1068, 433);
             this.twoTabAll.TabIndex = 0;
             this.twoTabAll.Text = "ALL";
             this.twoTabAll.UseVisualStyleBackColor = true;
             // 
             // twoGrdAll
             // 
+            this.twoGrdAll.AllowUserToAddRows = false;
+            this.twoGrdAll.AllowUserToDeleteRows = false;
             this.twoGrdAll.AutoGenerateColumns = false;
             this.twoGrdAll.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.twoGrdAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1311,8 +1317,9 @@
             this.twoGrdAll.Location = new System.Drawing.Point(3, 3);
             this.twoGrdAll.MultiSelect = false;
             this.twoGrdAll.Name = "twoGrdAll";
+            this.twoGrdAll.ReadOnly = true;
             this.twoGrdAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.twoGrdAll.Size = new System.Drawing.Size(714, 428);
+            this.twoGrdAll.Size = new System.Drawing.Size(714, 427);
             this.twoGrdAll.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn4
@@ -1320,18 +1327,21 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "ProductSupplierId";
             this.dataGridViewTextBoxColumn4.HeaderText = "ProductSupplierId";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "ProdName";
             this.dataGridViewTextBoxColumn5.HeaderText = "ProdName";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "SupName";
             this.dataGridViewTextBoxColumn6.HeaderText = "SupName";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // productSupplierWithNameBindingSource
             // 
@@ -1346,10 +1356,10 @@
             this.twoTabEdit.Controls.Add(this.twoTxtProdSuppId);
             this.twoTabEdit.Controls.Add(supNameLabel);
             this.twoTabEdit.Controls.Add(this.twoCmbSupName);
-            this.twoTabEdit.Location = new System.Drawing.Point(4, 28);
+            this.twoTabEdit.Location = new System.Drawing.Point(4, 29);
             this.twoTabEdit.Name = "twoTabEdit";
             this.twoTabEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabEdit.Size = new System.Drawing.Size(1068, 434);
+            this.twoTabEdit.Size = new System.Drawing.Size(1068, 433);
             this.twoTabEdit.TabIndex = 1;
             this.twoTabEdit.Text = "EDIT";
             this.twoTabEdit.UseVisualStyleBackColor = true;
@@ -1361,11 +1371,12 @@
             this.twoCmbProdName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productSupplierWithNameBindingSource, "ProdName", true));
             this.twoCmbProdName.DataSource = this.productsBindingSource;
             this.twoCmbProdName.DisplayMember = "ProdName";
+            this.twoCmbProdName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.twoCmbProdName.FormattingEnabled = true;
             this.twoCmbProdName.Location = new System.Drawing.Point(231, 69);
             this.twoCmbProdName.Name = "twoCmbProdName";
             this.twoCmbProdName.Size = new System.Drawing.Size(230, 27);
-            this.twoCmbProdName.TabIndex = 1;
+            this.twoCmbProdName.TabIndex = 15;
             this.twoCmbProdName.ValueMember = "ProductId";
             // 
             // productsBindingSource
@@ -1388,11 +1399,12 @@
             this.twoCmbSupName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productSupplierWithNameBindingSource, "SupName", true));
             this.twoCmbSupName.DataSource = this.suppliersBindingSource;
             this.twoCmbSupName.DisplayMember = "SupName";
+            this.twoCmbSupName.DropDownWidth = 330;
             this.twoCmbSupName.FormattingEnabled = true;
             this.twoCmbSupName.Location = new System.Drawing.Point(231, 121);
             this.twoCmbSupName.Name = "twoCmbSupName";
             this.twoCmbSupName.Size = new System.Drawing.Size(230, 27);
-            this.twoCmbSupName.TabIndex = 5;
+            this.twoCmbSupName.TabIndex = 15;
             this.twoCmbSupName.ValueMember = "SupplierId";
             // 
             // suppliersBindingSource
@@ -1405,13 +1417,41 @@
             this.twoTabAdd.Controls.Add(this.twoCmbAddSuppName);
             this.twoTabAdd.Controls.Add(prodNameLabel1);
             this.twoTabAdd.Controls.Add(supNameLabel1);
-            this.twoTabAdd.Location = new System.Drawing.Point(4, 28);
+            this.twoTabAdd.Location = new System.Drawing.Point(4, 29);
             this.twoTabAdd.Name = "twoTabAdd";
             this.twoTabAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabAdd.Size = new System.Drawing.Size(1068, 434);
+            this.twoTabAdd.Size = new System.Drawing.Size(1068, 433);
             this.twoTabAdd.TabIndex = 2;
             this.twoTabAdd.Text = "ADD";
             this.twoTabAdd.UseVisualStyleBackColor = true;
+            // 
+            // twoCmbAddProdName
+            // 
+            this.twoCmbAddProdName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.twoCmbAddProdName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.twoCmbAddProdName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productSupplierWithNameBindingSource, "ProdName", true));
+            this.twoCmbAddProdName.DataSource = this.productsBindingSource;
+            this.twoCmbAddProdName.DisplayMember = "ProdName";
+            this.twoCmbAddProdName.FormattingEnabled = true;
+            this.twoCmbAddProdName.Location = new System.Drawing.Point(191, 35);
+            this.twoCmbAddProdName.Name = "twoCmbAddProdName";
+            this.twoCmbAddProdName.Size = new System.Drawing.Size(230, 27);
+            this.twoCmbAddProdName.TabIndex = 7;
+            this.twoCmbAddProdName.ValueMember = "ProductId";
+            // 
+            // twoCmbAddSuppName
+            // 
+            this.twoCmbAddSuppName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.twoCmbAddSuppName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.twoCmbAddSuppName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productSupplierWithNameBindingSource, "SupName", true));
+            this.twoCmbAddSuppName.DataSource = this.suppliersBindingSource;
+            this.twoCmbAddSuppName.DisplayMember = "SupName";
+            this.twoCmbAddSuppName.FormattingEnabled = true;
+            this.twoCmbAddSuppName.Location = new System.Drawing.Point(191, 87);
+            this.twoCmbAddSuppName.Name = "twoCmbAddSuppName";
+            this.twoCmbAddSuppName.Size = new System.Drawing.Size(230, 27);
+            this.twoCmbAddSuppName.TabIndex = 8;
+            this.twoCmbAddSuppName.ValueMember = "SupplierId";
             // 
             // tabProducts
             // 
@@ -1458,34 +1498,6 @@
             this.button2.Text = "SIGN OUT";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // twoCmbAddProdName
-            // 
-            this.twoCmbAddProdName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.twoCmbAddProdName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.twoCmbAddProdName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productSupplierWithNameBindingSource, "ProdName", true));
-            this.twoCmbAddProdName.DataSource = this.productsBindingSource;
-            this.twoCmbAddProdName.DisplayMember = "ProdName";
-            this.twoCmbAddProdName.FormattingEnabled = true;
-            this.twoCmbAddProdName.Location = new System.Drawing.Point(191, 35);
-            this.twoCmbAddProdName.Name = "twoCmbAddProdName";
-            this.twoCmbAddProdName.Size = new System.Drawing.Size(230, 27);
-            this.twoCmbAddProdName.TabIndex = 7;
-            this.twoCmbAddProdName.ValueMember = "ProductId";
-            // 
-            // twoCmbAddSuppName
-            // 
-            this.twoCmbAddSuppName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.twoCmbAddSuppName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.twoCmbAddSuppName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productSupplierWithNameBindingSource, "SupName", true));
-            this.twoCmbAddSuppName.DataSource = this.suppliersBindingSource;
-            this.twoCmbAddSuppName.DisplayMember = "SupName";
-            this.twoCmbAddSuppName.FormattingEnabled = true;
-            this.twoCmbAddSuppName.Location = new System.Drawing.Point(191, 87);
-            this.twoCmbAddSuppName.Name = "twoCmbAddSuppName";
-            this.twoCmbAddSuppName.Size = new System.Drawing.Size(230, 27);
-            this.twoCmbAddSuppName.TabIndex = 8;
-            this.twoCmbAddSuppName.ValueMember = "SupplierId";
             // 
             // frmPackages
             // 

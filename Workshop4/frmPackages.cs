@@ -213,26 +213,29 @@ namespace Workshop4
         //--------------------------- DongMing Hu -----------------------------------
 
         // 4 MAIN Nav Buttons
-
+        // Nav Btn 1: move to Packages
         private void btnPackages_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 0;
         }
-
+        // Nav Btn 2: move to Product Supplier
         private void btnProdSupp_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 1;
+            // click ALL btn, change tab index to 0
+            twoBtnViewAll_Click(sender, e);
+            // tab index changed to 0 (view all), show all data
             twoTab_SelectedIndexChanged(sender, e);
+            // databinding for combo boxes
             suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers();
             productsBindingSource.DataSource = ProductsDB.GetProducts();
         }
-
+        // Nav Btn 3: move to Products
         private void btnProducts_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 2;
         }
-
-
+        // Nav Btn 4: move to Suppliers
         private void btnSupplier_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 3;
@@ -252,31 +255,37 @@ namespace Workshop4
                 _psList = Products_suppliersDB.GetAllProductSupplierWithNames();
                 productSupplierWithNameBindingSource.DataSource = _psList;
             }
-            else if (twoTab.SelectedIndex == 1)
+            else if(twoTab.SelectedIndex == 2)
             {
-                // 'EDIT' tab, show details
-                Console.WriteLine(_psList[twoGrdAll.SelectedRows[0].Index].SupName);
+                // 'ADD' tab, change add combobox to empty
+                twoCmbAddProdName.SelectedIndex = -1;
+                twoCmbAddSuppName.SelectedIndex = -1;
             }
-            else
-            {
-                // 'ADD' tab, show create new
-
-            }
+            // 'EDIT' tab, show details
         }
-
+        // nav btn ALL
         private void twoBtnViewAll_Click(object sender, EventArgs e)
         {
             twoTab.SelectedIndex = 0;
+            twoBtnViewAll.BackColor = Color.DarkOrange; ;
+            twoBtnEdit.BackColor = Color.Transparent;
+            twoBtnAdd.BackColor = Color.Transparent;
         }
-
+        // nav btn EDIT
         private void twoBtnEdit_Click(object sender, EventArgs e)
         {
             twoTab.SelectedIndex = 1;
+            twoBtnViewAll.BackColor = Color.Transparent; ;
+            twoBtnEdit.BackColor = Color.DarkOrange;
+            twoBtnAdd.BackColor = Color.Transparent;
         }
-
+        // nav btn ADD
         private void twoBtnAdd_Click(object sender, EventArgs e)
         {
             twoTab.SelectedIndex = 2;
+            twoBtnViewAll.BackColor = Color.Transparent; ;
+            twoBtnEdit.BackColor = Color.Transparent;
+            twoBtnAdd.BackColor = Color.DarkOrange;
         }
 
         // save btn clicked: update or add new
@@ -284,7 +293,7 @@ namespace Workshop4
         {
             if (twoTab.SelectedIndex == 1)  // edit mode
             {
-                // get the current Product_supplier obj
+                // get the current Product_supplier obj in order to compare with new one
                 var currentPS = Products_suppliersDB.GetProductsSuppliers()
                     .SingleOrDefault(ps => ps.ProductSupplierId == Convert.ToInt32(twoTxtProdSuppId.Text));
                 // create new Product_supplier obj using user's change
@@ -293,7 +302,7 @@ namespace Workshop4
                     ProductId = Convert.ToInt32(twoCmbProdName.SelectedValue),
                     SupplierId = Convert.ToInt32(twoCmbSupName.SelectedValue)
                 };
-                // compare them, see if there is any change
+                // compare old and new, see if there is any change
                 if (currentPS.ProductId == newProdSupp.ProductId &&
                     currentPS.SupplierId == newProdSupp.SupplierId)
                     // no change, show message
@@ -314,7 +323,31 @@ namespace Workshop4
             }
             else if (twoTab.SelectedIndex == 2) // add mode
             {
-                
+                // do validation, make sure user select Product and Supplier
+                if (twoCmbAddProdName.SelectedIndex < 0 ||
+                    twoCmbAddSuppName.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Required data missing.", "Please choose Product and Supplier");
+                    twoCmbAddProdName.SelectedIndex = -1;
+                    twoCmbAddSuppName.SelectedIndex = -1;
+                    return;
+                }
+
+                // create new Product_supplier obj using user's choices
+                var newProdSupp = new Products_suppliers
+                {
+                    ProductId = Convert.ToInt32(twoCmbAddProdName.SelectedValue),
+                    SupplierId = Convert.ToInt32(twoCmbAddSuppName.SelectedValue)
+                };
+                try
+                {
+                    var newId = Products_suppliersDB.AddProductSupplier(newProdSupp);
+                    MessageBox.Show($"Product Supplier was successfully added, new record id: {newId}.", "Congratulations");
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
 
