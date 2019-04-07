@@ -103,7 +103,7 @@ namespace Travel_Experts
 
 
         //--------------------------- LOUISE ACOSTA ------------------------------
-        // Delete products from packages
+        // Delete products from existing packages
         public static int Delete(int packageId)
         {
             int count = 0;
@@ -133,7 +133,7 @@ namespace Travel_Experts
             return count;
         }
 
-        // add products to packages
+        // add products to existing packages
         public static void Add(int packageId, int productSupplierId)
         {
             // create connection
@@ -148,6 +148,44 @@ namespace Travel_Experts
             cmd.Parameters.AddWithValue("@PackageId", packageId);
             cmd.Parameters.AddWithValue("@ProductSupplierId", productSupplierId);
 
+            // check
+            try
+            {
+                // open connection
+                connection.Open();
+
+                // execute
+                cmd.ExecuteScalar();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
+        // add product-supplier to package product supplier
+        public static void AddProductsToNewPackage(int packageId, int productSupplierId)
+        {
+            packageId = 0;
+            // create connection
+            SqlConnection connection = TravelExpertsDB.GetConnection();
+
+            //create command object
+            string sqlInsert = "INSERT INTO Packages_Products_Suppliers (PackageId, ProductSupplierId) " +
+                                    "VALUES(@PackageId, @ProductSupplierId)";
+
+            SqlCommand cmd = new SqlCommand(sqlInsert, connection);
+
+            cmd.Parameters.AddWithValue("@PackageId", packageId);
+            cmd.Parameters.AddWithValue("@ProductSupplierId", productSupplierId);
+
+            // check
             // check
             try
             {

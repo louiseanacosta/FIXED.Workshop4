@@ -103,6 +103,16 @@ namespace Workshop4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap f26319a2_54b7_4785_a1fb_d22133ba3d01 {
+            get {
+                object obj = ResourceManager.GetObject("f26319a2-54b7-4785-a1fb-d22133ba3d01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hot_air_balloon {
             get {
                 object obj = ResourceManager.GetObject("hot-air-balloon", resourceCulture);

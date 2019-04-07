@@ -33,24 +33,24 @@ namespace Workshop4
             packageBindingSource.DataSource = this.packages;
             //cmbPackageId.SelectedIndex = 0;
 
-            //// get first object
+            //get first object
             //Package firstPackage = this.packages.First();
 
-            //List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(firstPackage.PackageId);
-            //productsInPackageBindingSource.DataSource = products;
+            // List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(firstPackage.PackageId);
+            // productsInPackageBindingSource.DataSource = products;
 
-            //if (cmbPackageId.Text == "") { return; }
-            //int packageID = Convert.ToInt32(cmbPackageId.Text);
+            if (cmbPackageId.Text == "") { return; }
+            int packageID = Convert.ToInt32(cmbPackageId.Text);
 
-            //List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(packageID);
-            //productsInPackageBindingSource.DataSource = products;
+            List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(packageID);
+            productsInPackageBindingSource.DataSource = products;
         }
 
         // display list of products included in selected package
         private void packageBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            //if (cmbPackageId.SelectedValue == "") { return; }
-            int packageID = Convert.ToInt32(cmbPackageId.SelectedValue);
+            if (cmbPackageId.Text == "") { return; }
+            int packageID = Convert.ToInt32(cmbPackageId.Text);
 
             List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(packageID);
             productsInPackageBindingSource.DataSource = products;
@@ -60,7 +60,9 @@ namespace Workshop4
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             // get current package from database
-            int packageId = Convert.ToInt32(cmbPackageId.SelectedValue);
+            if (cmbPackageId.Text == "") { return; }
+
+            int packageId = Convert.ToInt32(cmbPackageId.Text);
             List <Package> oldPackageList = PackageDB.GetPackages(packageId);
             Package oldPackage = oldPackageList.First();
 
@@ -97,7 +99,7 @@ namespace Workshop4
         private void btnDeletePackage_Click(object sender, EventArgs e)
         {
             // get selected package
-            int packageId = Convert.ToInt32(cmbPackageId.SelectedValue);
+            int packageId = Convert.ToInt32(cmbPackageId.Text);
             List<Package> packageList = PackageDB.GetPackages(packageId);
             Package package = packageList.First();
 
@@ -135,18 +137,31 @@ namespace Workshop4
             Package package = new Package();
             this.NewPackageData(package);
 
-            MessageBox.Show("New package added succesfully");
 
-            // add products suppliers to new package
-            //List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)productsInNewPackageBindingSource.DataSource;
-            //int packageId = 0;
+            // add to package table
+            int packageId=PackageDB.AddPackage(package);
+
+            //// add selected products to packageproductsupplier table
+
+
+            //List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)newProductPackageBindingSource.DataSource;
+
             //foreach (var productsInPackage in productsInPackages)
             //{
             //    Packages_products_suppliersDB.AddProductsToNewPackage(packageId, productsInPackage.ProductSupplierId);
             //}
 
-            // save package
-            PackageDB.AddPackage(package);
+
+            // add products supliers to package
+            List<int> productSupplierIds = new List<int>();
+            List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)newProductPackageBindingSource.DataSource;
+            foreach (var productsInPackage in productsInPackages)
+            {
+                Packages_products_suppliersDB.AddProductsToNewPackage(packageId, productsInPackage.ProductSupplierId);
+            }
+
+
+            MessageBox.Show("New package added succesfully");
         }
 
         // values for adding new package
@@ -189,6 +204,7 @@ namespace Workshop4
         private void btnBackList2_Click(object sender, EventArgs e)
         {
             tabPackageList.SelectTab(0);
+            packageBindingSource.DataSource = this.packages;
         }
 
         // delete selected products
@@ -205,7 +221,7 @@ namespace Workshop4
         // add product in package
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            frmAddProduct addNewProduct = new frmAddProduct(productsInPackageBindingSource);
+            frmAddProduct addNewProduct = new frmAddProduct(newProductPackageBindingSource);
             addNewProduct.ShowDialog();
         }
 
@@ -213,6 +229,7 @@ namespace Workshop4
         private void btnBackList_Click(object sender, EventArgs e)
         {
             tabPackageList.SelectTab(0);
+            packageBindingSource.DataSource = this.packages;
         }
 
         // go to create new package tab
@@ -227,12 +244,23 @@ namespace Workshop4
         private void grdProductList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             tabPackageList.SelectedIndex = 1;
+            if (cmbPackageId.Text == "") { return; }
+            int packageID = Convert.ToInt32(cmbPackageId.Text);
+
+            List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(packageID);
+            productsInPackageBindingSource.DataSource = products;
 
         }
 
         private void btnViewDetail_Click(object sender, EventArgs e)
         {
             tabPackageList.SelectedIndex = 1;
+            if (cmbPackageId.Text == "") { return; }
+            int packageID = Convert.ToInt32(cmbPackageId.Text);
+
+            List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(packageID);
+            productsInPackageBindingSource.DataSource = products;
+
         }
 
         private void btnCreate1_Click(object sender, EventArgs e)
@@ -482,9 +510,18 @@ namespace Workshop4
             }
         }
 
+        private void txtSearchPackage_KeyUp(object sender, KeyEventArgs e)
+        {
+            // get search
+            string search = txtSearchPackage.Text.Trim();
 
+            // get products filtered by search
+            int packageId = 0;
+            List<Package> packages = PackageDB.GetPackages(packageId,search);
 
-
+            // update binding source
+            packageBindingSource.DataSource = packages;
+        }
 
         //--------------------------- END - DongMing Hu ------------------------------
 

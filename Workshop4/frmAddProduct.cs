@@ -37,6 +37,7 @@ namespace Workshop4
         {
             foreach (DataGridViewRow row in dataGridViewAvailableProducts.SelectedRows)
             {
+                // get selected 
                 ProductsInPackage productsInPackage = new ProductsInPackage();
                 productsInPackage.ProductSupplierId = Convert.ToInt32(row.Cells[0].Value);
                 productsInPackage.ProdName = row.Cells[1].Value.ToString();
@@ -44,10 +45,23 @@ namespace Workshop4
 
                 // add to list
                 this.productsInPackageBindingSource.Add(productsInPackage);
-
+                
             }
 
             this.Close();
+        }
+
+        // search available products
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            // get search
+            string search = txtSearch.Text.Trim();
+
+            // get products filtered by search
+            List<AvailableProducts> availableProducts = AvailableProductsDB.GetAvailableProducts(search);
+
+            // update binding source
+            availableProductsBindingSource.DataSource = availableProducts;
         }
     }
 }

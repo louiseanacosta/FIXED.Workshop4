@@ -19,7 +19,7 @@ namespace Travel_Experts
         /// Get Package List from Travel Experts database
         /// </summary>
         /// <returns>A list of all packages</returns>
-        public static List<Package> GetPackages(int packageId = 0)
+        public static List<Package> GetPackages(int packageId = 0, string search="")
         {
             List<Package> packages = new List<Package>();
 
@@ -38,6 +38,13 @@ namespace Travel_Experts
 
             }
 
+            // check search string
+            if (search != "")
+            {
+                // update query
+                sqlSelect += " WHERE (PkgName LIKE @search or PkgDesc LIKE @search)";
+            }
+
             SqlCommand selectCmd = new SqlCommand(sqlSelect, connection);
 
             // check package id
@@ -46,6 +53,12 @@ namespace Travel_Experts
                 // bind
                 selectCmd.Parameters.AddWithValue("@PackageId", packageId);
 
+            }
+
+            // check search
+            if(search != "")
+            {
+                selectCmd.Parameters.AddWithValue("@search", "%" + search + "%");
             }
 
             // execute
@@ -108,14 +121,13 @@ namespace Travel_Experts
             SqlConnection connection = TravelExpertsDB.GetConnection();
 
             //create command object
-            string sqlInsert = "INSERT INTO Packages (PackageId, PkgName, PkgStartDate, " +
+            string sqlInsert = "INSERT INTO Packages (PkgName, PkgStartDate, " +
                                     "PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission) " +
                                     "OUTPUT inserted.[PackageId] " +
                                     "VALUES(@PkgName, @PkgStartDate, @PkgEndDate, @PkgDesc, " +
                                     "@PkgBasePrice, @PkgAgencyCommission)";
             SqlCommand cmd = new SqlCommand(sqlInsert, connection);
 
-            cmd.Parameters.AddWithValue("@PackageId", package.PackageId);
             cmd.Parameters.AddWithValue("@PkgName", package.PkgName);
             cmd.Parameters.AddWithValue("@PkgStartDate", package.PkgStartDate);
             cmd.Parameters.AddWithValue("@PkgEndDate", package.PkgEndDate);
@@ -132,12 +144,6 @@ namespace Travel_Experts
                 // execute
                 packageID = (int)cmd.ExecuteScalar(); 
 
-                // run select query that gets Package ID
-                string selectQuery = "SELECT IDENT_CURRENT('Packages') FROM Packages"; 
-                SqlCommand selectCommand = new SqlCommand(selectQuery, connection);
-
-                // run
-                packageID = Convert.ToInt32(selectCommand.ExecuteScalar()); 
             }
             catch (Exception ex)
             {

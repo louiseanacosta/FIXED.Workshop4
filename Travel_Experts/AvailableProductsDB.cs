@@ -14,7 +14,7 @@ namespace Travel_Experts
     {
 
         // select products that are not yet included in packages
-        public static List<AvailableProducts> GetAvailableProducts()
+        public static List<AvailableProducts> GetAvailableProducts(string search = "")
         {
             List<AvailableProducts> products = new List<AvailableProducts>();
             AvailableProducts prod = null;
@@ -26,11 +26,27 @@ namespace Travel_Experts
                                 "FROM Products p, Products_Suppliers q, Suppliers s " +
                                 "WHERE p.ProductId = q.ProductId and " +
                                 "s.SupplierId = q.SupplierId and ProductSupplierId NOT IN " +
-                                "(SELECT ProductSupplierId FROM Packages_Products_Suppliers) " +
-                                "ORDER BY ProdName";
+                                "(SELECT ProductSupplierId FROM Packages_Products_Suppliers) ";
+
+            // check search string
+            if(search != "")
+            {
+                // update query
+                selectQuery += " AND (p.ProdName LIKE @search or s.SupName LIKE @search)";
+            }
+
+            // add order to query
+            selectQuery += " ORDER BY ProdName";
 
             SqlCommand cmd = new SqlCommand(selectQuery, connection);
 
+            // check search
+            if (search != "")
+            {
+                // bind
+                cmd.Parameters.AddWithValue("@search", "%" + search + "%");
+
+            }
 
             // check
             try
