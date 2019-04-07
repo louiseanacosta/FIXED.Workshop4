@@ -148,18 +148,11 @@ namespace Workshop4
             int packageId = PackageDB.AddPackage(newPackage);
 
 
-
             List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)newProductPackageBindingSource.DataSource;
             foreach (var productsInPackage in productsInPackages)
             {
                 Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
             }
-
-            foreach (var productsInPackage in productsInPackages)
-            {
-                Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
-            }
-
 
             MessageBox.Show("New package added succesfully");
             ClearControls();
