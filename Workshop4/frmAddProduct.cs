@@ -18,9 +18,9 @@ namespace Workshop4
         public BindingSource productsInPackageBindingSource;
 
 
-        public frmAddProduct(BindingSource productsInPackageBindingSource)
+        public frmAddProduct(BindingSource incommingProductsInPackageBindingSource)
         {
-            this.productsInPackageBindingSource = productsInPackageBindingSource;
+            this.productsInPackageBindingSource = incommingProductsInPackageBindingSource;
             InitializeComponent();
         }
 

@@ -63,6 +63,10 @@ namespace Travel_Experts
             }
         }
 
-
+        public static List<ProductsInPackage> GetProducts()
+        {
+            List<ProductsInPackage> products = new List<ProductsInPackage>();
+            return products;
+        }
     }
 }
