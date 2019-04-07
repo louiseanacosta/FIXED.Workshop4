@@ -30,7 +30,12 @@ namespace Workshop4
         // form load
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             packageBindingSource.DataSource = this.packages;
+            grdProductList.Columns[5].DefaultCellStyle.Format = "c";
+            grdProductList.Columns[6].DefaultCellStyle.Format = "c";
+            grdProductList.Columns[2].DefaultCellStyle.Format = "d";
+            grdProductList.Columns[3].DefaultCellStyle.Format = "d";
             //cmbPackageId.SelectedIndex = 0;
 
             //get first object
@@ -44,6 +49,7 @@ namespace Workshop4
 
             List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(packageID);
             productsInPackageBindingSource.DataSource = products;
+
         }
 
         // display list of products included in selected package
@@ -204,6 +210,7 @@ namespace Workshop4
         private void btnBackList2_Click(object sender, EventArgs e)
         {
             tabPackageList.SelectTab(0);
+            this.packages = PackageDB.GetPackages();
             packageBindingSource.DataSource = this.packages;
         }
 
@@ -229,6 +236,7 @@ namespace Workshop4
         private void btnBackList_Click(object sender, EventArgs e)
         {
             tabPackageList.SelectTab(0);
+            this.packages = PackageDB.GetPackages();
             packageBindingSource.DataSource = this.packages;
         }
 
@@ -522,6 +530,8 @@ namespace Workshop4
             // update binding source
             packageBindingSource.DataSource = packages;
         }
+
+
 
         //--------------------------- END - DongMing Hu ------------------------------
 

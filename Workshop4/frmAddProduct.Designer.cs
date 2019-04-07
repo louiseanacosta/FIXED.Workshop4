@@ -36,6 +36,7 @@
             this.btnAddToPackage = new System.Windows.Forms.Button();
             this.availableProductsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.availableProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -48,16 +49,15 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.availableProductsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewAvailableProducts = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.availableProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingNavigator)).BeginInit();
             this.availableProductsBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddToPackage
@@ -102,7 +102,7 @@
             this.availableProductsBindingNavigator.Name = "availableProductsBindingNavigator";
             this.availableProductsBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.availableProductsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.availableProductsBindingNavigator.Size = new System.Drawing.Size(1404, 25);
+            this.availableProductsBindingNavigator.Size = new System.Drawing.Size(1078, 25);
             this.availableProductsBindingNavigator.TabIndex = 35;
             this.availableProductsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -114,6 +114,10 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // availableProductsBindingSource
+            // 
+            this.availableProductsBindingSource.DataSource = typeof(Travel_Experts.AvailableProducts);
             // 
             // bindingNavigatorCountItem
             // 
@@ -240,26 +244,8 @@
             this.dataGridViewAvailableProducts.Name = "dataGridViewAvailableProducts";
             this.dataGridViewAvailableProducts.ReadOnly = true;
             this.dataGridViewAvailableProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAvailableProducts.Size = new System.Drawing.Size(867, 586);
+            this.dataGridViewAvailableProducts.Size = new System.Drawing.Size(867, 780);
             this.dataGridViewAvailableProducts.TabIndex = 35;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(84, 48);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(801, 26);
-            this.txtSearch.TabIndex = 36;
-            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "Search:";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -288,16 +274,30 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // availableProductsBindingSource
+            // txtSearch
             // 
-            this.availableProductsBindingSource.DataSource = typeof(Travel_Experts.AvailableProducts);
+            this.txtSearch.Location = new System.Drawing.Point(84, 48);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(801, 26);
+            this.txtSearch.TabIndex = 36;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(14, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 20);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Search:";
             // 
             // frmAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1404, 889);
+            this.ClientSize = new System.Drawing.Size(1078, 889);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dataGridViewAvailableProducts);
@@ -311,8 +311,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingNavigator)).EndInit();
             this.availableProductsBindingNavigator.ResumeLayout(false);
             this.availableProductsBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.availableProductsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvailableProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

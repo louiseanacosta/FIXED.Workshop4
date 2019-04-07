@@ -116,6 +116,10 @@
             this.txtPkgStart = new System.Windows.Forms.DateTimePicker();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.productsInPackageDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.productSupplierIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.newProductPackageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnBackList2 = new System.Windows.Forms.Button();
             this.btnSaveNewPackage = new System.Windows.Forms.Button();
@@ -169,10 +173,6 @@
             this.Dashboard = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.productsInPackageDataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productSupplierIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             pkgAgencyCommissionLabel1 = new System.Windows.Forms.Label();
             pkgBasePriceLabel1 = new System.Windows.Forms.Label();
             pkgDescLabel1 = new System.Windows.Forms.Label();
@@ -212,6 +212,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsInPackageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsInPackageBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsInPackageDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newProductPackageBindingSource)).BeginInit();
             this.tabProdSupp.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -233,7 +234,6 @@
             this.tabPage6.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsInPackageDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pkgAgencyCommissionLabel1
@@ -452,8 +452,8 @@
             this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.Controls.Add(this.tabMain);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1480, 594);
-            this.splitContainer1.SplitterDistance = 178;
+            this.splitContainer1.Size = new System.Drawing.Size(1055, 546);
+            this.splitContainer1.SplitterDistance = 126;
             this.splitContainer1.TabIndex = 0;
             // 
             // label5
@@ -593,7 +593,7 @@
             this.tabMain.Location = new System.Drawing.Point(0, 44);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(1298, 550);
+            this.tabMain.Size = new System.Drawing.Size(925, 502);
             this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabMain.TabIndex = 2;
             // 
@@ -603,7 +603,7 @@
             this.tabPackages.Location = new System.Drawing.Point(4, 28);
             this.tabPackages.Name = "tabPackages";
             this.tabPackages.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPackages.Size = new System.Drawing.Size(1290, 518);
+            this.tabPackages.Size = new System.Drawing.Size(917, 470);
             this.tabPackages.TabIndex = 0;
             this.tabPackages.Text = "PACKAGES";
             this.tabPackages.UseVisualStyleBackColor = true;
@@ -617,7 +617,7 @@
             this.tabPackageList.Location = new System.Drawing.Point(3, 3);
             this.tabPackageList.Name = "tabPackageList";
             this.tabPackageList.SelectedIndex = 0;
-            this.tabPackageList.Size = new System.Drawing.Size(1284, 512);
+            this.tabPackageList.Size = new System.Drawing.Size(911, 464);
             this.tabPackageList.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabPackageList.TabIndex = 1;
             // 
@@ -627,7 +627,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1276, 480);
+            this.tabPage1.Size = new System.Drawing.Size(903, 432);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View List";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -648,7 +648,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1270, 474);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(897, 426);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // grdProductList
@@ -696,7 +696,7 @@
             this.grdProductList.Name = "grdProductList";
             this.grdProductList.ReadOnly = true;
             this.grdProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdProductList.Size = new System.Drawing.Size(1264, 381);
+            this.grdProductList.Size = new System.Drawing.Size(891, 333);
             this.grdProductList.TabIndex = 33;
             this.grdProductList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProductList_CellContentDoubleClick);
             // 
@@ -847,10 +847,10 @@
             this.tabPage2.Controls.Add(pkgStartDateLabel);
             this.tabPage2.Controls.Add(this.txtPkgStart);
             this.tabPage2.Controls.Add(this.btnUpdate);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1276, 486);
+            this.tabPage2.Size = new System.Drawing.Size(903, 432);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -858,9 +858,9 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = null;
-            this.bindingNavigator1.BindingSource = this.packageBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(36, 36);
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -878,14 +878,14 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1253, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(880, 43);
             this.bindingNavigator1.TabIndex = 38;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 40);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -895,7 +895,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(40, 40);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -904,13 +904,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(40, 40);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 43);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -924,7 +924,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 43);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -932,7 +932,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(40, 40);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -941,13 +941,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(40, 40);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 43);
             // 
             // cmbPackageId
             // 
@@ -1203,13 +1203,51 @@
             this.tabPage3.Controls.Add(this.txtPkgName2);
             this.tabPage3.Controls.Add(pkgStartDateLabel1);
             this.tabPage3.Controls.Add(this.txtPkgStart2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1276, 480);
+            this.tabPage3.Size = new System.Drawing.Size(1672, 905);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Create New";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // productsInPackageDataGridView1
+            // 
+            this.productsInPackageDataGridView1.AllowUserToAddRows = false;
+            this.productsInPackageDataGridView1.AllowUserToDeleteRows = false;
+            this.productsInPackageDataGridView1.AutoGenerateColumns = false;
+            this.productsInPackageDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsInPackageDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productSupplierIdDataGridViewTextBoxColumn,
+            this.prodNameDataGridViewTextBoxColumn,
+            this.supNameDataGridViewTextBoxColumn});
+            this.productsInPackageDataGridView1.DataSource = this.newProductPackageBindingSource;
+            this.productsInPackageDataGridView1.Location = new System.Drawing.Point(23, 289);
+            this.productsInPackageDataGridView1.Name = "productsInPackageDataGridView1";
+            this.productsInPackageDataGridView1.ReadOnly = true;
+            this.productsInPackageDataGridView1.Size = new System.Drawing.Size(577, 220);
+            this.productsInPackageDataGridView1.TabIndex = 37;
+            // 
+            // productSupplierIdDataGridViewTextBoxColumn
+            // 
+            this.productSupplierIdDataGridViewTextBoxColumn.DataPropertyName = "ProductSupplierId";
+            this.productSupplierIdDataGridViewTextBoxColumn.HeaderText = "ProductSupplierId";
+            this.productSupplierIdDataGridViewTextBoxColumn.Name = "productSupplierIdDataGridViewTextBoxColumn";
+            this.productSupplierIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prodNameDataGridViewTextBoxColumn
+            // 
+            this.prodNameDataGridViewTextBoxColumn.DataPropertyName = "ProdName";
+            this.prodNameDataGridViewTextBoxColumn.HeaderText = "ProdName";
+            this.prodNameDataGridViewTextBoxColumn.Name = "prodNameDataGridViewTextBoxColumn";
+            this.prodNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // supNameDataGridViewTextBoxColumn
+            // 
+            this.supNameDataGridViewTextBoxColumn.DataPropertyName = "SupName";
+            this.supNameDataGridViewTextBoxColumn.HeaderText = "SupName";
+            this.supNameDataGridViewTextBoxColumn.Name = "supNameDataGridViewTextBoxColumn";
+            this.supNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // newProductPackageBindingSource
             // 
@@ -1331,7 +1369,7 @@
             this.tabProdSupp.Location = new System.Drawing.Point(4, 22);
             this.tabProdSupp.Name = "tabProdSupp";
             this.tabProdSupp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProdSupp.Size = new System.Drawing.Size(1290, 524);
+            this.tabProdSupp.Size = new System.Drawing.Size(1698, 978);
             this.tabProdSupp.TabIndex = 1;
             this.tabProdSupp.Text = "PROD | SUPP";
             this.tabProdSupp.UseVisualStyleBackColor = true;
@@ -1348,7 +1386,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1284, 518);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1692, 972);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -1375,7 +1413,7 @@
             this.twoBtnViewAll.AutoSize = true;
             this.twoBtnViewAll.Location = new System.Drawing.Point(3, 3);
             this.twoBtnViewAll.Name = "twoBtnViewAll";
-            this.twoBtnViewAll.Size = new System.Drawing.Size(78, 28);
+            this.twoBtnViewAll.Size = new System.Drawing.Size(80, 28);
             this.twoBtnViewAll.TabIndex = 0;
             this.twoBtnViewAll.Text = "ALL";
             this.twoBtnViewAll.UseVisualStyleBackColor = true;
@@ -1384,9 +1422,9 @@
             // twoBtnEdit
             // 
             this.twoBtnEdit.AutoSize = true;
-            this.twoBtnEdit.Location = new System.Drawing.Point(87, 3);
+            this.twoBtnEdit.Location = new System.Drawing.Point(89, 3);
             this.twoBtnEdit.Name = "twoBtnEdit";
-            this.twoBtnEdit.Size = new System.Drawing.Size(75, 28);
+            this.twoBtnEdit.Size = new System.Drawing.Size(91, 28);
             this.twoBtnEdit.TabIndex = 0;
             this.twoBtnEdit.Text = "EDIT";
             this.twoBtnEdit.UseVisualStyleBackColor = true;
@@ -1395,9 +1433,9 @@
             // twoBtnAdd
             // 
             this.twoBtnAdd.AutoSize = true;
-            this.twoBtnAdd.Location = new System.Drawing.Point(168, 3);
+            this.twoBtnAdd.Location = new System.Drawing.Point(186, 3);
             this.twoBtnAdd.Name = "twoBtnAdd";
-            this.twoBtnAdd.Size = new System.Drawing.Size(75, 28);
+            this.twoBtnAdd.Size = new System.Drawing.Size(100, 28);
             this.twoBtnAdd.TabIndex = 0;
             this.twoBtnAdd.Text = "ADD";
             this.twoBtnAdd.UseVisualStyleBackColor = true;
@@ -1406,9 +1444,9 @@
             // twoBtnSave
             // 
             this.twoBtnSave.AutoSize = true;
-            this.twoBtnSave.Location = new System.Drawing.Point(249, 3);
+            this.twoBtnSave.Location = new System.Drawing.Point(292, 3);
             this.twoBtnSave.Name = "twoBtnSave";
-            this.twoBtnSave.Size = new System.Drawing.Size(75, 28);
+            this.twoBtnSave.Size = new System.Drawing.Size(78, 28);
             this.twoBtnSave.TabIndex = 0;
             this.twoBtnSave.Text = "SAVE";
             this.twoBtnSave.UseVisualStyleBackColor = true;
@@ -1427,7 +1465,7 @@
             this.twoTab.Multiline = true;
             this.twoTab.Name = "twoTab";
             this.twoTab.SelectedIndex = 0;
-            this.twoTab.Size = new System.Drawing.Size(1278, 472);
+            this.twoTab.Size = new System.Drawing.Size(1686, 926);
             this.twoTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.twoTab.TabIndex = 2;
             this.twoTab.SelectedIndexChanged += new System.EventHandler(this.twoTab_SelectedIndexChanged);
@@ -1438,7 +1476,7 @@
             this.twoTabAll.Location = new System.Drawing.Point(4, 29);
             this.twoTabAll.Name = "twoTabAll";
             this.twoTabAll.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabAll.Size = new System.Drawing.Size(1270, 439);
+            this.twoTabAll.Size = new System.Drawing.Size(1678, 893);
             this.twoTabAll.TabIndex = 0;
             this.twoTabAll.Text = "ALL";
             this.twoTabAll.UseVisualStyleBackColor = true;
@@ -1457,7 +1495,7 @@
             this.twoGrdAll.Name = "twoGrdAll";
             this.twoGrdAll.ReadOnly = true;
             this.twoGrdAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.twoGrdAll.Size = new System.Drawing.Size(714, 433);
+            this.twoGrdAll.Size = new System.Drawing.Size(714, 887);
             this.twoGrdAll.TabIndex = 0;
             // 
             // twoTabEdit
@@ -1472,7 +1510,7 @@
             this.twoTabEdit.Location = new System.Drawing.Point(4, 29);
             this.twoTabEdit.Name = "twoTabEdit";
             this.twoTabEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabEdit.Size = new System.Drawing.Size(1270, 439);
+            this.twoTabEdit.Size = new System.Drawing.Size(1666, 852);
             this.twoTabEdit.TabIndex = 1;
             this.twoTabEdit.Text = "EDIT";
             this.twoTabEdit.UseVisualStyleBackColor = true;
@@ -1533,7 +1571,7 @@
             this.twoTabAdd.Location = new System.Drawing.Point(4, 29);
             this.twoTabAdd.Name = "twoTabAdd";
             this.twoTabAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabAdd.Size = new System.Drawing.Size(1270, 439);
+            this.twoTabAdd.Size = new System.Drawing.Size(1666, 852);
             this.twoTabAdd.TabIndex = 2;
             this.twoTabAdd.Text = "ADD";
             this.twoTabAdd.UseVisualStyleBackColor = true;
@@ -1572,7 +1610,7 @@
             this.tabProducts.Location = new System.Drawing.Point(4, 22);
             this.tabProducts.Name = "tabProducts";
             this.tabProducts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProducts.Size = new System.Drawing.Size(1290, 524);
+            this.tabProducts.Size = new System.Drawing.Size(1698, 978);
             this.tabProducts.TabIndex = 2;
             this.tabProducts.Text = "PRODUCTS";
             this.tabProducts.UseVisualStyleBackColor = true;
@@ -1589,7 +1627,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1284, 518);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1692, 972);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // threeTab
@@ -1601,7 +1639,7 @@
             this.threeTab.Location = new System.Drawing.Point(3, 53);
             this.threeTab.Name = "threeTab";
             this.threeTab.SelectedIndex = 0;
-            this.threeTab.Size = new System.Drawing.Size(1278, 462);
+            this.threeTab.Size = new System.Drawing.Size(1686, 916);
             this.threeTab.TabIndex = 0;
             this.threeTab.SelectedIndexChanged += new System.EventHandler(this.threeTab_SelectedIndexChanged);
             // 
@@ -1611,7 +1649,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1270, 430);
+            this.tabPage4.Size = new System.Drawing.Size(1678, 884);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "ALL";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1633,7 +1671,7 @@
             this.productsDataGridView.Name = "productsDataGridView";
             this.productsDataGridView.ReadOnly = true;
             this.productsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productsDataGridView.Size = new System.Drawing.Size(552, 424);
+            this.productsDataGridView.Size = new System.Drawing.Size(552, 878);
             this.productsDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn7
@@ -1661,7 +1699,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1270, 436);
+            this.tabPage5.Size = new System.Drawing.Size(1666, 849);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "EDIT";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1690,7 +1728,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1270, 436);
+            this.tabPage6.Size = new System.Drawing.Size(1666, 849);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "ADD";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1725,7 +1763,7 @@
             this.threeBtnAll.AutoSize = true;
             this.threeBtnAll.Location = new System.Drawing.Point(3, 3);
             this.threeBtnAll.Name = "threeBtnAll";
-            this.threeBtnAll.Size = new System.Drawing.Size(75, 30);
+            this.threeBtnAll.Size = new System.Drawing.Size(80, 50);
             this.threeBtnAll.TabIndex = 0;
             this.threeBtnAll.Text = "ALL";
             this.threeBtnAll.UseVisualStyleBackColor = true;
@@ -1734,9 +1772,9 @@
             // threeBtnEdit
             // 
             this.threeBtnEdit.AutoSize = true;
-            this.threeBtnEdit.Location = new System.Drawing.Point(84, 3);
+            this.threeBtnEdit.Location = new System.Drawing.Point(89, 3);
             this.threeBtnEdit.Name = "threeBtnEdit";
-            this.threeBtnEdit.Size = new System.Drawing.Size(75, 30);
+            this.threeBtnEdit.Size = new System.Drawing.Size(91, 50);
             this.threeBtnEdit.TabIndex = 0;
             this.threeBtnEdit.Text = "EDIT";
             this.threeBtnEdit.UseVisualStyleBackColor = true;
@@ -1745,9 +1783,9 @@
             // threeBtnAdd
             // 
             this.threeBtnAdd.AutoSize = true;
-            this.threeBtnAdd.Location = new System.Drawing.Point(165, 3);
+            this.threeBtnAdd.Location = new System.Drawing.Point(186, 3);
             this.threeBtnAdd.Name = "threeBtnAdd";
-            this.threeBtnAdd.Size = new System.Drawing.Size(75, 30);
+            this.threeBtnAdd.Size = new System.Drawing.Size(100, 50);
             this.threeBtnAdd.TabIndex = 0;
             this.threeBtnAdd.Text = "ADD";
             this.threeBtnAdd.UseVisualStyleBackColor = true;
@@ -1756,9 +1794,9 @@
             // threeBtnSave
             // 
             this.threeBtnSave.AutoSize = true;
-            this.threeBtnSave.Location = new System.Drawing.Point(246, 3);
+            this.threeBtnSave.Location = new System.Drawing.Point(292, 3);
             this.threeBtnSave.Name = "threeBtnSave";
-            this.threeBtnSave.Size = new System.Drawing.Size(75, 30);
+            this.threeBtnSave.Size = new System.Drawing.Size(107, 50);
             this.threeBtnSave.TabIndex = 0;
             this.threeBtnSave.Text = "SAVE";
             this.threeBtnSave.UseVisualStyleBackColor = true;
@@ -1769,7 +1807,7 @@
             this.tabSupplier.Location = new System.Drawing.Point(4, 22);
             this.tabSupplier.Name = "tabSupplier";
             this.tabSupplier.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSupplier.Size = new System.Drawing.Size(1290, 524);
+            this.tabSupplier.Size = new System.Drawing.Size(1698, 978);
             this.tabSupplier.TabIndex = 3;
             this.tabSupplier.Text = "SUPPLIER";
             this.tabSupplier.UseVisualStyleBackColor = true;
@@ -1779,7 +1817,7 @@
             this.Dashboard.Location = new System.Drawing.Point(4, 22);
             this.Dashboard.Name = "Dashboard";
             this.Dashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.Dashboard.Size = new System.Drawing.Size(1290, 524);
+            this.Dashboard.Size = new System.Drawing.Size(1698, 978);
             this.Dashboard.TabIndex = 4;
             this.Dashboard.Text = "tabPage7";
             this.Dashboard.UseVisualStyleBackColor = true;
@@ -1791,7 +1829,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1298, 44);
+            this.panel1.Size = new System.Drawing.Size(925, 44);
             this.panel1.TabIndex = 0;
             // 
             // button2
@@ -1810,49 +1848,11 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // productsInPackageDataGridView1
-            // 
-            this.productsInPackageDataGridView1.AllowUserToAddRows = false;
-            this.productsInPackageDataGridView1.AllowUserToDeleteRows = false;
-            this.productsInPackageDataGridView1.AutoGenerateColumns = false;
-            this.productsInPackageDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productsInPackageDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productSupplierIdDataGridViewTextBoxColumn,
-            this.prodNameDataGridViewTextBoxColumn,
-            this.supNameDataGridViewTextBoxColumn});
-            this.productsInPackageDataGridView1.DataSource = this.newProductPackageBindingSource;
-            this.productsInPackageDataGridView1.Location = new System.Drawing.Point(23, 289);
-            this.productsInPackageDataGridView1.Name = "productsInPackageDataGridView1";
-            this.productsInPackageDataGridView1.ReadOnly = true;
-            this.productsInPackageDataGridView1.Size = new System.Drawing.Size(577, 220);
-            this.productsInPackageDataGridView1.TabIndex = 37;
-            // 
-            // productSupplierIdDataGridViewTextBoxColumn
-            // 
-            this.productSupplierIdDataGridViewTextBoxColumn.DataPropertyName = "ProductSupplierId";
-            this.productSupplierIdDataGridViewTextBoxColumn.HeaderText = "ProductSupplierId";
-            this.productSupplierIdDataGridViewTextBoxColumn.Name = "productSupplierIdDataGridViewTextBoxColumn";
-            this.productSupplierIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prodNameDataGridViewTextBoxColumn
-            // 
-            this.prodNameDataGridViewTextBoxColumn.DataPropertyName = "ProdName";
-            this.prodNameDataGridViewTextBoxColumn.HeaderText = "ProdName";
-            this.prodNameDataGridViewTextBoxColumn.Name = "prodNameDataGridViewTextBoxColumn";
-            this.prodNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // supNameDataGridViewTextBoxColumn
-            // 
-            this.supNameDataGridViewTextBoxColumn.DataPropertyName = "SupName";
-            this.supNameDataGridViewTextBoxColumn.HeaderText = "SupName";
-            this.supNameDataGridViewTextBoxColumn.Name = "supNameDataGridViewTextBoxColumn";
-            this.supNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // frmPackages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1480, 594);
+            this.ClientSize = new System.Drawing.Size(1055, 546);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
@@ -1883,6 +1883,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsInPackageBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsInPackageDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newProductPackageBindingSource)).EndInit();
             this.tabProdSupp.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1910,7 +1911,6 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productsInPackageDataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
