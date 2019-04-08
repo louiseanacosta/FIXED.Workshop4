@@ -32,10 +32,16 @@ namespace Workshop4
         {
             // display all packages in data grid view
             packageBindingSource.DataSource = this.packages;
-            grdProductList.Columns[5].DefaultCellStyle.Format = "c";
-            grdProductList.Columns[6].DefaultCellStyle.Format = "c";
             grdProductList.Columns[2].DefaultCellStyle.Format = "d";
             grdProductList.Columns[3].DefaultCellStyle.Format = "d";
+            grdProductList.Columns[5].DefaultCellStyle.Format = "c";
+            grdProductList.Columns[6].DefaultCellStyle.Format = "c";
+
+
+            // add products supliers to new package
+            List<ProductsInPackage> productsIncluded;
+            productsIncluded = ProductsInPackageDB.GetProducts();
+            newProductPackageBindingSource.DataSource = productsIncluded;
 
             // display products included in selected package
             if (cmbPackageId.Text == "") { return; }
@@ -44,10 +50,7 @@ namespace Workshop4
             List<ProductsInPackage> products = ProductsInPackageDB.GetProductsFromPackage(packageID);
             productsInPackageBindingSource.DataSource = products;
 
-            // add products supliers to new package
-            List<ProductsInPackage> productsIncluded;
-            productsIncluded = ProductsInPackageDB.GetProducts();
-            newProductPackageBindingSource.DataSource = products;
+
         }
 
         // details view - display list of products included in selected package
@@ -63,40 +66,51 @@ namespace Workshop4
         // update Package
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            // get current package from database
-            if (cmbPackageId.Text == "") { return; }
-
-            int packageId = Convert.ToInt32(cmbPackageId.Text);
-            List <Package> oldPackageList = PackageDB.GetPackages(packageId);
-            Package oldPackage = oldPackageList.First();
-
-            // set new values
-            Package newPackage = new Package();
-            newPackage.PackageId = packageId;
-            this.PutPackageData(newPackage);
-
-            // save package
-            package = newPackage;
-            PackageDB.UpdatePackage(oldPackage, newPackage);
-
-            // get current product suppliers
-            List <int> productSupplierIds = new List<int>();
-            foreach (var product in ProductsInPackageDB.GetProductsFromPackage(packageId))
+            if (IsValidData())
             {
-                productSupplierIds.Add(product.ProductSupplierId);
+                // get current package from database
+                if (cmbPackageId.Text == "") { return; }
+
+                int packageId = Convert.ToInt32(cmbPackageId.Text);
+                List<Package> oldPackageList = PackageDB.GetPackages(packageId);
+                Package oldPackage = oldPackageList.First();
+
+                // set new values
+                Package newPackage = new Package();
+                newPackage.PackageId = packageId;
+                this.PutPackageData(newPackage);
+
+
+                // save package
+                try
+                {
+                    package = newPackage;
+                    PackageDB.UpdatePackage(oldPackage, newPackage);
+
+                    // get current product suppliers
+                    List<int> productSupplierIds = new List<int>();
+                    foreach (var product in ProductsInPackageDB.GetProductsFromPackage(packageId))
+                    {
+                        productSupplierIds.Add(product.ProductSupplierId);
+                    }
+
+                    // delete products suppliers linked to package
+                    Packages_products_suppliersDB.Delete(packageId);
+
+                    // add products supliers to package
+                    List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)productsInPackageBindingSource.DataSource;
+                    foreach (var productsInPackage in productsInPackages)
+                    {
+                        Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
+                    }
+
+                    MessageBox.Show("Changes saved for Package ID " + packageId);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-
-            // delete products suppliers linked to package
-            Packages_products_suppliersDB.Delete(packageId);
-
-            // add products supliers to package
-            List <ProductsInPackage> productsInPackages = (List<ProductsInPackage>)productsInPackageBindingSource.DataSource;
-            foreach (var productsInPackage in productsInPackages)
-            {
-                Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
-            }
-
-            MessageBox.Show("Changes saved for Package ID " + packageId);
         }
 
         // delete Package
@@ -112,50 +126,65 @@ namespace Workshop4
                 "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                // get current product suppliers
-                List<int> productSupplierIds = new List<int>();
-                foreach (var product in ProductsInPackageDB.GetProductsFromPackage(packageId))
+                try
                 {
-                    productSupplierIds.Remove(product.ProductSupplierId);
-                }
+                    // get current product suppliers
+                    List<int> productSupplierIds = new List<int>();
+                    foreach (var product in ProductsInPackageDB.GetProductsFromPackage(packageId))
+                    {
+                        productSupplierIds.Remove(product.ProductSupplierId);
+                    }
 
-                // delete products suppliers linked to package
-                Packages_products_suppliersDB.Delete(packageId);
+                    // delete products suppliers linked to package
+                    Packages_products_suppliersDB.Delete(packageId);
 
-                foreach (DataGridViewRow item in this.grdProductList.SelectedRows)
-                {
-                    grdProductList.Rows.RemoveAt(item.Index);
-                }
+                    foreach (DataGridViewRow item in this.grdProductList.SelectedRows)
+                    {
+                        grdProductList.Rows.RemoveAt(item.Index);
+                    }
 
-
-                // delete package
-                PackageDB.DeletePackage(package);
+                    // delete package
+                    PackageDB.DeletePackage(package);
                     MessageBox.Show("Package " + packageId + " deleted successfully");
 
-
-
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
         // create new package
         private void btnSaveNewPackage_Click(object sender, EventArgs e)
         {
-            // set new values
-            Package newPackage = new Package();
-            this.NewPackageData(newPackage);
-
-            // save package
-            int packageId = PackageDB.AddPackage(newPackage);
-
-
-            List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)newProductPackageBindingSource.DataSource;
-            foreach (var productsInPackage in productsInPackages)
+            if (IsValidDataForCreate())
             {
-                Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
-            }
+                try
+                {
+                    // set new values
+                    var test = newProductPackageBindingSource.DataSource;
+                    Package newPackage = new Package();
+                    this.NewPackageData(newPackage);
 
-            MessageBox.Show("New package added succesfully");
-            ClearControls();
+                    // save package
+                    int packageId = PackageDB.AddPackage(newPackage);
+
+
+                    List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)newProductPackageBindingSource.DataSource;
+                    foreach (var productsInPackage in productsInPackages)
+                    {
+                        Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
+                    }
+
+                    MessageBox.Show("New package added succesfully");
+                    ClearControls();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         // control values for adding new package
@@ -189,13 +218,33 @@ namespace Workshop4
 
         }
 
+        // clear textboxes & gridview
         private void ClearControls()
         {
             txtPkgName2.Text = "";
             txtPkgDesc2.Text = "";
             txtPkgPrice2.Text = "";
             txtPkgCommission2.Text = "";
+            grdProductsInNewPackage.DataSource = null;
 
+        }
+
+        private bool IsValidData()
+        {
+            return
+                Validator.IsPresent(txtPkgName) &&
+                Validator.IsPresent(txtPkgPrice) &&
+                Validator.IsNonNegativeDouble(txtPkgPrice) &&
+                Validator.IsNonNegativeDouble(txtPkgCommission);
+        }
+
+        private bool IsValidDataForCreate()
+        {
+            return
+                Validator.IsPresent(txtPkgName2) &&
+                Validator.IsPresent(txtPkgPrice2) &&
+                Validator.IsNonNegativeDouble(txtPkgPrice2) &&
+                Validator.IsNonNegativeDouble(txtPkgCommission2);
         }
 
 

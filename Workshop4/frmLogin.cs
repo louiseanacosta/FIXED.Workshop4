@@ -17,5 +17,19 @@ namespace Workshop4
             InitializeComponent();
         }
 
+        // user logs in - open package form
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            frmPackages openPackageForm = new frmPackages();
+            openPackageForm.ShowDialog();
+            this.Close();
+        }
+
+        // user exits
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

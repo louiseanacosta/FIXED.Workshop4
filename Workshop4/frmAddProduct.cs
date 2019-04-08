@@ -14,7 +14,7 @@ namespace Workshop4
     //--------------------------- LOUISE ACOSTA ------------------------------
     public partial class frmAddProduct : Form
     {
-        BindingSource newProductPackageBindingSource;
+        
         public frmAddProduct(BindingSource incommingProductsInPackageBindingSource)
         {
             this.productsInPackageBindingSource = incommingProductsInPackageBindingSource;
@@ -24,7 +24,8 @@ namespace Workshop4
         public Package package;
         public BindingSource productsInPackageBindingSource;
         public bool addToExistingPackage; // indicates whether it is adding to an existing package(modify tab)
-        List<AvailableProducts> products = AvailableProductsDB.GetAvailableProducts(); 
+        List<AvailableProducts> products = AvailableProductsDB.GetAvailableProducts();
+       
 
         private void AddProduct_Load(object sender, EventArgs e)
         {
@@ -47,10 +48,9 @@ namespace Workshop4
 
                     // add to datagridview in modify tab
                     this.productsInPackageBindingSource.Add(productsInPackage);
-                
+               
                 }
 
-                this.Close();
             }
             else // add to gridview in new package tab
             {
@@ -62,11 +62,13 @@ namespace Workshop4
                     newProductsInPackage.ProdName = row.Cells[1].Value.ToString();
                     newProductsInPackage.SupName = row.Cells[2].Value.ToString();
 
+
                     // add to datagridview in modify tab
-                    this.newProductPackageBindingSource.Add(newProductsInPackage);
+                    this.productsInPackageBindingSource.Add(newProductsInPackage);
 
                 }
             }
+                    this.Close();
         }
 
         // search available products
