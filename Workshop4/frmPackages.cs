@@ -291,10 +291,10 @@ namespace Workshop4
         private void btnProdSupp_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 1;
-            // click ALL btn, change tab index to 0
-            twoBtnViewAll_Click(sender, e);
             // tab index changed to 0 (view all), show all data
             twoTab_SelectedIndexChanged(sender, e);
+            // click ALL btn, change tab index to 0
+            twoBtnViewAll_Click(sender, e);
             // databinding for combo boxes
             suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers().OrderBy(s=>s.SupName);
             productsBindingSource.DataSource = ProductsDB.GetProducts();
@@ -303,23 +303,31 @@ namespace Workshop4
         private void btnProducts_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 2;
-            // click ALL btn, change tab index to 0
-            threeBtnAll_Click(sender, e);
             // tab index changed to 0 (view all), show all products
             threeTab_SelectedIndexChanged(sender, e);
+            // click ALL btn, change tab index to 0
+            threeBtnAll_Click(sender, e);
         }
         // Nav Btn 4: move to Suppliers
         private void btnSupplier_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 3;
+            // tab index changed to 0 (view all), show all suppliers
+            fourTab_SelectedIndexChanged(sender, e);
+            // click ALL btn, change tab index to 0
+            fourBtnAll_Click(sender, e);
         }
 
 
         // ----- 2ND NAV ITEM: Product_Supplier -----
         private List<ProductSupplierWithName> _psList = new List<ProductSupplierWithName>();
 
+        // Tab Two Changed (by using ALL, EDIT, ADD btn): change UI appearance accordingly
         private void twoTab_SelectedIndexChanged(object sender, EventArgs e)
         {
+            twoBtnViewAll.BackColor = Color.Transparent; ;
+            twoBtnEdit.BackColor = Color.Transparent;
+            twoBtnAdd.BackColor = Color.Transparent;
             twoBtnSave.Visible = true;
             if (twoTab.SelectedIndex == 0)
             {
@@ -336,35 +344,30 @@ namespace Workshop4
             }
             // 'EDIT' tab, show details
         }
+
         // nav btn ALL, click change color
         private void twoBtnViewAll_Click(object sender, EventArgs e)
         {
             twoTab.SelectedIndex = 0;
             twoBtnViewAll.BackColor = Color.DarkOrange; ;
-            twoBtnEdit.BackColor = Color.Transparent;
-            twoBtnAdd.BackColor = Color.Transparent;
         }
         // nav btn EDIT
         private void twoBtnEdit_Click(object sender, EventArgs e)
         {
             twoTab.SelectedIndex = 1;
-            twoBtnViewAll.BackColor = Color.Transparent; ;
             twoBtnEdit.BackColor = Color.DarkOrange;
-            twoBtnAdd.BackColor = Color.Transparent;
         }
         // nav btn ADD
         private void twoBtnAdd_Click(object sender, EventArgs e)
         {
             twoTab.SelectedIndex = 2;
-            twoBtnViewAll.BackColor = Color.Transparent; ;
-            twoBtnEdit.BackColor = Color.Transparent;
             twoBtnAdd.BackColor = Color.DarkOrange;
         }
 
-        // save btn clicked: update or add new
+        // SAVE btn clicked: update or add new
         private void twoBtnSave_Click(object sender, EventArgs e)
         {
-            if (twoTab.SelectedIndex == 1)  // edit mode
+            if (twoTab.SelectedIndex == 1)  // EDIT MODE
             {
                 // get the current Product_supplier obj in order to compare with new one
                 var currentPS = Products_suppliersDB.GetProductsSuppliers()
@@ -394,7 +397,7 @@ namespace Workshop4
                     }
                 }
             }
-            else if (twoTab.SelectedIndex == 2) // add mode
+            else if (twoTab.SelectedIndex == 2) // ADD MODE
             {
                 // do validation, make sure user select Product and Supplier
                 if (twoCmbAddProdName.SelectedIndex < 0 ||
@@ -426,63 +429,62 @@ namespace Workshop4
         }
 
         // ----- 3RD NAV ITEM: Products -----
-        // nav btn ALL, click change color
-        private void threeBtnAll_Click(object sender, EventArgs e)
-        {
-            threeTab.SelectedIndex = 0;
-            threeBtnAll.BackColor = Color.DarkOrange;
-            threeBtnEdit.BackColor = Color.Transparent;
-            threeBtnAdd.BackColor = Color.Transparent;
-        }
-        // nav btn EDIT
-        private void threeBtnEdit_Click(object sender, EventArgs e)
-        {
-            threeTab.SelectedIndex = 1;
-            threeBtnAll.BackColor = Color.Transparent;
-            threeBtnEdit.BackColor = Color.DarkOrange;
-            threeBtnAdd.BackColor = Color.Transparent;
-        }
-        // nav btn ADD
-        private void threeBtnAdd_Click(object sender, EventArgs e)
-        {
-            threeTab.SelectedIndex = 2;
-            threeBtnAll.BackColor = Color.Transparent;
-            threeBtnEdit.BackColor = Color.Transparent;
-            threeBtnAdd.BackColor = Color.DarkOrange;
-        }
 
+        // Tab Three Changed (by using ALL, EDIT, ADD btn): change UI appearance accordingly
         private void threeTab_SelectedIndexChanged(object sender, EventArgs e)
         {
             threeBtnSave.Visible = true;
+            threeBtnAll.BackColor = Color.Transparent;
+            threeBtnEdit.BackColor = Color.Transparent;
+            threeBtnAdd.BackColor = Color.Transparent;
             if (threeTab.SelectedIndex == 0)
             {
-                // hide save button when in view all mode
+                // view ALL mode: hide save button
                 threeBtnSave.Visible = false;
                 // bind data to grid view
                 productsBindingSource.DataSource = ProductsDB.GetProducts();
             }
         }
-
+        // nav btn ALL, click change color
+        private void threeBtnAll_Click(object sender, EventArgs e)
+        {
+            threeTab.SelectedIndex = 0;
+            threeBtnAll.BackColor = Color.DarkOrange;
+        }
+        // nav btn EDIT
+        private void threeBtnEdit_Click(object sender, EventArgs e)
+        {
+            threeTab.SelectedIndex = 1;
+            threeBtnEdit.BackColor = Color.DarkOrange;
+        }
+        // nav btn ADD
+        private void threeBtnAdd_Click(object sender, EventArgs e)
+        {
+            threeTab.SelectedIndex = 2;
+            threeBtnAdd.BackColor = Color.DarkOrange;
+        }
+        // btn SAVE: save edit (update) or save add (create)
         private void threeBtnSave_Click(object sender, EventArgs e)
         {
-            if (threeTab.SelectedIndex == 1) // edit mode
+            if (threeTab.SelectedIndex == 1) // EDIT MODE
             {
                 // get current displaying product obj
                 var currentProd = ProductsDB.GetProducts().
                     SingleOrDefault(p=>p.ProductId==Convert.ToInt32(threeTxtEditProdId.Text));
                 // initiate new product obj
                 Products newProd;
-                if (Validator.TBIsEmpty(threeTxtProdName, "Product Name") ||
-                    threeTxtProdName.Text == currentProd.ProdName)
+                // validate: product name is empty or duplicated
+                if (Validator.TBIsEmpty(threeTxtEditProdName, "Product Name") ||
+                    FindDuplicatedProductName(threeTxtEditProdName.Text))
                 {
-                    // name is empty or same as old, do not perform update
-                    threeTxtProdName.Text = currentProd.ProdName;
-                    threeTxtProdName.SelectAll();
+                    // empty or same, do not perform update
+                    threeTxtEditProdName.Text = currentProd.ProdName;
+                    threeTxtEditProdName.SelectAll();
                     return;
                 }
                 else
                     // name is valid, create new Product obj
-                    newProd = new Products{ ProdName = threeTxtProdName.Text };
+                    newProd = new Products{ ProdName = threeTxtEditProdName.Text };
                 // try to perform update
                 try
                 {
@@ -495,11 +497,11 @@ namespace Workshop4
                     MessageBox.Show(ex.Message);
                 }
             }
-            else if (threeTab.SelectedIndex == 2) // add mode
+            else if (threeTab.SelectedIndex == 2) // ADD MODE
             {
-                // validate input, check if empty or have same name of an existing product
+                // validate input, check if empty or have duplicated name
                 if (!Validator.TBIsEmpty(threeTxtAddProdName, "Product Name") &&
-                    ProductsDB.GetProducts().Find(p => p.ProdName == threeTxtAddProdName.Text) == null)
+                    !FindDuplicatedProductName(threeTxtAddProdName.Text))
                 {
                     // validation passed, create new product using user input
                     var newProd = new Products{ ProdName = threeTxtAddProdName.Text};
@@ -517,7 +519,139 @@ namespace Workshop4
                 }
             }
         }
+        // Convenient Method: find if there is a duplicated product name in DB, return bool
+        private bool FindDuplicatedProductName(string productName)
+        {
+            if (ProductsDB.GetProducts().Find(p => p.ProdName == productName) == null)
+                return false;
+            else
+            {
+                MessageBox.Show("The product you input already exists.", "Duplicated Name");
+                return true;
+            }
+        }
 
+        // ----- 4TH NAV ITEM: Suppliers -----
+        // Tab Four Changed (by using ALL, EDIT, ADD btn): change UI appearance accordingly
+        private void fourTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fourBtnSave.Visible = true;
+            fourBtnAll.BackColor = Color.Transparent;
+            fourBtnEdit.BackColor = Color.Transparent;
+            fourBtnAdd.BackColor = Color.Transparent;
+            if (fourTab.SelectedIndex == 0)
+            {
+                // view ALL mode: hide save btn
+                fourBtnSave.Visible = false;
+                // bind data to gridview's binding source
+                suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers();
+            }
+        }
+        // nav btn ALL: click change color
+        private void fourBtnAll_Click(object sender, EventArgs e)
+        {
+            fourTab.SelectedIndex = 0;
+            fourBtnAll.BackColor = Color.DarkOrange;
+        }
+
+        private void fourBtnEdit_Click(object sender, EventArgs e)
+        {
+            fourTab.SelectedIndex = 1;
+            fourBtnEdit.BackColor = Color.DarkOrange;
+        }
+
+        private void fourBtnAdd_Click(object sender, EventArgs e)
+        {
+            fourTab.SelectedIndex = 2;
+            fourBtnAdd.BackColor = Color.DarkOrange;
+        }
+
+        private void fourBtnSave_Click(object sender, EventArgs e)
+        {
+            if (fourTab.SelectedIndex == 1)  // EDIT MODE
+            {
+                // get current Supplier obj
+                var currentSupplier = SuppliersDB.GetSuppliers()
+                    .Find(s => s.SupplierId == Convert.ToInt32(fourTxtEditSuppId.Text));
+                // initialize new Suppliers obj
+                Suppliers newSupplier;
+                // do validation: no empty name, no duplicated name
+                if (Validator.TBIsEmpty(fourTxtEditSuppName, "Supplier Name") ||
+                    FindDuplicatedSupplierName(fourTxtEditSuppName.Text))
+                {
+                    // validation failed, rollback to old name, do nothing
+                    fourTxtEditSuppName.Text = currentSupplier.SupName;
+                    fourTxtEditSuppName.SelectAll();
+                    return;
+                }
+                else
+                    // validation passed, create new Suppliers obj
+                    newSupplier = new Suppliers { SupName = fourTxtEditSuppName.Text };
+
+                // try update
+                try
+                {
+                    int rowsAffected = SuppliersDB.UpdateSupplier(currentSupplier, newSupplier);
+                    MessageBox.Show($"{rowsAffected} record was successfully updated.", "Congratulations");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Cannot complete update due to error: {ex.Message}.");
+                }
+            }
+            else if (fourTab.SelectedIndex == 2)  // ADD MODE
+            {
+                // validate input: no empty name, no duplicated name
+                if (!Validator.TBIsEmpty(fourTxtAddSuppName, "Supplier Name") &&
+                    Validator.TBHasNonNegativeInt(fourTxtAddSuppId, "Supplier Id") &&
+                    !FindDuplicatedSupplierName(fourTxtAddSuppName.Text))
+                {
+                    // validation passed, create new Suppliers obj
+                    var newSupplier = new Suppliers
+                    {
+                        SupName = fourTxtAddSuppName.Text,
+                        // PK SuppId is not auto-increment, need to assign an new id
+                        SupplierId = Convert.ToInt32(fourTxtAddSuppId.Text)
+                    };
+                    // try to add to DB
+                    try
+                    {
+                        int id = SuppliersDB.AddSupplier(newSupplier);
+                        MessageBox.Show($"New supplier was successfully added, supplier id: {id}.",
+                            "Congratulations");
+                        fourTxtAddSuppId.Clear();
+                        fourTxtAddSuppName.Clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Cannot add new supplier due to duplicated id. Error detail: {ex.Message}.");
+                    }
+                }
+            }
+        }
+        // Convenient Method: find if there is a duplicated supplier name in DB, return bool
+        private bool FindDuplicatedSupplierName(string supplierName)
+        {
+            if (SuppliersDB.GetSuppliers().Find(s => s.SupName == supplierName) == null)
+                return false;
+            else
+            {
+                MessageBox.Show("The supplier you input already exists.", "Duplicated Name");
+                return true;
+            }
+        }
+        // generate id btn clicked: generate a new supplier id, fill in textbox
+        private void fourBtnGenerateSuppId_Click(object sender, EventArgs e)
+        {
+            int newId = SuppliersDB.GetSuppliers().Max(s => s.SupplierId) + 1;
+            fourTxtAddSuppId.Text = newId.ToString();
+        }
+
+
+        //--------------------------- END - DongMing Hu ------------------------------
+
+        // ----------- Louise Temp (plz move your code to your zone ↑) ------------------
+        // ----------- (very neat search bar, by the way. ヾ(๑╹◡╹)ﾉ" )
         private void txtSearchPackage_KeyUp(object sender, KeyEventArgs e)
         {
             // get search
@@ -530,10 +664,6 @@ namespace Workshop4
             // update binding source
             packageBindingSource.DataSource = packages;
         }
-
-
-
-        //--------------------------- END - DongMing Hu ------------------------------
 
     }
 }
