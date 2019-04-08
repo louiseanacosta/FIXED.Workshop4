@@ -324,6 +324,20 @@ namespace Workshop4
         {
             tabPackageList.SelectedIndex = 2;
         }
+
+        // user typing in search bar
+        private void txtSearchPackage_KeyUp(object sender, KeyEventArgs e)
+        {
+            // get search
+            string search = txtSearchPackage.Text.Trim();
+
+            // get products filtered by search
+            int packageId = 0;
+            List<Package> packages = PackageDB.GetPackages(packageId, search);
+
+            // update binding source
+            packageBindingSource.DataSource = packages;
+        }
         //--------------------------- END - LOUISE ACOSTA ------------------------------
 
 
@@ -374,9 +388,9 @@ namespace Workshop4
         // Tab Two Changed (by using ALL, EDIT, ADD btn): change UI appearance accordingly
         private void twoTab_SelectedIndexChanged(object sender, EventArgs e)
         {
-            twoBtnViewAll.BackColor = Color.Transparent; ;
-            twoBtnEdit.BackColor = Color.Transparent;
-            twoBtnAdd.BackColor = Color.Transparent;
+            twoBtnViewAll.BackColor = Color.DarkCyan; ;
+            twoBtnEdit.BackColor = Color.DarkCyan;
+            twoBtnAdd.BackColor = Color.DarkCyan;
             twoBtnSave.Visible = true;
             if (twoTab.SelectedIndex == 0)
             {
@@ -483,9 +497,9 @@ namespace Workshop4
         private void threeTab_SelectedIndexChanged(object sender, EventArgs e)
         {
             threeBtnSave.Visible = true;
-            threeBtnAll.BackColor = Color.Transparent;
-            threeBtnEdit.BackColor = Color.Transparent;
-            threeBtnAdd.BackColor = Color.Transparent;
+            threeBtnAll.BackColor = Color.DarkCyan;
+            threeBtnEdit.BackColor = Color.DarkCyan;
+            threeBtnAdd.BackColor = Color.DarkCyan;
             if (threeTab.SelectedIndex == 0)
             {
                 // view ALL mode: hide save button
@@ -585,9 +599,9 @@ namespace Workshop4
         private void fourTab_SelectedIndexChanged(object sender, EventArgs e)
         {
             fourBtnSave.Visible = true;
-            fourBtnAll.BackColor = Color.Transparent;
-            fourBtnEdit.BackColor = Color.Transparent;
-            fourBtnAdd.BackColor = Color.Transparent;
+            fourBtnAll.BackColor = Color.DarkCyan;
+            fourBtnEdit.BackColor = Color.DarkCyan;
+            fourBtnAdd.BackColor = Color.DarkCyan;
             if (fourTab.SelectedIndex == 0)
             {
                 // view ALL mode: hide save btn
@@ -699,20 +713,7 @@ namespace Workshop4
 
         //--------------------------- END - DongMing Hu ------------------------------
 
-        // ----------- Louise Temp (plz move your code to your zone ↑) ------------------
-        // ----------- (very neat search bar, by the way. ヾ(๑╹◡╹)ﾉ" )
-        private void txtSearchPackage_KeyUp(object sender, KeyEventArgs e)
-        {
-            // get search
-            string search = txtSearchPackage.Text.Trim();
 
-            // get products filtered by search
-            int packageId = 0;
-            List<Package> packages = PackageDB.GetPackages(packageId,search);
-
-            // update binding source
-            packageBindingSource.DataSource = packages;
-        }
 
     }
 }
