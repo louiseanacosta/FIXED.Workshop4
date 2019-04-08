@@ -106,10 +106,13 @@ namespace Workshop4
                     }
 
                     MessageBox.Show("Changes saved for Package ID " + packageId);
+                    tabPackageList.SelectTab(0); // go back to list view
+
                 }
                 catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    
                 }
             }
         }
