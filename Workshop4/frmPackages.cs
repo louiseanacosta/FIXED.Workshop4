@@ -324,6 +324,20 @@ namespace Workshop4
         {
             tabPackageList.SelectedIndex = 2;
         }
+
+        // user typing in search bar
+        private void txtSearchPackage_KeyUp(object sender, KeyEventArgs e)
+        {
+            // get search
+            string search = txtSearchPackage.Text.Trim();
+
+            // get products filtered by search
+            int packageId = 0;
+            List<Package> packages = PackageDB.GetPackages(packageId, search);
+
+            // update binding source
+            packageBindingSource.DataSource = packages;
+        }
         //--------------------------- END - LOUISE ACOSTA ------------------------------
 
 
@@ -699,20 +713,7 @@ namespace Workshop4
 
         //--------------------------- END - DongMing Hu ------------------------------
 
-        // ----------- Louise Temp (plz move your code to your zone ↑) ------------------
-        // ----------- (very neat search bar, by the way. ヾ(๑╹◡╹)ﾉ" )
-        private void txtSearchPackage_KeyUp(object sender, KeyEventArgs e)
-        {
-            // get search
-            string search = txtSearchPackage.Text.Trim();
 
-            // get products filtered by search
-            int packageId = 0;
-            List<Package> packages = PackageDB.GetPackages(packageId,search);
-
-            // update binding source
-            packageBindingSource.DataSource = packages;
-        }
 
     }
 }
