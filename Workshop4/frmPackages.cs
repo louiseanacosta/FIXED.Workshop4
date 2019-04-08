@@ -30,6 +30,7 @@ namespace Workshop4
         // form load
         private void Form1_Load(object sender, EventArgs e)
         {
+            tabMain.SelectedIndex = 4;
             // display all packages in data grid view
             var _sortablePackages = new SortableBindingList<Package>(packages);
             packageBindingSource.DataSource = _sortablePackages;
@@ -722,7 +723,17 @@ namespace Workshop4
             fourTxtAddSuppId.Text = newId.ToString();
         }
 
- 
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 4;
+        }
+
+
+
+
+
+
+
 
 
         //--------------------------- END - DongMing Hu ------------------------------
