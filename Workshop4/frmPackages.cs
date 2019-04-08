@@ -31,7 +31,8 @@ namespace Workshop4
         private void Form1_Load(object sender, EventArgs e)
         {
             // display all packages in data grid view
-            packageBindingSource.DataSource = this.packages;
+            var _sortablePackages = new SortableBindingList<Package>(packages);
+            packageBindingSource.DataSource = _sortablePackages;
             grdProductList.Columns[2].DefaultCellStyle.Format = "d";
             grdProductList.Columns[3].DefaultCellStyle.Format = "d";
             grdProductList.Columns[5].DefaultCellStyle.Format = "c";
@@ -384,7 +385,7 @@ namespace Workshop4
 
         // ----- 2ND NAV ITEM: Product_Supplier -----
         private List<ProductSupplierWithName> _psList = new List<ProductSupplierWithName>();
-
+      
         // Tab Two Changed (by using ALL, EDIT, ADD btn): change UI appearance accordingly
         private void twoTab_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -397,7 +398,9 @@ namespace Workshop4
                 twoBtnSave.Visible = false;
                 // 'ALL' tab, load all Product Supplier data and fill DataSource
                 _psList = Products_suppliersDB.GetAllProductSupplierWithNames();
-                productSupplierWithNameBindingSource.DataSource = _psList;
+                // use List to make a SortableBindingList
+                var _sortableList = new SortableBindingList<ProductSupplierWithName>(_psList);
+                productSupplierWithNameBindingSource.DataSource = _sortableList;
             }
             else if(twoTab.SelectedIndex == 2)
             {
@@ -491,6 +494,7 @@ namespace Workshop4
             }
         }
 
+
         // ----- 3RD NAV ITEM: Products -----
 
         // Tab Three Changed (by using ALL, EDIT, ADD btn): change UI appearance accordingly
@@ -505,7 +509,9 @@ namespace Workshop4
                 // view ALL mode: hide save button
                 threeBtnSave.Visible = false;
                 // bind data to grid view
-                productsBindingSource.DataSource = ProductsDB.GetProducts();
+                var productsList = ProductsDB.GetProducts();
+                var _sortableProducts = new SortableBindingList<Products>(productsList);
+                productsBindingSource.DataSource = _sortableProducts;
             }
         }
         // nav btn ALL, click change color
@@ -607,7 +613,9 @@ namespace Workshop4
                 // view ALL mode: hide save btn
                 fourBtnSave.Visible = false;
                 // bind data to gridview's binding source
-                suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers();
+                var suppliersList = SuppliersDB.GetSuppliers();
+                var _sortableSuppliers = new SortableBindingList<Suppliers>(suppliersList);
+                suppliersBindingSource.DataSource = _sortableSuppliers;
             }
         }
         // nav btn ALL: click change color
@@ -709,6 +717,8 @@ namespace Workshop4
             int newId = SuppliersDB.GetSuppliers().Max(s => s.SupplierId) + 1;
             fourTxtAddSuppId.Text = newId.ToString();
         }
+
+ 
 
 
         //--------------------------- END - DongMing Hu ------------------------------
