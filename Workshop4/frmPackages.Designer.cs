@@ -714,7 +714,7 @@
             this.tabPackageList.Controls.Add(this.tabPage2);
             this.tabPackageList.Controls.Add(this.tabPage3);
             this.tabPackageList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPackageList.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabPackageList.ItemSize = new System.Drawing.Size(60, 30);
             this.tabPackageList.Location = new System.Drawing.Point(3, 3);
             this.tabPackageList.Multiline = true;
             this.tabPackageList.Name = "tabPackageList";
@@ -727,10 +727,10 @@
             // 
             this.tabPage1.Controls.Add(this.tableLayoutPanel8);
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 5);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(982, 503);
+            this.tabPage1.Size = new System.Drawing.Size(982, 474);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View List";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -751,8 +751,8 @@
             // 
             // txtSearchPackage
             // 
-            this.txtSearchPackage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtSearchPackage.Location = new System.Drawing.Point(126, 3);
+            this.txtSearchPackage.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtSearchPackage.Location = new System.Drawing.Point(126, 4);
             this.txtSearchPackage.Name = "txtSearchPackage";
             this.txtSearchPackage.Size = new System.Drawing.Size(820, 25);
             this.txtSearchPackage.TabIndex = 35;
@@ -760,8 +760,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(29, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 36;
@@ -781,7 +782,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(976, 497);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(976, 468);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // grdProductList
@@ -829,7 +830,7 @@
             this.grdProductList.Name = "grdProductList";
             this.grdProductList.ReadOnly = true;
             this.grdProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdProductList.Size = new System.Drawing.Size(970, 422);
+            this.grdProductList.Size = new System.Drawing.Size(970, 393);
             this.grdProductList.TabIndex = 33;
             this.grdProductList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProductList_CellContentDoubleClick);
             // 
@@ -981,10 +982,10 @@
             this.tabPage2.Controls.Add(pkgStartDateLabel);
             this.tabPage2.Controls.Add(this.txtPkgStart);
             this.tabPage2.Controls.Add(this.btnUpdate);
-            this.tabPage2.Location = new System.Drawing.Point(4, 5);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(982, 503);
+            this.tabPage2.Size = new System.Drawing.Size(982, 474);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1188,7 +1189,9 @@
             // 
             // txtPkgEnd
             // 
+            this.txtPkgEnd.CustomFormat = "";
             this.txtPkgEnd.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packageBindingSource, "PkgEndDate", true));
+            this.txtPkgEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtPkgEnd.Location = new System.Drawing.Point(209, 189);
             this.txtPkgEnd.Name = "txtPkgEnd";
             this.txtPkgEnd.Size = new System.Drawing.Size(174, 25);
@@ -1206,7 +1209,9 @@
             // 
             // txtPkgStart
             // 
+            this.txtPkgStart.CustomFormat = "";
             this.txtPkgStart.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packageBindingSource, "PkgStartDate", true));
+            this.txtPkgStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtPkgStart.Location = new System.Drawing.Point(209, 160);
             this.txtPkgStart.Name = "txtPkgStart";
             this.txtPkgStart.Size = new System.Drawing.Size(174, 25);
@@ -1249,10 +1254,10 @@
             this.tabPage3.Controls.Add(this.txtPkgName2);
             this.tabPage3.Controls.Add(pkgStartDateLabel1);
             this.tabPage3.Controls.Add(this.txtPkgStart2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(982, 503);
+            this.tabPage3.Size = new System.Drawing.Size(982, 474);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Create New";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1490,45 +1495,65 @@
             // twoBtnViewAll
             // 
             this.twoBtnViewAll.AutoSize = true;
+            this.twoBtnViewAll.BackColor = System.Drawing.Color.DarkCyan;
+            this.twoBtnViewAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.twoBtnViewAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.twoBtnViewAll.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twoBtnViewAll.ForeColor = System.Drawing.Color.White;
             this.twoBtnViewAll.Location = new System.Drawing.Point(3, 3);
             this.twoBtnViewAll.Name = "twoBtnViewAll";
             this.twoBtnViewAll.Size = new System.Drawing.Size(80, 28);
             this.twoBtnViewAll.TabIndex = 0;
             this.twoBtnViewAll.Text = "ALL";
-            this.twoBtnViewAll.UseVisualStyleBackColor = true;
+            this.twoBtnViewAll.UseVisualStyleBackColor = false;
             this.twoBtnViewAll.Click += new System.EventHandler(this.twoBtnViewAll_Click);
             // 
             // twoBtnEdit
             // 
             this.twoBtnEdit.AutoSize = true;
+            this.twoBtnEdit.BackColor = System.Drawing.Color.DarkCyan;
+            this.twoBtnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.twoBtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.twoBtnEdit.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twoBtnEdit.ForeColor = System.Drawing.Color.White;
             this.twoBtnEdit.Location = new System.Drawing.Point(89, 3);
             this.twoBtnEdit.Name = "twoBtnEdit";
             this.twoBtnEdit.Size = new System.Drawing.Size(91, 28);
             this.twoBtnEdit.TabIndex = 0;
             this.twoBtnEdit.Text = "EDIT";
-            this.twoBtnEdit.UseVisualStyleBackColor = true;
+            this.twoBtnEdit.UseVisualStyleBackColor = false;
             this.twoBtnEdit.Click += new System.EventHandler(this.twoBtnEdit_Click);
             // 
             // twoBtnAdd
             // 
             this.twoBtnAdd.AutoSize = true;
+            this.twoBtnAdd.BackColor = System.Drawing.Color.DarkCyan;
+            this.twoBtnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.twoBtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.twoBtnAdd.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twoBtnAdd.ForeColor = System.Drawing.Color.White;
             this.twoBtnAdd.Location = new System.Drawing.Point(186, 3);
             this.twoBtnAdd.Name = "twoBtnAdd";
             this.twoBtnAdd.Size = new System.Drawing.Size(100, 28);
             this.twoBtnAdd.TabIndex = 0;
             this.twoBtnAdd.Text = "ADD";
-            this.twoBtnAdd.UseVisualStyleBackColor = true;
+            this.twoBtnAdd.UseVisualStyleBackColor = false;
             this.twoBtnAdd.Click += new System.EventHandler(this.twoBtnAdd_Click);
             // 
             // twoBtnSave
             // 
             this.twoBtnSave.AutoSize = true;
+            this.twoBtnSave.BackColor = System.Drawing.Color.DarkCyan;
+            this.twoBtnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.twoBtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.twoBtnSave.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twoBtnSave.ForeColor = System.Drawing.Color.White;
             this.twoBtnSave.Location = new System.Drawing.Point(292, 3);
             this.twoBtnSave.Name = "twoBtnSave";
             this.twoBtnSave.Size = new System.Drawing.Size(78, 28);
             this.twoBtnSave.TabIndex = 0;
             this.twoBtnSave.Text = "SAVE";
-            this.twoBtnSave.UseVisualStyleBackColor = true;
+            this.twoBtnSave.UseVisualStyleBackColor = false;
             this.twoBtnSave.Visible = false;
             this.twoBtnSave.Click += new System.EventHandler(this.twoBtnSave_Click);
             // 
@@ -1645,7 +1670,7 @@
             this.twoTabEdit.Location = new System.Drawing.Point(4, 29);
             this.twoTabEdit.Name = "twoTabEdit";
             this.twoTabEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabEdit.Size = new System.Drawing.Size(949, 433);
+            this.twoTabEdit.Size = new System.Drawing.Size(976, 433);
             this.twoTabEdit.TabIndex = 1;
             this.twoTabEdit.Text = "EDIT";
             this.twoTabEdit.UseVisualStyleBackColor = true;
@@ -1706,7 +1731,7 @@
             this.twoTabAdd.Location = new System.Drawing.Point(4, 29);
             this.twoTabAdd.Name = "twoTabAdd";
             this.twoTabAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabAdd.Size = new System.Drawing.Size(949, 433);
+            this.twoTabAdd.Size = new System.Drawing.Size(976, 433);
             this.twoTabAdd.TabIndex = 2;
             this.twoTabAdd.Text = "ADD";
             this.twoTabAdd.UseVisualStyleBackColor = true;
@@ -1859,7 +1884,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(949, 430);
+            this.tabPage5.Size = new System.Drawing.Size(976, 438);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "EDIT";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1888,7 +1913,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(949, 430);
+            this.tabPage6.Size = new System.Drawing.Size(976, 438);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "ADD";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1921,45 +1946,73 @@
             // threeBtnAll
             // 
             this.threeBtnAll.AutoSize = true;
+            this.threeBtnAll.BackColor = System.Drawing.Color.DarkCyan;
+            this.threeBtnAll.FlatAppearance.BorderSize = 0;
+            this.threeBtnAll.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.threeBtnAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.threeBtnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.threeBtnAll.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.threeBtnAll.ForeColor = System.Drawing.Color.White;
             this.threeBtnAll.Location = new System.Drawing.Point(3, 3);
             this.threeBtnAll.Name = "threeBtnAll";
             this.threeBtnAll.Size = new System.Drawing.Size(80, 30);
             this.threeBtnAll.TabIndex = 0;
             this.threeBtnAll.Text = "ALL";
-            this.threeBtnAll.UseVisualStyleBackColor = true;
+            this.threeBtnAll.UseVisualStyleBackColor = false;
             this.threeBtnAll.Click += new System.EventHandler(this.threeBtnAll_Click);
             // 
             // threeBtnEdit
             // 
             this.threeBtnEdit.AutoSize = true;
+            this.threeBtnEdit.BackColor = System.Drawing.Color.DarkCyan;
+            this.threeBtnEdit.FlatAppearance.BorderSize = 0;
+            this.threeBtnEdit.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.threeBtnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.threeBtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.threeBtnEdit.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.threeBtnEdit.ForeColor = System.Drawing.Color.White;
             this.threeBtnEdit.Location = new System.Drawing.Point(89, 3);
             this.threeBtnEdit.Name = "threeBtnEdit";
             this.threeBtnEdit.Size = new System.Drawing.Size(91, 30);
             this.threeBtnEdit.TabIndex = 0;
             this.threeBtnEdit.Text = "EDIT";
-            this.threeBtnEdit.UseVisualStyleBackColor = true;
+            this.threeBtnEdit.UseVisualStyleBackColor = false;
             this.threeBtnEdit.Click += new System.EventHandler(this.threeBtnEdit_Click);
             // 
             // threeBtnAdd
             // 
             this.threeBtnAdd.AutoSize = true;
+            this.threeBtnAdd.BackColor = System.Drawing.Color.DarkCyan;
+            this.threeBtnAdd.FlatAppearance.BorderSize = 0;
+            this.threeBtnAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.threeBtnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.threeBtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.threeBtnAdd.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.threeBtnAdd.ForeColor = System.Drawing.Color.White;
             this.threeBtnAdd.Location = new System.Drawing.Point(186, 3);
             this.threeBtnAdd.Name = "threeBtnAdd";
             this.threeBtnAdd.Size = new System.Drawing.Size(100, 30);
             this.threeBtnAdd.TabIndex = 0;
             this.threeBtnAdd.Text = "ADD";
-            this.threeBtnAdd.UseVisualStyleBackColor = true;
+            this.threeBtnAdd.UseVisualStyleBackColor = false;
             this.threeBtnAdd.Click += new System.EventHandler(this.threeBtnAdd_Click);
             // 
             // threeBtnSave
             // 
             this.threeBtnSave.AutoSize = true;
+            this.threeBtnSave.BackColor = System.Drawing.Color.DarkCyan;
+            this.threeBtnSave.FlatAppearance.BorderSize = 0;
+            this.threeBtnSave.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.threeBtnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.threeBtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.threeBtnSave.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.threeBtnSave.ForeColor = System.Drawing.Color.White;
             this.threeBtnSave.Location = new System.Drawing.Point(292, 3);
             this.threeBtnSave.Name = "threeBtnSave";
             this.threeBtnSave.Size = new System.Drawing.Size(107, 30);
             this.threeBtnSave.TabIndex = 0;
             this.threeBtnSave.Text = "SAVE";
-            this.threeBtnSave.UseVisualStyleBackColor = true;
+            this.threeBtnSave.UseVisualStyleBackColor = false;
             this.threeBtnSave.Click += new System.EventHandler(this.threeBtnSave_Click);
             // 
             // tabSupplier
@@ -2080,7 +2133,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(949, 430);
+            this.tabPage8.Size = new System.Drawing.Size(976, 438);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "EDIT";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -2112,7 +2165,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(949, 430);
+            this.tabPage9.Size = new System.Drawing.Size(976, 438);
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "ADD";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -2164,45 +2217,69 @@
             // fourBtnAll
             // 
             this.fourBtnAll.AutoSize = true;
+            this.fourBtnAll.BackColor = System.Drawing.Color.DarkCyan;
+            this.fourBtnAll.FlatAppearance.BorderSize = 0;
+            this.fourBtnAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.fourBtnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fourBtnAll.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fourBtnAll.ForeColor = System.Drawing.Color.White;
             this.fourBtnAll.Location = new System.Drawing.Point(3, 3);
             this.fourBtnAll.Name = "fourBtnAll";
             this.fourBtnAll.Size = new System.Drawing.Size(80, 30);
             this.fourBtnAll.TabIndex = 0;
             this.fourBtnAll.Text = "ALL";
-            this.fourBtnAll.UseVisualStyleBackColor = true;
+            this.fourBtnAll.UseVisualStyleBackColor = false;
             this.fourBtnAll.Click += new System.EventHandler(this.fourBtnAll_Click);
             // 
             // fourBtnEdit
             // 
             this.fourBtnEdit.AutoSize = true;
+            this.fourBtnEdit.BackColor = System.Drawing.Color.DarkCyan;
+            this.fourBtnEdit.FlatAppearance.BorderSize = 0;
+            this.fourBtnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.fourBtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fourBtnEdit.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fourBtnEdit.ForeColor = System.Drawing.Color.White;
             this.fourBtnEdit.Location = new System.Drawing.Point(89, 3);
             this.fourBtnEdit.Name = "fourBtnEdit";
             this.fourBtnEdit.Size = new System.Drawing.Size(91, 30);
             this.fourBtnEdit.TabIndex = 0;
             this.fourBtnEdit.Text = "EDIT";
-            this.fourBtnEdit.UseVisualStyleBackColor = true;
+            this.fourBtnEdit.UseVisualStyleBackColor = false;
             this.fourBtnEdit.Click += new System.EventHandler(this.fourBtnEdit_Click);
             // 
             // fourBtnAdd
             // 
             this.fourBtnAdd.AutoSize = true;
+            this.fourBtnAdd.BackColor = System.Drawing.Color.DarkCyan;
+            this.fourBtnAdd.FlatAppearance.BorderSize = 0;
+            this.fourBtnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.fourBtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fourBtnAdd.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fourBtnAdd.ForeColor = System.Drawing.Color.White;
             this.fourBtnAdd.Location = new System.Drawing.Point(186, 3);
             this.fourBtnAdd.Name = "fourBtnAdd";
             this.fourBtnAdd.Size = new System.Drawing.Size(100, 30);
             this.fourBtnAdd.TabIndex = 0;
             this.fourBtnAdd.Text = "ADD";
-            this.fourBtnAdd.UseVisualStyleBackColor = true;
+            this.fourBtnAdd.UseVisualStyleBackColor = false;
             this.fourBtnAdd.Click += new System.EventHandler(this.fourBtnAdd_Click);
             // 
             // fourBtnSave
             // 
             this.fourBtnSave.AutoSize = true;
+            this.fourBtnSave.BackColor = System.Drawing.Color.DarkCyan;
+            this.fourBtnSave.FlatAppearance.BorderSize = 0;
+            this.fourBtnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.fourBtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fourBtnSave.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fourBtnSave.ForeColor = System.Drawing.Color.White;
             this.fourBtnSave.Location = new System.Drawing.Point(292, 3);
             this.fourBtnSave.Name = "fourBtnSave";
             this.fourBtnSave.Size = new System.Drawing.Size(107, 30);
             this.fourBtnSave.TabIndex = 0;
             this.fourBtnSave.Text = "SAVE";
-            this.fourBtnSave.UseVisualStyleBackColor = true;
+            this.fourBtnSave.UseVisualStyleBackColor = false;
             this.fourBtnSave.Visible = false;
             this.fourBtnSave.Click += new System.EventHandler(this.fourBtnSave_Click);
             // 
