@@ -47,24 +47,28 @@
             System.Windows.Forms.Label supNameLabel;
             System.Windows.Forms.Label prodNameLabel1;
             System.Windows.Forms.Label supNameLabel1;
-            System.Windows.Forms.Label prodNameLabel2;
-            System.Windows.Forms.Label productIdLabel;
             System.Windows.Forms.Label label8;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label productIdLabel;
+            System.Windows.Forms.Label prodNameLabel2;
+            System.Windows.Forms.Label supNameLabel2;
+            System.Windows.Forms.Label supplierIdLabel;
+            System.Windows.Forms.Label label9;
+            System.Windows.Forms.Label label10;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -79,13 +83,22 @@
             this.tabPackages = new System.Windows.Forms.TabPage();
             this.tabPackageList = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtSearchPackage = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.grdProductList = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgEndDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgDescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgBasePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCreate1 = new System.Windows.Forms.Button();
             this.btnViewDetail = new System.Windows.Forms.Button();
-            this.txtSearchPackage = new System.Windows.Forms.TextBox();
+            this.btnCreate1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cmbPackageId = new System.Windows.Forms.ComboBox();
             this.btnDeletePackage = new System.Windows.Forms.Button();
@@ -154,7 +167,7 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.threeTxtProdName = new System.Windows.Forms.TextBox();
+            this.threeTxtEditProdName = new System.Windows.Forms.TextBox();
             this.threeTxtEditProdId = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.threeTxtAddProdName = new System.Windows.Forms.TextBox();
@@ -164,26 +177,28 @@
             this.threeBtnAdd = new System.Windows.Forms.Button();
             this.threeBtnSave = new System.Windows.Forms.Button();
             this.tabSupplier = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.suppliersDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fourTab = new System.Windows.Forms.TabControl();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.supplierIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.fourTxtEditSuppName = new System.Windows.Forms.TextBox();
+            this.fourTxtEditSuppId = new System.Windows.Forms.TextBox();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.fourTxtAddSuppId = new System.Windows.Forms.TextBox();
+            this.fourTxtAddSuppName = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.fourBtnAll = new System.Windows.Forms.Button();
+            this.fourBtnEdit = new System.Windows.Forms.Button();
+            this.fourBtnAdd = new System.Windows.Forms.Button();
+            this.fourBtnSave = new System.Windows.Forms.Button();
             this.Dashboard = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.productsInPackageBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgEndDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgDescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgBasePriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fourBtnGenerateSuppId = new System.Windows.Forms.Button();
             pkgAgencyCommissionLabel1 = new System.Windows.Forms.Label();
             pkgBasePriceLabel1 = new System.Windows.Forms.Label();
             pkgDescLabel1 = new System.Windows.Forms.Label();
@@ -202,9 +217,13 @@
             supNameLabel = new System.Windows.Forms.Label();
             prodNameLabel1 = new System.Windows.Forms.Label();
             supNameLabel1 = new System.Windows.Forms.Label();
-            prodNameLabel2 = new System.Windows.Forms.Label();
-            productIdLabel = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
+            productIdLabel = new System.Windows.Forms.Label();
+            prodNameLabel2 = new System.Windows.Forms.Label();
+            supNameLabel2 = new System.Windows.Forms.Label();
+            supplierIdLabel = new System.Windows.Forms.Label();
+            label9 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -213,6 +232,7 @@
             this.tabPackages.SuspendLayout();
             this.tabPackageList.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdProductList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
@@ -243,13 +263,15 @@
             this.tabPage6.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tabSupplier.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage7.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.suppliersDataGridView)).BeginInit();
+            this.fourTab.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsInPackageBindingSource1)).BeginInit();
-            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // pkgAgencyCommissionLabel1
@@ -414,14 +436,14 @@
             supNameLabel1.TabIndex = 4;
             supNameLabel1.Text = "Supplier:";
             // 
-            // prodNameLabel2
+            // label8
             // 
-            prodNameLabel2.AutoSize = true;
-            prodNameLabel2.Location = new System.Drawing.Point(60, 62);
-            prodNameLabel2.Name = "prodNameLabel2";
-            prodNameLabel2.Size = new System.Drawing.Size(95, 20);
-            prodNameLabel2.TabIndex = 0;
-            prodNameLabel2.Text = "Prod Name:";
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(76, 38);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(119, 20);
+            label8.TabIndex = 2;
+            label8.Text = "Product Name:";
             // 
             // productIdLabel
             // 
@@ -432,14 +454,50 @@
             productIdLabel.TabIndex = 2;
             productIdLabel.Text = "Product Id:";
             // 
-            // label8
+            // prodNameLabel2
             // 
-            label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(76, 38);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(95, 20);
-            label8.TabIndex = 2;
-            label8.Text = "Prod Name:";
+            prodNameLabel2.AutoSize = true;
+            prodNameLabel2.Location = new System.Drawing.Point(31, 62);
+            prodNameLabel2.Name = "prodNameLabel2";
+            prodNameLabel2.Size = new System.Drawing.Size(119, 20);
+            prodNameLabel2.TabIndex = 0;
+            prodNameLabel2.Text = "Product Name:";
+            // 
+            // supNameLabel2
+            // 
+            supNameLabel2.AutoSize = true;
+            supNameLabel2.Location = new System.Drawing.Point(119, 66);
+            supNameLabel2.Name = "supNameLabel2";
+            supNameLabel2.Size = new System.Drawing.Size(57, 20);
+            supNameLabel2.TabIndex = 0;
+            supNameLabel2.Text = "Name:";
+            // 
+            // supplierIdLabel
+            // 
+            supplierIdLabel.AutoSize = true;
+            supplierIdLabel.Location = new System.Drawing.Point(87, 24);
+            supplierIdLabel.Name = "supplierIdLabel";
+            supplierIdLabel.Size = new System.Drawing.Size(89, 20);
+            supplierIdLabel.TabIndex = 2;
+            supplierIdLabel.Text = "Supplier Id:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(58, 49);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(118, 20);
+            label9.TabIndex = 2;
+            label9.Text = "Supplier Name:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(87, 15);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(89, 20);
+            label10.TabIndex = 4;
+            label10.Text = "Supplier Id:";
             // 
             // splitContainer1
             // 
@@ -468,8 +526,8 @@
             this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.Controls.Add(this.tabMain);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1055, 546);
-            this.splitContainer1.SplitterDistance = 126;
+            this.splitContainer1.Size = new System.Drawing.Size(1114, 594);
+            this.splitContainer1.SplitterDistance = 133;
             this.splitContainer1.TabIndex = 0;
             // 
             // label5
@@ -609,7 +667,7 @@
             this.tabMain.Location = new System.Drawing.Point(0, 44);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(925, 502);
+            this.tabMain.Size = new System.Drawing.Size(977, 550);
             this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabMain.TabIndex = 2;
             // 
@@ -619,7 +677,7 @@
             this.tabPackages.Location = new System.Drawing.Point(4, 28);
             this.tabPackages.Name = "tabPackages";
             this.tabPackages.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPackages.Size = new System.Drawing.Size(917, 470);
+            this.tabPackages.Size = new System.Drawing.Size(969, 518);
             this.tabPackages.TabIndex = 0;
             this.tabPackages.Text = "PACKAGES";
             this.tabPackages.UseVisualStyleBackColor = true;
@@ -633,7 +691,7 @@
             this.tabPackageList.Location = new System.Drawing.Point(3, 3);
             this.tabPackageList.Name = "tabPackageList";
             this.tabPackageList.SelectedIndex = 0;
-            this.tabPackageList.Size = new System.Drawing.Size(911, 464);
+            this.tabPackageList.Size = new System.Drawing.Size(963, 512);
             this.tabPackageList.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabPackageList.TabIndex = 1;
             // 
@@ -644,10 +702,43 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(903, 432);
+            this.tabPage1.Size = new System.Drawing.Size(955, 480);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View List";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 826F));
+            this.tableLayoutPanel8.Controls.Add(this.txtSearchPackage, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(949, 34);
+            this.tableLayoutPanel8.TabIndex = 1;
+            // 
+            // txtSearchPackage
+            // 
+            this.txtSearchPackage.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtSearchPackage.Location = new System.Drawing.Point(126, 3);
+            this.txtSearchPackage.Name = "txtSearchPackage";
+            this.txtSearchPackage.Size = new System.Drawing.Size(810, 25);
+            this.txtSearchPackage.TabIndex = 35;
+            this.txtSearchPackage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearchPackage_KeyUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 20);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Search:";
             // 
             // tableLayoutPanel1
             // 
@@ -665,7 +756,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(897, 426);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(949, 474);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // grdProductList
@@ -673,22 +764,22 @@
             this.grdProductList.AllowUserToAddRows = false;
             this.grdProductList.AllowUserToDeleteRows = false;
             this.grdProductList.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.grdProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.grdProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.grdProductList.AutoGenerateColumns = false;
             this.grdProductList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdProductList.BackgroundColor = System.Drawing.Color.White;
             this.grdProductList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grdProductList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdProductList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.grdProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProductList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -699,23 +790,93 @@
             this.pkgBasePriceDataGridViewTextBoxColumn,
             this.pkgAgencyCommissionDataGridViewTextBoxColumn});
             this.grdProductList.DataSource = this.packageBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdProductList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdProductList.DefaultCellStyle = dataGridViewCellStyle33;
             this.grdProductList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdProductList.EnableHeadersVisualStyles = false;
-            this.grdProductList.Location = new System.Drawing.Point(3, 70);
+            this.grdProductList.Location = new System.Drawing.Point(3, 39);
             this.grdProductList.Name = "grdProductList";
             this.grdProductList.ReadOnly = true;
             this.grdProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdProductList.Size = new System.Drawing.Size(891, 353);
+            this.grdProductList.Size = new System.Drawing.Size(943, 432);
             this.grdProductList.TabIndex = 33;
             this.grdProductList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProductList_CellContentDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.DataPropertyName = "PackageId";
+            this.Column1.FillWeight = 34.32074F;
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 48;
+            // 
+            // pkgNameDataGridViewTextBoxColumn
+            // 
+            this.pkgNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pkgNameDataGridViewTextBoxColumn.DataPropertyName = "PkgName";
+            this.pkgNameDataGridViewTextBoxColumn.FillWeight = 63.9096F;
+            this.pkgNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.pkgNameDataGridViewTextBoxColumn.Name = "pkgNameDataGridViewTextBoxColumn";
+            this.pkgNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pkgNameDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // pkgStartDateDataGridViewTextBoxColumn
+            // 
+            this.pkgStartDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pkgStartDateDataGridViewTextBoxColumn.DataPropertyName = "PkgStartDate";
+            this.pkgStartDateDataGridViewTextBoxColumn.FillWeight = 88.97629F;
+            this.pkgStartDateDataGridViewTextBoxColumn.HeaderText = "Start Date";
+            this.pkgStartDateDataGridViewTextBoxColumn.Name = "pkgStartDateDataGridViewTextBoxColumn";
+            this.pkgStartDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pkgStartDateDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // pkgEndDateDataGridViewTextBoxColumn
+            // 
+            this.pkgEndDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pkgEndDateDataGridViewTextBoxColumn.DataPropertyName = "PkgEndDate";
+            this.pkgEndDateDataGridViewTextBoxColumn.FillWeight = 91.60652F;
+            this.pkgEndDateDataGridViewTextBoxColumn.HeaderText = "End Date";
+            this.pkgEndDateDataGridViewTextBoxColumn.Name = "pkgEndDateDataGridViewTextBoxColumn";
+            this.pkgEndDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pkgEndDateDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // pkgDescDataGridViewTextBoxColumn
+            // 
+            this.pkgDescDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pkgDescDataGridViewTextBoxColumn.DataPropertyName = "PkgDesc";
+            this.pkgDescDataGridViewTextBoxColumn.FillWeight = 122.4418F;
+            this.pkgDescDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.pkgDescDataGridViewTextBoxColumn.Name = "pkgDescDataGridViewTextBoxColumn";
+            this.pkgDescDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pkgDescDataGridViewTextBoxColumn.Width = 114;
+            // 
+            // pkgBasePriceDataGridViewTextBoxColumn
+            // 
+            this.pkgBasePriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pkgBasePriceDataGridViewTextBoxColumn.DataPropertyName = "PkgBasePrice";
+            this.pkgBasePriceDataGridViewTextBoxColumn.FillWeight = 109.884F;
+            this.pkgBasePriceDataGridViewTextBoxColumn.HeaderText = "Base Price";
+            this.pkgBasePriceDataGridViewTextBoxColumn.Name = "pkgBasePriceDataGridViewTextBoxColumn";
+            this.pkgBasePriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pkgBasePriceDataGridViewTextBoxColumn.Width = 99;
+            // 
+            // pkgAgencyCommissionDataGridViewTextBoxColumn
+            // 
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.DataPropertyName = "PkgAgencyCommission";
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.FillWeight = 188.861F;
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.HeaderText = "Agency Commission";
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.Name = "pkgAgencyCommissionDataGridViewTextBoxColumn";
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pkgAgencyCommissionDataGridViewTextBoxColumn.Width = 163;
             // 
             // packageBindingSource
             // 
@@ -731,27 +892,12 @@
             this.tableLayoutPanel2.Controls.Add(this.btnViewDetail, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnCreate1, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 34);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(280, 30);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(943, 30);
             this.tableLayoutPanel2.TabIndex = 34;
-            // 
-            // btnCreate1
-            // 
-            this.btnCreate1.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnCreate1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnCreate1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreate1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate1.ForeColor = System.Drawing.Color.White;
-            this.btnCreate1.Location = new System.Drawing.Point(3, 3);
-            this.btnCreate1.Name = "btnCreate1";
-            this.btnCreate1.Size = new System.Drawing.Size(134, 28);
-            this.btnCreate1.TabIndex = 34;
-            this.btnCreate1.Text = "&Create New";
-            this.btnCreate1.UseVisualStyleBackColor = false;
-            this.btnCreate1.Click += new System.EventHandler(this.btnCreate1_Click);
             // 
             // btnViewDetail
             // 
@@ -768,14 +914,20 @@
             this.btnViewDetail.UseVisualStyleBackColor = false;
             this.btnViewDetail.Click += new System.EventHandler(this.btnViewDetail_Click);
             // 
-            // txtSearchPackage
+            // btnCreate1
             // 
-            this.txtSearchPackage.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtSearchPackage.Location = new System.Drawing.Point(74, 3);
-            this.txtSearchPackage.Name = "txtSearchPackage";
-            this.txtSearchPackage.Size = new System.Drawing.Size(810, 25);
-            this.txtSearchPackage.TabIndex = 35;
-            this.txtSearchPackage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearchPackage_KeyUp);
+            this.btnCreate1.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnCreate1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCreate1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate1.ForeColor = System.Drawing.Color.White;
+            this.btnCreate1.Location = new System.Drawing.Point(3, 3);
+            this.btnCreate1.Name = "btnCreate1";
+            this.btnCreate1.Size = new System.Drawing.Size(134, 28);
+            this.btnCreate1.TabIndex = 34;
+            this.btnCreate1.Text = "&Create New";
+            this.btnCreate1.UseVisualStyleBackColor = false;
+            this.btnCreate1.Click += new System.EventHandler(this.btnCreate1_Click);
             // 
             // tabPage2
             // 
@@ -802,10 +954,10 @@
             this.tabPage2.Controls.Add(pkgStartDateLabel);
             this.tabPage2.Controls.Add(this.txtPkgStart);
             this.tabPage2.Controls.Add(this.btnUpdate);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(903, 432);
+            this.tabPage2.Size = new System.Drawing.Size(955, 486);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -857,35 +1009,35 @@
             // 
             this.productsInPackageDataGridView.AllowUserToAddRows = false;
             this.productsInPackageDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.productsInPackageDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.productsInPackageDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
             this.productsInPackageDataGridView.AutoGenerateColumns = false;
             this.productsInPackageDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.productsInPackageDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.productsInPackageDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.productsInPackageDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productsInPackageDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productsInPackageDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.productsInPackageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productsInPackageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.productsInPackageDataGridView.DataSource = this.productsInPackageBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productsInPackageDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.productsInPackageDataGridView.DefaultCellStyle = dataGridViewCellStyle36;
             this.productsInPackageDataGridView.EnableHeadersVisualStyles = false;
             this.productsInPackageDataGridView.Location = new System.Drawing.Point(20, 315);
             this.productsInPackageDataGridView.Name = "productsInPackageDataGridView";
@@ -1064,10 +1216,10 @@
             this.tabPage3.Controls.Add(this.txtPkgName2);
             this.tabPage3.Controls.Add(pkgStartDateLabel1);
             this.tabPage3.Controls.Add(this.txtPkgStart2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(903, 432);
+            this.tabPage3.Size = new System.Drawing.Size(955, 486);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Create New";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1227,10 +1379,10 @@
             // tabProdSupp
             // 
             this.tabProdSupp.Controls.Add(this.tableLayoutPanel3);
-            this.tabProdSupp.Location = new System.Drawing.Point(4, 28);
+            this.tabProdSupp.Location = new System.Drawing.Point(4, 22);
             this.tabProdSupp.Name = "tabProdSupp";
             this.tabProdSupp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProdSupp.Size = new System.Drawing.Size(917, 470);
+            this.tabProdSupp.Size = new System.Drawing.Size(969, 524);
             this.tabProdSupp.TabIndex = 1;
             this.tabProdSupp.Text = "PROD | SUPP";
             this.tabProdSupp.UseVisualStyleBackColor = true;
@@ -1247,7 +1399,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(911, 464);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(963, 518);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -1256,7 +1408,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.Controls.Add(this.twoBtnViewAll, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.twoBtnEdit, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.twoBtnAdd, 2, 0);
@@ -1266,7 +1418,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(330, 34);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(425, 34);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // twoBtnViewAll
@@ -1326,7 +1478,7 @@
             this.twoTab.Multiline = true;
             this.twoTab.Name = "twoTab";
             this.twoTab.SelectedIndex = 0;
-            this.twoTab.Size = new System.Drawing.Size(905, 418);
+            this.twoTab.Size = new System.Drawing.Size(957, 472);
             this.twoTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.twoTab.TabIndex = 2;
             this.twoTab.SelectedIndexChanged += new System.EventHandler(this.twoTab_SelectedIndexChanged);
@@ -1337,7 +1489,7 @@
             this.twoTabAll.Location = new System.Drawing.Point(4, 29);
             this.twoTabAll.Name = "twoTabAll";
             this.twoTabAll.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabAll.Size = new System.Drawing.Size(897, 385);
+            this.twoTabAll.Size = new System.Drawing.Size(949, 439);
             this.twoTabAll.TabIndex = 0;
             this.twoTabAll.Text = "ALL";
             this.twoTabAll.UseVisualStyleBackColor = true;
@@ -1346,35 +1498,35 @@
             // 
             this.twoGrdAll.AllowUserToAddRows = false;
             this.twoGrdAll.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.twoGrdAll.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.twoGrdAll.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
             this.twoGrdAll.AutoGenerateColumns = false;
             this.twoGrdAll.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.twoGrdAll.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.twoGrdAll.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.twoGrdAll.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.twoGrdAll.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.twoGrdAll.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
             this.twoGrdAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.twoGrdAll.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productSupplierIdDataGridViewTextBoxColumn1,
             this.prodNameDataGridViewTextBoxColumn1,
             this.supNameDataGridViewTextBoxColumn1});
             this.twoGrdAll.DataSource = this.productSupplierWithNameBindingSource;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.twoGrdAll.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.twoGrdAll.DefaultCellStyle = dataGridViewCellStyle39;
             this.twoGrdAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.twoGrdAll.EnableHeadersVisualStyles = false;
             this.twoGrdAll.Location = new System.Drawing.Point(3, 3);
@@ -1382,7 +1534,7 @@
             this.twoGrdAll.Name = "twoGrdAll";
             this.twoGrdAll.ReadOnly = true;
             this.twoGrdAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.twoGrdAll.Size = new System.Drawing.Size(891, 379);
+            this.twoGrdAll.Size = new System.Drawing.Size(943, 433);
             this.twoGrdAll.TabIndex = 0;
             // 
             // productSupplierIdDataGridViewTextBoxColumn1
@@ -1427,7 +1579,7 @@
             this.twoTabEdit.Location = new System.Drawing.Point(4, 29);
             this.twoTabEdit.Name = "twoTabEdit";
             this.twoTabEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabEdit.Size = new System.Drawing.Size(897, 385);
+            this.twoTabEdit.Size = new System.Drawing.Size(949, 439);
             this.twoTabEdit.TabIndex = 1;
             this.twoTabEdit.Text = "EDIT";
             this.twoTabEdit.UseVisualStyleBackColor = true;
@@ -1488,7 +1640,7 @@
             this.twoTabAdd.Location = new System.Drawing.Point(4, 29);
             this.twoTabAdd.Name = "twoTabAdd";
             this.twoTabAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabAdd.Size = new System.Drawing.Size(897, 385);
+            this.twoTabAdd.Size = new System.Drawing.Size(949, 439);
             this.twoTabAdd.TabIndex = 2;
             this.twoTabAdd.Text = "ADD";
             this.twoTabAdd.UseVisualStyleBackColor = true;
@@ -1524,10 +1676,10 @@
             // tabProducts
             // 
             this.tabProducts.Controls.Add(this.tableLayoutPanel5);
-            this.tabProducts.Location = new System.Drawing.Point(4, 28);
+            this.tabProducts.Location = new System.Drawing.Point(4, 22);
             this.tabProducts.Name = "tabProducts";
             this.tabProducts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProducts.Size = new System.Drawing.Size(917, 470);
+            this.tabProducts.Size = new System.Drawing.Size(969, 524);
             this.tabProducts.TabIndex = 2;
             this.tabProducts.Text = "PRODUCTS";
             this.tabProducts.UseVisualStyleBackColor = true;
@@ -1544,7 +1696,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(911, 464);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(963, 518);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // threeTab
@@ -1556,7 +1708,7 @@
             this.threeTab.Location = new System.Drawing.Point(3, 53);
             this.threeTab.Name = "threeTab";
             this.threeTab.SelectedIndex = 0;
-            this.threeTab.Size = new System.Drawing.Size(905, 408);
+            this.threeTab.Size = new System.Drawing.Size(957, 462);
             this.threeTab.TabIndex = 0;
             this.threeTab.SelectedIndexChanged += new System.EventHandler(this.threeTab_SelectedIndexChanged);
             // 
@@ -1566,7 +1718,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(897, 376);
+            this.tabPage4.Size = new System.Drawing.Size(949, 430);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "ALL";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1575,34 +1727,34 @@
             // 
             this.productsDataGridView.AllowUserToAddRows = false;
             this.productsDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.productsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.productsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle40;
             this.productsDataGridView.AutoGenerateColumns = false;
             this.productsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.productsDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.productsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.productsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
             this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.productsDataGridView.DataSource = this.productsBindingSource;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productsDataGridView.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.productsDataGridView.DefaultCellStyle = dataGridViewCellStyle42;
             this.productsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productsDataGridView.EnableHeadersVisualStyles = false;
             this.productsDataGridView.Location = new System.Drawing.Point(3, 3);
@@ -1610,7 +1762,7 @@
             this.productsDataGridView.Name = "productsDataGridView";
             this.productsDataGridView.ReadOnly = true;
             this.productsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productsDataGridView.Size = new System.Drawing.Size(891, 370);
+            this.productsDataGridView.Size = new System.Drawing.Size(943, 424);
             this.productsDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn7
@@ -1635,24 +1787,24 @@
             // tabPage5
             // 
             this.tabPage5.Controls.Add(prodNameLabel2);
-            this.tabPage5.Controls.Add(this.threeTxtProdName);
+            this.tabPage5.Controls.Add(this.threeTxtEditProdName);
             this.tabPage5.Controls.Add(productIdLabel);
             this.tabPage5.Controls.Add(this.threeTxtEditProdId);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(897, 382);
+            this.tabPage5.Size = new System.Drawing.Size(949, 436);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "EDIT";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // threeTxtProdName
+            // threeTxtEditProdName
             // 
-            this.threeTxtProdName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
-            this.threeTxtProdName.Location = new System.Drawing.Point(161, 59);
-            this.threeTxtProdName.Name = "threeTxtProdName";
-            this.threeTxtProdName.Size = new System.Drawing.Size(100, 25);
-            this.threeTxtProdName.TabIndex = 1;
+            this.threeTxtEditProdName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
+            this.threeTxtEditProdName.Location = new System.Drawing.Point(161, 59);
+            this.threeTxtEditProdName.Name = "threeTxtEditProdName";
+            this.threeTxtEditProdName.Size = new System.Drawing.Size(154, 25);
+            this.threeTxtEditProdName.TabIndex = 1;
             // 
             // threeTxtEditProdId
             // 
@@ -1670,16 +1822,16 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(897, 382);
+            this.tabPage6.Size = new System.Drawing.Size(949, 436);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "ADD";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // threeTxtAddProdName
             // 
-            this.threeTxtAddProdName.Location = new System.Drawing.Point(191, 35);
+            this.threeTxtAddProdName.Location = new System.Drawing.Point(211, 38);
             this.threeTxtAddProdName.Name = "threeTxtAddProdName";
-            this.threeTxtAddProdName.Size = new System.Drawing.Size(126, 25);
+            this.threeTxtAddProdName.Size = new System.Drawing.Size(184, 25);
             this.threeTxtAddProdName.TabIndex = 3;
             // 
             // tableLayoutPanel6
@@ -1705,7 +1857,7 @@
             this.threeBtnAll.AutoSize = true;
             this.threeBtnAll.Location = new System.Drawing.Point(3, 3);
             this.threeBtnAll.Name = "threeBtnAll";
-            this.threeBtnAll.Size = new System.Drawing.Size(80, 50);
+            this.threeBtnAll.Size = new System.Drawing.Size(80, 30);
             this.threeBtnAll.TabIndex = 0;
             this.threeBtnAll.Text = "ALL";
             this.threeBtnAll.UseVisualStyleBackColor = true;
@@ -1716,7 +1868,7 @@
             this.threeBtnEdit.AutoSize = true;
             this.threeBtnEdit.Location = new System.Drawing.Point(89, 3);
             this.threeBtnEdit.Name = "threeBtnEdit";
-            this.threeBtnEdit.Size = new System.Drawing.Size(91, 50);
+            this.threeBtnEdit.Size = new System.Drawing.Size(91, 30);
             this.threeBtnEdit.TabIndex = 0;
             this.threeBtnEdit.Text = "EDIT";
             this.threeBtnEdit.UseVisualStyleBackColor = true;
@@ -1727,7 +1879,7 @@
             this.threeBtnAdd.AutoSize = true;
             this.threeBtnAdd.Location = new System.Drawing.Point(186, 3);
             this.threeBtnAdd.Name = "threeBtnAdd";
-            this.threeBtnAdd.Size = new System.Drawing.Size(100, 50);
+            this.threeBtnAdd.Size = new System.Drawing.Size(100, 30);
             this.threeBtnAdd.TabIndex = 0;
             this.threeBtnAdd.Text = "ADD";
             this.threeBtnAdd.UseVisualStyleBackColor = true;
@@ -1738,7 +1890,7 @@
             this.threeBtnSave.AutoSize = true;
             this.threeBtnSave.Location = new System.Drawing.Point(292, 3);
             this.threeBtnSave.Name = "threeBtnSave";
-            this.threeBtnSave.Size = new System.Drawing.Size(107, 50);
+            this.threeBtnSave.Size = new System.Drawing.Size(107, 30);
             this.threeBtnSave.TabIndex = 0;
             this.threeBtnSave.Text = "SAVE";
             this.threeBtnSave.UseVisualStyleBackColor = true;
@@ -1746,126 +1898,239 @@
             // 
             // tabSupplier
             // 
-            this.tabSupplier.Controls.Add(this.tabControl1);
-            this.tabSupplier.Location = new System.Drawing.Point(4, 22);
+            this.tabSupplier.Controls.Add(this.tableLayoutPanel7);
+            this.tabSupplier.Location = new System.Drawing.Point(4, 28);
             this.tabSupplier.Name = "tabSupplier";
             this.tabSupplier.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSupplier.Size = new System.Drawing.Size(917, 476);
+            this.tabSupplier.Size = new System.Drawing.Size(969, 518);
             this.tabSupplier.TabIndex = 3;
             this.tabSupplier.Text = "SUPPLIER";
             this.tabSupplier.UseVisualStyleBackColor = true;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Controls.Add(this.tabPage8);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(911, 470);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.tableLayoutPanel7);
-            this.tabPage7.Location = new System.Drawing.Point(4, 28);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(903, 438);
-            this.tabPage7.TabIndex = 0;
-            this.tabPage7.Text = "ALL";
-            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Controls.Add(this.suppliersDataGridView, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.fourTab, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.798164F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.20184F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(897, 432);
-            this.tableLayoutPanel7.TabIndex = 0;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(963, 512);
+            this.tableLayoutPanel7.TabIndex = 1;
             // 
-            // suppliersDataGridView
+            // fourTab
             // 
-            this.suppliersDataGridView.AllowUserToAddRows = false;
-            this.suppliersDataGridView.AllowUserToDeleteRows = false;
-            this.suppliersDataGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
-            this.suppliersDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.suppliersDataGridView.AutoGenerateColumns = false;
-            this.suppliersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.suppliersDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.suppliersDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.suppliersDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.suppliersDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.suppliersDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.suppliersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.suppliersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10});
-            this.suppliersDataGridView.DataSource = this.suppliersBindingSource;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.suppliersDataGridView.DefaultCellStyle = dataGridViewCellStyle15;
-            this.suppliersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.suppliersDataGridView.EnableHeadersVisualStyles = false;
-            this.suppliersDataGridView.Location = new System.Drawing.Point(3, 36);
-            this.suppliersDataGridView.Name = "suppliersDataGridView";
-            this.suppliersDataGridView.ReadOnly = true;
-            this.suppliersDataGridView.Size = new System.Drawing.Size(891, 393);
-            this.suppliersDataGridView.TabIndex = 0;
+            this.fourTab.Controls.Add(this.tabPage7);
+            this.fourTab.Controls.Add(this.tabPage8);
+            this.fourTab.Controls.Add(this.tabPage9);
+            this.fourTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fourTab.Location = new System.Drawing.Point(3, 53);
+            this.fourTab.Name = "fourTab";
+            this.fourTab.SelectedIndex = 0;
+            this.fourTab.Size = new System.Drawing.Size(957, 456);
+            this.fourTab.TabIndex = 0;
+            this.fourTab.SelectedIndexChanged += new System.EventHandler(this.fourTab_SelectedIndexChanged);
             // 
-            // dataGridViewTextBoxColumn9
+            // tabPage7
             // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "SupplierId";
-            this.dataGridViewTextBoxColumn9.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 48;
+            this.tabPage7.Controls.Add(this.dataGridView1);
+            this.tabPage7.Location = new System.Drawing.Point(4, 28);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(949, 424);
+            this.tabPage7.TabIndex = 0;
+            this.tabPage7.Text = "ALL";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn10
+            // dataGridView1
             // 
-            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "SupName";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Supplier Name";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.supplierIdDataGridViewTextBoxColumn,
+            this.supNameDataGridViewTextBoxColumn2});
+            this.dataGridView1.DataSource = this.suppliersBindingSource;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle45;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(943, 418);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // supplierIdDataGridViewTextBoxColumn
+            // 
+            this.supplierIdDataGridViewTextBoxColumn.DataPropertyName = "SupplierId";
+            this.supplierIdDataGridViewTextBoxColumn.HeaderText = "SupplierId";
+            this.supplierIdDataGridViewTextBoxColumn.Name = "supplierIdDataGridViewTextBoxColumn";
+            this.supplierIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // supNameDataGridViewTextBoxColumn2
+            // 
+            this.supNameDataGridViewTextBoxColumn2.DataPropertyName = "SupName";
+            this.supNameDataGridViewTextBoxColumn2.HeaderText = "SupName";
+            this.supNameDataGridViewTextBoxColumn2.Name = "supNameDataGridViewTextBoxColumn2";
+            this.supNameDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(supNameLabel2);
+            this.tabPage8.Controls.Add(this.fourTxtEditSuppName);
+            this.tabPage8.Controls.Add(supplierIdLabel);
+            this.tabPage8.Controls.Add(this.fourTxtEditSuppId);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(903, 438);
+            this.tabPage8.Size = new System.Drawing.Size(949, 430);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "EDIT";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // fourTxtEditSuppName
+            // 
+            this.fourTxtEditSuppName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupName", true));
+            this.fourTxtEditSuppName.Location = new System.Drawing.Point(205, 64);
+            this.fourTxtEditSuppName.Name = "fourTxtEditSuppName";
+            this.fourTxtEditSuppName.Size = new System.Drawing.Size(316, 25);
+            this.fourTxtEditSuppName.TabIndex = 1;
+            // 
+            // fourTxtEditSuppId
+            // 
+            this.fourTxtEditSuppId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupplierId", true));
+            this.fourTxtEditSuppId.Enabled = false;
+            this.fourTxtEditSuppId.Location = new System.Drawing.Point(205, 21);
+            this.fourTxtEditSuppId.Name = "fourTxtEditSuppId";
+            this.fourTxtEditSuppId.Size = new System.Drawing.Size(100, 25);
+            this.fourTxtEditSuppId.TabIndex = 3;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(label10);
+            this.tabPage9.Controls.Add(this.fourTxtAddSuppId);
+            this.tabPage9.Controls.Add(label9);
+            this.tabPage9.Controls.Add(this.fourBtnGenerateSuppId);
+            this.tabPage9.Controls.Add(this.fourTxtAddSuppName);
+            this.tabPage9.Location = new System.Drawing.Point(4, 28);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(949, 424);
+            this.tabPage9.TabIndex = 2;
+            this.tabPage9.Text = "ADD";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // fourTxtAddSuppId
+            // 
+            this.fourTxtAddSuppId.Location = new System.Drawing.Point(205, 13);
+            this.fourTxtAddSuppId.Name = "fourTxtAddSuppId";
+            this.fourTxtAddSuppId.Size = new System.Drawing.Size(100, 25);
+            this.fourTxtAddSuppId.TabIndex = 5;
+            // 
+            // fourTxtAddSuppName
+            // 
+            this.fourTxtAddSuppName.Location = new System.Drawing.Point(205, 47);
+            this.fourTxtAddSuppName.Name = "fourTxtAddSuppName";
+            this.fourTxtAddSuppName.Size = new System.Drawing.Size(387, 25);
+            this.fourTxtAddSuppName.TabIndex = 3;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 4;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.Controls.Add(this.fourBtnAll, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.fourBtnEdit, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.fourBtnAdd, 2, 0);
+            this.tableLayoutPanel9.Controls.Add(this.fourBtnSave, 3, 0);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(402, 44);
+            this.tableLayoutPanel9.TabIndex = 1;
+            // 
+            // fourBtnAll
+            // 
+            this.fourBtnAll.AutoSize = true;
+            this.fourBtnAll.Location = new System.Drawing.Point(3, 3);
+            this.fourBtnAll.Name = "fourBtnAll";
+            this.fourBtnAll.Size = new System.Drawing.Size(80, 30);
+            this.fourBtnAll.TabIndex = 0;
+            this.fourBtnAll.Text = "ALL";
+            this.fourBtnAll.UseVisualStyleBackColor = true;
+            this.fourBtnAll.Click += new System.EventHandler(this.fourBtnAll_Click);
+            // 
+            // fourBtnEdit
+            // 
+            this.fourBtnEdit.AutoSize = true;
+            this.fourBtnEdit.Location = new System.Drawing.Point(89, 3);
+            this.fourBtnEdit.Name = "fourBtnEdit";
+            this.fourBtnEdit.Size = new System.Drawing.Size(91, 30);
+            this.fourBtnEdit.TabIndex = 0;
+            this.fourBtnEdit.Text = "EDIT";
+            this.fourBtnEdit.UseVisualStyleBackColor = true;
+            this.fourBtnEdit.Click += new System.EventHandler(this.fourBtnEdit_Click);
+            // 
+            // fourBtnAdd
+            // 
+            this.fourBtnAdd.AutoSize = true;
+            this.fourBtnAdd.Location = new System.Drawing.Point(186, 3);
+            this.fourBtnAdd.Name = "fourBtnAdd";
+            this.fourBtnAdd.Size = new System.Drawing.Size(100, 30);
+            this.fourBtnAdd.TabIndex = 0;
+            this.fourBtnAdd.Text = "ADD";
+            this.fourBtnAdd.UseVisualStyleBackColor = true;
+            this.fourBtnAdd.Click += new System.EventHandler(this.fourBtnAdd_Click);
+            // 
+            // fourBtnSave
+            // 
+            this.fourBtnSave.AutoSize = true;
+            this.fourBtnSave.Location = new System.Drawing.Point(292, 3);
+            this.fourBtnSave.Name = "fourBtnSave";
+            this.fourBtnSave.Size = new System.Drawing.Size(107, 30);
+            this.fourBtnSave.TabIndex = 0;
+            this.fourBtnSave.Text = "SAVE";
+            this.fourBtnSave.UseVisualStyleBackColor = true;
+            this.fourBtnSave.Visible = false;
+            this.fourBtnSave.Click += new System.EventHandler(this.fourBtnSave_Click);
             // 
             // Dashboard
             // 
             this.Dashboard.Location = new System.Drawing.Point(4, 22);
             this.Dashboard.Name = "Dashboard";
             this.Dashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.Dashboard.Size = new System.Drawing.Size(917, 476);
+            this.Dashboard.Size = new System.Drawing.Size(969, 524);
             this.Dashboard.TabIndex = 4;
             this.Dashboard.Text = "tabPage7";
             this.Dashboard.UseVisualStyleBackColor = true;
@@ -1877,7 +2142,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(925, 44);
+            this.panel1.Size = new System.Drawing.Size(977, 44);
             this.panel1.TabIndex = 0;
             // 
             // button2
@@ -1900,105 +2165,23 @@
             // 
             this.productsInPackageBindingSource1.DataSource = typeof(Travel_Experts.ProductsInPackage);
             // 
-            // tableLayoutPanel8
+            // fourBtnGenerateSuppId
             // 
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 826F));
-            this.tableLayoutPanel8.Controls.Add(this.txtSearchPackage, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(897, 34);
-            this.tableLayoutPanel8.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Search:";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.DataPropertyName = "PackageId";
-            this.Column1.FillWeight = 34.32074F;
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 48;
-            // 
-            // pkgNameDataGridViewTextBoxColumn
-            // 
-            this.pkgNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.pkgNameDataGridViewTextBoxColumn.DataPropertyName = "PkgName";
-            this.pkgNameDataGridViewTextBoxColumn.FillWeight = 63.9096F;
-            this.pkgNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.pkgNameDataGridViewTextBoxColumn.Name = "pkgNameDataGridViewTextBoxColumn";
-            this.pkgNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pkgNameDataGridViewTextBoxColumn.Width = 76;
-            // 
-            // pkgStartDateDataGridViewTextBoxColumn
-            // 
-            this.pkgStartDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.pkgStartDateDataGridViewTextBoxColumn.DataPropertyName = "PkgStartDate";
-            this.pkgStartDateDataGridViewTextBoxColumn.FillWeight = 88.97629F;
-            this.pkgStartDateDataGridViewTextBoxColumn.HeaderText = "Start Date";
-            this.pkgStartDateDataGridViewTextBoxColumn.Name = "pkgStartDateDataGridViewTextBoxColumn";
-            this.pkgStartDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pkgStartDateDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // pkgEndDateDataGridViewTextBoxColumn
-            // 
-            this.pkgEndDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.pkgEndDateDataGridViewTextBoxColumn.DataPropertyName = "PkgEndDate";
-            this.pkgEndDateDataGridViewTextBoxColumn.FillWeight = 91.60652F;
-            this.pkgEndDateDataGridViewTextBoxColumn.HeaderText = "End Date";
-            this.pkgEndDateDataGridViewTextBoxColumn.Name = "pkgEndDateDataGridViewTextBoxColumn";
-            this.pkgEndDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pkgEndDateDataGridViewTextBoxColumn.Width = 99;
-            // 
-            // pkgDescDataGridViewTextBoxColumn
-            // 
-            this.pkgDescDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.pkgDescDataGridViewTextBoxColumn.DataPropertyName = "PkgDesc";
-            this.pkgDescDataGridViewTextBoxColumn.FillWeight = 122.4418F;
-            this.pkgDescDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.pkgDescDataGridViewTextBoxColumn.Name = "pkgDescDataGridViewTextBoxColumn";
-            this.pkgDescDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pkgDescDataGridViewTextBoxColumn.Width = 114;
-            // 
-            // pkgBasePriceDataGridViewTextBoxColumn
-            // 
-            this.pkgBasePriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.pkgBasePriceDataGridViewTextBoxColumn.DataPropertyName = "PkgBasePrice";
-            this.pkgBasePriceDataGridViewTextBoxColumn.FillWeight = 109.884F;
-            this.pkgBasePriceDataGridViewTextBoxColumn.HeaderText = "Base Price";
-            this.pkgBasePriceDataGridViewTextBoxColumn.Name = "pkgBasePriceDataGridViewTextBoxColumn";
-            this.pkgBasePriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pkgBasePriceDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // pkgAgencyCommissionDataGridViewTextBoxColumn
-            // 
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.DataPropertyName = "PkgAgencyCommission";
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.FillWeight = 188.861F;
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.HeaderText = "Agency Commission";
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.Name = "pkgAgencyCommissionDataGridViewTextBoxColumn";
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pkgAgencyCommissionDataGridViewTextBoxColumn.Width = 163;
+            this.fourBtnGenerateSuppId.AutoSize = true;
+            this.fourBtnGenerateSuppId.Font = new System.Drawing.Font("Century Gothic", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fourBtnGenerateSuppId.Location = new System.Drawing.Point(341, 12);
+            this.fourBtnGenerateSuppId.Name = "fourBtnGenerateSuppId";
+            this.fourBtnGenerateSuppId.Size = new System.Drawing.Size(90, 27);
+            this.fourBtnGenerateSuppId.TabIndex = 0;
+            this.fourBtnGenerateSuppId.Text = "Generate Id";
+            this.fourBtnGenerateSuppId.UseVisualStyleBackColor = true;
+            this.fourBtnGenerateSuppId.Click += new System.EventHandler(this.fourBtnGenerateSuppId_Click);
             // 
             // frmPackages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 546);
+            this.ClientSize = new System.Drawing.Size(1114, 594);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
@@ -2015,6 +2198,8 @@
             this.tabPackages.ResumeLayout(false);
             this.tabPackageList.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdProductList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();
@@ -2053,14 +2238,18 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tabSupplier.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.suppliersDataGridView)).EndInit();
+            this.fourTab.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.productsInPackageBindingSource1)).EndInit();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2115,7 +2304,6 @@
         private System.Windows.Forms.TabPage tabPackages;
         private System.Windows.Forms.TabPage tabProdSupp;
         private System.Windows.Forms.TabPage tabProducts;
-        private System.Windows.Forms.TabPage tabSupplier;
         private System.Windows.Forms.ComboBox cmbPackageId;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView grdProductList;
@@ -2140,23 +2328,9 @@
         private System.Windows.Forms.Button twoBtnSave;
         private System.Windows.Forms.ComboBox twoCmbAddProdName;
         private System.Windows.Forms.ComboBox twoCmbAddSuppName;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TabControl threeTab;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Button threeBtnAll;
-        private System.Windows.Forms.Button threeBtnEdit;
-        private System.Windows.Forms.Button threeBtnAdd;
-        private System.Windows.Forms.Button threeBtnSave;
-        private System.Windows.Forms.DataGridView productsDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.TextBox threeTxtProdName;
-        private System.Windows.Forms.TextBox threeTxtEditProdId;
-        private System.Windows.Forms.TextBox threeTxtAddProdName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -2168,15 +2342,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn supNameDataGridViewTextBoxColumn;
         public System.Windows.Forms.BindingSource newProductPackageBindingSource;
         private System.Windows.Forms.BindingSource productsInPackageBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.DataGridView suppliersDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.DataGridViewTextBoxColumn productSupplierIdDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn prodNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn supNameDataGridViewTextBoxColumn1;
@@ -2189,6 +2354,41 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pkgDescDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pkgBasePriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pkgAgencyCommissionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TabControl threeTab;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView productsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TextBox threeTxtEditProdName;
+        private System.Windows.Forms.TextBox threeTxtEditProdId;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TextBox threeTxtAddProdName;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button threeBtnAll;
+        private System.Windows.Forms.Button threeBtnEdit;
+        private System.Windows.Forms.Button threeBtnAdd;
+        private System.Windows.Forms.Button threeBtnSave;
+        private System.Windows.Forms.TabPage tabSupplier;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TabControl fourTab;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.Button fourBtnAll;
+        private System.Windows.Forms.Button fourBtnEdit;
+        private System.Windows.Forms.Button fourBtnAdd;
+        private System.Windows.Forms.Button fourBtnSave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplierIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supNameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.TextBox fourTxtEditSuppName;
+        private System.Windows.Forms.TextBox fourTxtEditSuppId;
+        private System.Windows.Forms.TextBox fourTxtAddSuppName;
+        private System.Windows.Forms.TextBox fourTxtAddSuppId;
+        private System.Windows.Forms.Button fourBtnGenerateSuppId;
     }
 }
 

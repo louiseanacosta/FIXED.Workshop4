@@ -49,9 +49,11 @@ namespace Travel_Experts
             int supId = 0;
 
             SqlConnection con = TravelExpertsDB.GetConnection();
-            string insertStatement = "INSERT INTO Suppliers (SupName) " +
-                                       "VALUES(@SupName)";
+            string insertStatement = "INSERT INTO Suppliers(SupplierId,SupName) VALUES(@SupId,@SupName)";
             SqlCommand cmd = new SqlCommand(insertStatement, con);
+            // bind parameters
+            cmd.Parameters.AddWithValue("@SupId", sup.SupplierId);
+
             if (sup.SupName == null)
                 cmd.Parameters.AddWithValue("@SupName", DBNull.Value);
             else
@@ -61,8 +63,9 @@ namespace Travel_Experts
             {
                 con.Open();
                 cmd.ExecuteNonQuery();
-                string selectQuery = "SELECT IDENT_CURRENT('Suppliers') FROM Suppliers"; // Identity value
+                string selectQuery = "SELECT * FROM Suppliers WHERE SupplierId=@SupId"; // Identity value
                 SqlCommand selectCommand = new SqlCommand(selectQuery, con);
+                selectCommand.Parameters.AddWithValue("@SupId", sup.SupplierId);
                 supId = Convert.ToInt32(selectCommand.ExecuteScalar()); // single value
             }
             catch (Exception ex)
@@ -94,7 +97,7 @@ namespace Travel_Experts
                     else
                         cmd.Parameters.AddWithValue("@NewSupName", newSupplier.SupName);
 
-                    cmd.Parameters.AddWithValue("@OldProductId", oldSupplier.SupplierId); // PK is not null
+                    cmd.Parameters.AddWithValue("@OldSupplierId", oldSupplier.SupplierId); // PK is not null
                     
                     if (oldSupplier.SupName == null)
                         cmd.Parameters.AddWithValue("@OldSupName", DBNull.Value);
