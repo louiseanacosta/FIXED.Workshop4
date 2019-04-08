@@ -29,7 +29,8 @@ namespace Workshop4
 
         private void AddProduct_Load(object sender, EventArgs e)
         {
-            availableProductsBindingSource.DataSource = products;// bind list of products in package to gridview
+            var _sortableProducts = new SortableBindingList<AvailableProducts>(products);
+            availableProductsBindingSource.DataSource = _sortableProducts;// bind list of products in package to gridview
         }
 
         
