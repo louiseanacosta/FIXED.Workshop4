@@ -150,6 +150,7 @@ namespace Workshop4
                     // delete package
                     PackageDB.DeletePackage(package);
                     MessageBox.Show("Package " + packageId + " deleted successfully");
+                    tabPackageList.SelectTab(0); // go back to list view
 
                 }
                 catch (Exception ex)
