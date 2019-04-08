@@ -1464,6 +1464,7 @@
             // 
             // txtPkgEnd2
             // 
+            this.txtPkgEnd2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtPkgEnd2.Location = new System.Drawing.Point(211, 142);
             this.txtPkgEnd2.Name = "txtPkgEnd2";
             this.txtPkgEnd2.Size = new System.Drawing.Size(184, 25);
@@ -1480,6 +1481,7 @@
             // 
             // txtPkgStart2
             // 
+            this.txtPkgStart2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtPkgStart2.Location = new System.Drawing.Point(211, 112);
             this.txtPkgStart2.Name = "txtPkgStart2";
             this.txtPkgStart2.Size = new System.Drawing.Size(184, 25);
@@ -2385,7 +2387,9 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmPackages";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
