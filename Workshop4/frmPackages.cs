@@ -435,7 +435,7 @@ namespace Workshop4
             {
                 twoBtnSave.Visible = false;
                 // 'ALL' tab, load all Product Supplier data and fill DataSource
-                _psList = Products_suppliersDB.GetAllProductSupplierWithNames();
+                _psList = Products_suppliersDB.GetAllProductSupplierWithNames().OrderBy(ps => ps.ProdName).ToList();
                 // use List to make a SortableBindingList
                 var _sortableList = new SortableBindingList<ProductSupplierWithName>(_psList);
                 productSupplierWithNameBindingSource.DataSource = _sortableList;
@@ -444,11 +444,11 @@ namespace Workshop4
             {
                 // 'ADD' tab
                 // databinding for combo boxes
-                //suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers().OrderBy(s => s.SupName);
-                //productsBindingSource.DataSource = ProductsDB.GetProducts();
-
-                //twoCmbAddProdName.SelectedIndex = -1;
-                //twoCmbAddSuppName.SelectedIndex = -1;
+                suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers().OrderBy(s => s.SupName);
+                productsBindingSource.DataSource = ProductsDB.GetProducts();
+                // select nothing when load
+                twoCmbAddProdName.SelectedIndex = -1;
+                twoCmbAddSuppName.SelectedIndex = -1;
             }
             // 'EDIT' tab, show details
         }
@@ -471,12 +471,23 @@ namespace Workshop4
             twoTab.SelectedIndex = 2;
             twoBtnAdd.BackColor = Color.DarkOrange;
         }
-        // dropdown list selected
+        // dropdown list selected: filter for second dropdown list
         private void twoCmbAddProdName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //var filteredSuppliers = SuppliersDB.GetSuppliers().
-            //    RemoveAll(s=>_psList.fi);
-            //suppliersBindingSource.DataSource = filteredSuppliers;
+        {   // if nothing selected, return
+            if (twoCmbAddProdName.SelectedIndex == -1) return;
+            // filtering
+            var suppliers = SuppliersDB.GetSuppliers();
+            var prodSupps = Products_suppliersDB.GetProductsSuppliers();
+            var _psHasIds = prodSupps.FindAll(ps => ps.ProductId == (int) twoCmbAddProdName.SelectedValue).Select(ps=>ps.SupplierId);
+            List<Suppliers> filteredSupp = new List<Suppliers>();
+            foreach (var supp in suppliers)
+            {
+                if (!_psHasIds.Contains(supp.SupplierId))
+                    filteredSupp.Add(supp);
+            }
+
+            suppliersBindingSource.DataSource = filteredSupp;
+            twoCmbAddSuppName.SelectedIndex = -1;
         }
 
         // SAVE btn clicked: update or add new
