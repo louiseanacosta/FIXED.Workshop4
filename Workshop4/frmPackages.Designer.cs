@@ -730,7 +730,7 @@
             this.tabMain.Controls.Add(this.tabSupplier);
             this.tabMain.Controls.Add(this.tabPage10);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabMain.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabMain.ItemSize = new System.Drawing.Size(60, 50);
             this.tabMain.Location = new System.Drawing.Point(0, 44);
             this.tabMain.Multiline = true;
             this.tabMain.Name = "tabMain";
@@ -742,10 +742,10 @@
             // tabPackages
             // 
             this.tabPackages.Controls.Add(this.tabPackageList);
-            this.tabPackages.Location = new System.Drawing.Point(4, 5);
+            this.tabPackages.Location = new System.Drawing.Point(4, 54);
             this.tabPackages.Name = "tabPackages";
             this.tabPackages.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPackages.Size = new System.Drawing.Size(981, 663);
+            this.tabPackages.Size = new System.Drawing.Size(981, 614);
             this.tabPackages.TabIndex = 0;
             this.tabPackages.Text = "PACKAGES";
             this.tabPackages.UseVisualStyleBackColor = true;
@@ -757,12 +757,12 @@
             this.tabPackageList.Controls.Add(this.tabPage2);
             this.tabPackageList.Controls.Add(this.tabPage3);
             this.tabPackageList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPackageList.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabPackageList.ItemSize = new System.Drawing.Size(50, 50);
             this.tabPackageList.Location = new System.Drawing.Point(3, 3);
             this.tabPackageList.Multiline = true;
             this.tabPackageList.Name = "tabPackageList";
             this.tabPackageList.SelectedIndex = 0;
-            this.tabPackageList.Size = new System.Drawing.Size(975, 657);
+            this.tabPackageList.Size = new System.Drawing.Size(975, 608);
             this.tabPackageList.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabPackageList.TabIndex = 1;
             // 
@@ -770,10 +770,10 @@
             // 
             this.tabPage1.Controls.Add(this.tableLayoutPanel8);
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(967, 629);
+            this.tabPage1.Size = new System.Drawing.Size(967, 599);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View List";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -825,7 +825,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(961, 623);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(961, 593);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // grdProductList
@@ -839,7 +839,6 @@
             this.grdProductList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdProductList.BackgroundColor = System.Drawing.Color.White;
             this.grdProductList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.grdProductList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.grdProductList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.CadetBlue;
@@ -873,7 +872,7 @@
             this.grdProductList.Name = "grdProductList";
             this.grdProductList.ReadOnly = true;
             this.grdProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdProductList.Size = new System.Drawing.Size(955, 548);
+            this.grdProductList.Size = new System.Drawing.Size(955, 518);
             this.grdProductList.TabIndex = 33;
             this.grdProductList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProductList_CellContentDoubleClick);
             // 
@@ -1024,10 +1023,10 @@
             this.tabPage2.Controls.Add(pkgStartDateLabel);
             this.tabPage2.Controls.Add(this.txtPkgStart);
             this.tabPage2.Controls.Add(this.btnUpdate);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 54);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(967, 629);
+            this.tabPage2.Size = new System.Drawing.Size(967, 599);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1296,10 +1295,10 @@
             this.tabPage3.Controls.Add(this.txtPkgName2);
             this.tabPage3.Controls.Add(pkgStartDateLabel1);
             this.tabPage3.Controls.Add(this.txtPkgStart2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 54);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(967, 648);
+            this.tabPage3.Size = new System.Drawing.Size(967, 550);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Create New";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1496,10 +1495,10 @@
             // tabProdSupp
             // 
             this.tabProdSupp.Controls.Add(this.tableLayoutPanel3);
-            this.tabProdSupp.Location = new System.Drawing.Point(4, 5);
+            this.tabProdSupp.Location = new System.Drawing.Point(4, 54);
             this.tabProdSupp.Name = "tabProdSupp";
             this.tabProdSupp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProdSupp.Size = new System.Drawing.Size(981, 663);
+            this.tabProdSupp.Size = new System.Drawing.Size(981, 614);
             this.tabProdSupp.TabIndex = 1;
             this.tabProdSupp.Text = "PROD | SUPP";
             this.tabProdSupp.UseVisualStyleBackColor = true;
@@ -1516,7 +1515,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(975, 657);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(975, 608);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -1615,7 +1614,7 @@
             this.twoTab.Multiline = true;
             this.twoTab.Name = "twoTab";
             this.twoTab.SelectedIndex = 0;
-            this.twoTab.Size = new System.Drawing.Size(969, 611);
+            this.twoTab.Size = new System.Drawing.Size(969, 562);
             this.twoTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.twoTab.TabIndex = 2;
             this.twoTab.SelectedIndexChanged += new System.EventHandler(this.twoTab_SelectedIndexChanged);
@@ -1626,7 +1625,7 @@
             this.twoTabAll.Location = new System.Drawing.Point(4, 5);
             this.twoTabAll.Name = "twoTabAll";
             this.twoTabAll.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabAll.Size = new System.Drawing.Size(961, 602);
+            this.twoTabAll.Size = new System.Drawing.Size(961, 553);
             this.twoTabAll.TabIndex = 0;
             this.twoTabAll.Text = "ALL";
             this.twoTabAll.UseVisualStyleBackColor = true;
@@ -1671,7 +1670,7 @@
             this.twoGrdAll.Name = "twoGrdAll";
             this.twoGrdAll.ReadOnly = true;
             this.twoGrdAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.twoGrdAll.Size = new System.Drawing.Size(955, 596);
+            this.twoGrdAll.Size = new System.Drawing.Size(955, 547);
             this.twoGrdAll.TabIndex = 0;
             // 
             // productSupplierIdDataGridViewTextBoxColumn1
@@ -1716,7 +1715,7 @@
             this.twoTabEdit.Location = new System.Drawing.Point(4, 5);
             this.twoTabEdit.Name = "twoTabEdit";
             this.twoTabEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabEdit.Size = new System.Drawing.Size(961, 553);
+            this.twoTabEdit.Size = new System.Drawing.Size(961, 602);
             this.twoTabEdit.TabIndex = 1;
             this.twoTabEdit.Text = "EDIT";
             this.twoTabEdit.UseVisualStyleBackColor = true;
@@ -1777,7 +1776,7 @@
             this.twoTabAdd.Location = new System.Drawing.Point(4, 5);
             this.twoTabAdd.Name = "twoTabAdd";
             this.twoTabAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabAdd.Size = new System.Drawing.Size(961, 553);
+            this.twoTabAdd.Size = new System.Drawing.Size(961, 602);
             this.twoTabAdd.TabIndex = 2;
             this.twoTabAdd.Text = "ADD";
             this.twoTabAdd.UseVisualStyleBackColor = true;
@@ -1813,10 +1812,10 @@
             // tabProducts
             // 
             this.tabProducts.Controls.Add(this.tableLayoutPanel5);
-            this.tabProducts.Location = new System.Drawing.Point(4, 5);
+            this.tabProducts.Location = new System.Drawing.Point(4, 54);
             this.tabProducts.Name = "tabProducts";
             this.tabProducts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProducts.Size = new System.Drawing.Size(981, 663);
+            this.tabProducts.Size = new System.Drawing.Size(981, 614);
             this.tabProducts.TabIndex = 2;
             this.tabProducts.Text = "PRODUCTS";
             this.tabProducts.UseVisualStyleBackColor = true;
@@ -1833,7 +1832,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(975, 657);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(975, 608);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // threeTab
@@ -1848,7 +1847,7 @@
             this.threeTab.Multiline = true;
             this.threeTab.Name = "threeTab";
             this.threeTab.SelectedIndex = 0;
-            this.threeTab.Size = new System.Drawing.Size(969, 609);
+            this.threeTab.Size = new System.Drawing.Size(969, 560);
             this.threeTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.threeTab.TabIndex = 0;
             this.threeTab.SelectedIndexChanged += new System.EventHandler(this.threeTab_SelectedIndexChanged);
@@ -1859,7 +1858,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 5);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(961, 600);
+            this.tabPage4.Size = new System.Drawing.Size(961, 551);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "ALL";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1903,7 +1902,7 @@
             this.productsDataGridView.Name = "productsDataGridView";
             this.productsDataGridView.ReadOnly = true;
             this.productsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productsDataGridView.Size = new System.Drawing.Size(955, 594);
+            this.productsDataGridView.Size = new System.Drawing.Size(955, 545);
             this.productsDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn7
@@ -1934,7 +1933,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 5);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(961, 551);
+            this.tabPage5.Size = new System.Drawing.Size(961, 600);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "EDIT";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1963,7 +1962,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 5);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(961, 551);
+            this.tabPage6.Size = new System.Drawing.Size(961, 600);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "ADD";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2068,10 +2067,10 @@
             // tabSupplier
             // 
             this.tabSupplier.Controls.Add(this.tableLayoutPanel7);
-            this.tabSupplier.Location = new System.Drawing.Point(4, 5);
+            this.tabSupplier.Location = new System.Drawing.Point(4, 54);
             this.tabSupplier.Name = "tabSupplier";
             this.tabSupplier.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSupplier.Size = new System.Drawing.Size(981, 663);
+            this.tabSupplier.Size = new System.Drawing.Size(981, 614);
             this.tabSupplier.TabIndex = 3;
             this.tabSupplier.Text = "SUPPLIER";
             this.tabSupplier.UseVisualStyleBackColor = true;
@@ -2088,7 +2087,7 @@
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(975, 657);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(975, 608);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // fourTab
@@ -2103,7 +2102,7 @@
             this.fourTab.Multiline = true;
             this.fourTab.Name = "fourTab";
             this.fourTab.SelectedIndex = 0;
-            this.fourTab.Size = new System.Drawing.Size(969, 609);
+            this.fourTab.Size = new System.Drawing.Size(969, 560);
             this.fourTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.fourTab.TabIndex = 0;
             this.fourTab.SelectedIndexChanged += new System.EventHandler(this.fourTab_SelectedIndexChanged);
@@ -2114,7 +2113,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 5);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(961, 600);
+            this.tabPage7.Size = new System.Drawing.Size(961, 551);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "ALL";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -2158,7 +2157,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(955, 594);
+            this.dataGridView1.Size = new System.Drawing.Size(955, 545);
             this.dataGridView1.TabIndex = 0;
             // 
             // supplierIdDataGridViewTextBoxColumn
@@ -2187,7 +2186,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 5);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(961, 551);
+            this.tabPage8.Size = new System.Drawing.Size(961, 600);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "EDIT";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -2219,7 +2218,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 5);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(961, 551);
+            this.tabPage9.Size = new System.Drawing.Size(961, 600);
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "ADD";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -2340,10 +2339,10 @@
             // tabPage10
             // 
             this.tabPage10.Controls.Add(this.pictureBox1);
-            this.tabPage10.Location = new System.Drawing.Point(4, 5);
+            this.tabPage10.Location = new System.Drawing.Point(4, 54);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(981, 663);
+            this.tabPage10.Size = new System.Drawing.Size(981, 614);
             this.tabPage10.TabIndex = 4;
             this.tabPage10.Text = "DASHBOARD";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -2355,7 +2354,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(975, 657);
+            this.pictureBox1.Size = new System.Drawing.Size(975, 608);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
