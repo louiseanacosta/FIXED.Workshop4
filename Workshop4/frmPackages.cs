@@ -30,7 +30,7 @@ namespace Workshop4
         // form load
         private void Form1_Load(object sender, EventArgs e)
         {
-            tabMain.SelectedIndex = 4;
+            btnDashboard_Click(sender,e);
             // display all packages in data grid view
             var _sortablePackages = new SortableBindingList<Package>(packages);
             packageBindingSource.DataSource = _sortablePackages;
@@ -285,6 +285,15 @@ namespace Workshop4
             frmAddProduct addNewProduct = new frmAddProduct(newProductPackageBindingSource);
             addNewProduct.ShowDialog();
         }
+        // delete product from package
+        private void btnDeleteOnCreateTab_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in grdProductsInNewPackage.SelectedRows)
+            {
+                int rowIndex = grdProductsInNewPackage.CurrentCell.RowIndex;
+                grdProductsInNewPackage.Rows.RemoveAt(rowIndex);
+            }
+        }
 
         // go back to list
         private void btnBackList_Click(object sender, EventArgs e)
@@ -350,28 +359,50 @@ namespace Workshop4
 
         //--------------------------- DongMing Hu -----------------------------------
 
-        // ----- 4 MAIN Nav Buttons -----
+        // ----- 5 MAIN Nav Buttons -----
+
+        private void _resetBtnColor()
+        {
+            var defaultGrey = Color.FromArgb(41, 44, 51);
+            btnDashboard.BackColor = defaultGrey;
+            btnPackages.BackColor = defaultGrey;
+            btnProdSupp.BackColor = defaultGrey;
+            btnProducts.BackColor = defaultGrey;
+            btnSupplier.BackColor = defaultGrey;
+        }
+
+        // Nav Btn 0: move to Dashboard
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedIndex = 4;
+            _resetBtnColor();
+            btnDashboard.BackColor = SystemColors.WindowFrame;
+        }
+
         // Nav Btn 1: move to Packages
         private void btnPackages_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 0;
+            _resetBtnColor();
+            btnPackages.BackColor = SystemColors.WindowFrame;
         }
         // Nav Btn 2: move to Product Supplier
         private void btnProdSupp_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 1;
+            _resetBtnColor();
+            btnProdSupp.BackColor = SystemColors.WindowFrame;
             // tab index changed to 0 (view all), show all data
             twoTab_SelectedIndexChanged(sender, e);
             // click ALL btn, change tab index to 0
             twoBtnViewAll_Click(sender, e);
-            // databinding for combo boxes
-            suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers().OrderBy(s=>s.SupName);
-            productsBindingSource.DataSource = ProductsDB.GetProducts();
         }
         // Nav Btn 3: move to Products
         private void btnProducts_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 2;
+            _resetBtnColor();
+            btnProducts.BackColor = SystemColors.WindowFrame;
             // tab index changed to 0 (view all), show all products
             threeTab_SelectedIndexChanged(sender, e);
             // click ALL btn, change tab index to 0
@@ -381,6 +412,8 @@ namespace Workshop4
         private void btnSupplier_Click(object sender, EventArgs e)
         {
             tabMain.SelectedIndex = 3;
+            _resetBtnColor();
+            btnSupplier.BackColor = SystemColors.WindowFrame;
             // tab index changed to 0 (view all), show all suppliers
             fourTab_SelectedIndexChanged(sender, e);
             // click ALL btn, change tab index to 0
@@ -409,9 +442,13 @@ namespace Workshop4
             }
             else if(twoTab.SelectedIndex == 2)
             {
-                // 'ADD' tab, change add combobox to empty
-                twoCmbAddProdName.SelectedIndex = -1;
-                twoCmbAddSuppName.SelectedIndex = -1;
+                // 'ADD' tab
+                // databinding for combo boxes
+                //suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers().OrderBy(s => s.SupName);
+                //productsBindingSource.DataSource = ProductsDB.GetProducts();
+
+                //twoCmbAddProdName.SelectedIndex = -1;
+                //twoCmbAddSuppName.SelectedIndex = -1;
             }
             // 'EDIT' tab, show details
         }
@@ -433,6 +470,13 @@ namespace Workshop4
         {
             twoTab.SelectedIndex = 2;
             twoBtnAdd.BackColor = Color.DarkOrange;
+        }
+        // dropdown list selected
+        private void twoCmbAddProdName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //var filteredSuppliers = SuppliersDB.GetSuppliers().
+            //    RemoveAll(s=>_psList.fi);
+            //suppliersBindingSource.DataSource = filteredSuppliers;
         }
 
         // SAVE btn clicked: update or add new
@@ -723,10 +767,9 @@ namespace Workshop4
             fourTxtAddSuppId.Text = newId.ToString();
         }
 
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-            tabMain.SelectedIndex = 4;
-        }
+
+
+
 
 
 

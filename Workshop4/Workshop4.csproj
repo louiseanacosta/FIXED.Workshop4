@@ -61,10 +61,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D4D422A8CC8BC8AC32E3D8CCD4FDB33EFEC59C45</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C5BD28C03CCA7BEA22506062FD67F33138D09C55</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Workshop4_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Workshop4_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -144,6 +144,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Workshop4_1_TemporaryKey.pfx" />
+    <None Include="Workshop4_2_TemporaryKey.pfx" />
     <None Include="Workshop4_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
