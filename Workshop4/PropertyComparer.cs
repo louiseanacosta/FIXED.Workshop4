@@ -6,6 +6,10 @@ using System.Reflection;
 
 namespace Workshop4
 {
+    /*
+     * Author: DongMing Hu
+     * Purpose: A class provides method to work with sortable list.
+     */
     public class PropertyComparer<T> : IComparer<T>
     {
         private readonly IComparer comparer;

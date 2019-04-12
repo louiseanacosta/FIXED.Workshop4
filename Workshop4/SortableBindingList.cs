@@ -4,6 +4,10 @@ using System.ComponentModel;
 
 namespace Workshop4
 {
+    /*
+     * Author: DongMing Hu
+     * Purpose: A class to make a sortable list.
+     */
     public class SortableBindingList<T> : BindingList<T>
     {
         private readonly Dictionary<Type, PropertyComparer<T>> comparers;

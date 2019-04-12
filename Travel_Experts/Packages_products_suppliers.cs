@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Travel_Experts
 {
+    /*
+     * Author: Ibraheem
+     */
     public class Packages_products_suppliers
     {
         public int PackageId { get; set; }

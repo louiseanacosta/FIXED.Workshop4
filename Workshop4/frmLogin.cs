@@ -20,7 +20,7 @@ namespace Workshop4
         // user logs in - open package form
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            frmPackages openPackageForm = new frmPackages();
+            frmMain openPackageForm = new frmMain();
             openPackageForm.ShowDialog();
             this.Close();
         }
