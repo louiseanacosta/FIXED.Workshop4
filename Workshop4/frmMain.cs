@@ -11,17 +11,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Travel_Experts;
 
+/*
+ * Author: Louise, DongMing
+ * Purpose: All events code handle logic on main form.
+ */
 namespace Workshop4
 {
     //--------------------------- LOUISE ACOSTA ------------------------------
 
-    public partial class frmPackages : Form
+    public partial class frmMain : Form
     {
         List<Package> packages;
         public Package package; // current package
 
 
-        public frmPackages()
+        public frmMain()
         {
             this.packages = PackageDB.GetPackages();
             InitializeComponent();
@@ -404,7 +408,7 @@ namespace Workshop4
         //--------------------------- DongMing Hu -----------------------------------
 
         // ----- 5 MAIN Nav Buttons -----
-
+        // Convenient Method: reset color on all nav buttons
         private void _resetBtnColor()
         {
             var defaultGrey = Color.FromArgb(41, 44, 51);
@@ -465,7 +469,7 @@ namespace Workshop4
         }
 
 
-        // ----- 2ND NAV ITEM: Product_Supplier -----
+        // ----- 2ND NAV BTN: Product_Supplier -----
         private List<ProductSupplierWithName> _psList = new List<ProductSupplierWithName>();
       
         // Tab Two Changed (by using ALL, EDIT, ADD btn): change UI appearance accordingly
@@ -483,18 +487,18 @@ namespace Workshop4
                 // use List to make a SortableBindingList
                 var _sortableList = new SortableBindingList<ProductSupplierWithName>(_psList);
                 productSupplierWithNameBindingSource.DataSource = _sortableList;
+                // databinding for combo boxes
+                suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers().OrderBy(s => s.SupName);
+                productsBindingSource.DataSource = ProductsDB.GetProducts();
             }
             else if(twoTab.SelectedIndex == 2)
             {
                 // 'ADD' tab
-                // databinding for combo boxes
-                suppliersBindingSource.DataSource = SuppliersDB.GetSuppliers().OrderBy(s => s.SupName);
-                productsBindingSource.DataSource = ProductsDB.GetProducts();
                 // select nothing when load
                 twoCmbAddProdName.SelectedIndex = -1;
                 twoCmbAddSuppName.SelectedIndex = -1;
             }
-            // 'EDIT' tab, show details
+            // 'EDIT' tab
         }
 
         // nav btn ALL, click change color
@@ -599,7 +603,7 @@ namespace Workshop4
         }
 
 
-        // ----- 3RD NAV ITEM: Products -----
+        // ----- 3RD NAV BTN: Products -----
 
         // Tab Three Changed (by using ALL, EDIT, ADD btn): change UI appearance accordingly
         private void threeTab_SelectedIndexChanged(object sender, EventArgs e)
@@ -704,7 +708,7 @@ namespace Workshop4
             }
         }
 
-        // ----- 4TH NAV ITEM: Suppliers -----
+        // ----- 4TH NAV BTN: Suppliers -----
         // Tab Four Changed (by using ALL, EDIT, ADD btn): change UI appearance accordingly
         private void fourTab_SelectedIndexChanged(object sender, EventArgs e)
         {

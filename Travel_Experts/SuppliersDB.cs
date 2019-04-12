@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Travel_Experts
 {
+    /*
+     * Author: Ibraheem
+     */
     public class SuppliersDB
     {
         public static List<Suppliers> GetSuppliers()

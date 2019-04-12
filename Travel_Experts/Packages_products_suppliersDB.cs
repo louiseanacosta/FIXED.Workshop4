@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace Travel_Experts
 {
+    /*
+     * Author: Ibraheem, Louise
+     * Collaborator: DongMing
+     */
     public class Packages_products_suppliersDB
     {
         public static List<Packages_products_suppliers> GetPackagesProductsSuppliers()
