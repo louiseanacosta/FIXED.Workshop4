@@ -757,7 +757,7 @@
             this.tabPackageList.Controls.Add(this.tabPage2);
             this.tabPackageList.Controls.Add(this.tabPage3);
             this.tabPackageList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPackageList.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabPackageList.ItemSize = new System.Drawing.Size(50, 50);
             this.tabPackageList.Location = new System.Drawing.Point(3, 3);
             this.tabPackageList.Multiline = true;
             this.tabPackageList.Name = "tabPackageList";
@@ -770,10 +770,10 @@
             // 
             this.tabPage1.Controls.Add(this.tableLayoutPanel8);
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(967, 629);
+            this.tabPage1.Size = new System.Drawing.Size(967, 599);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View List";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -825,7 +825,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(961, 623);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(961, 593);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // grdProductList
@@ -873,7 +873,7 @@
             this.grdProductList.Name = "grdProductList";
             this.grdProductList.ReadOnly = true;
             this.grdProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdProductList.Size = new System.Drawing.Size(955, 548);
+            this.grdProductList.Size = new System.Drawing.Size(955, 518);
             this.grdProductList.TabIndex = 33;
             this.grdProductList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProductList_CellContentDoubleClick);
             // 
@@ -1024,10 +1024,10 @@
             this.tabPage2.Controls.Add(pkgStartDateLabel);
             this.tabPage2.Controls.Add(this.txtPkgStart);
             this.tabPage2.Controls.Add(this.btnUpdate);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 54);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(967, 629);
+            this.tabPage2.Size = new System.Drawing.Size(967, 599);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1204,7 +1204,7 @@
             // 
             // txtPkgCommission
             // 
-            this.txtPkgCommission.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PkgAgencyCommission", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
+            this.txtPkgCommission.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PkgAgencyCommission", true));
             this.txtPkgCommission.Location = new System.Drawing.Point(209, 250);
             this.txtPkgCommission.Name = "txtPkgCommission";
             this.txtPkgCommission.Size = new System.Drawing.Size(174, 25);
@@ -1213,7 +1213,7 @@
             // 
             // txtPkgPrice
             // 
-            this.txtPkgPrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PkgBasePrice", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
+            this.txtPkgPrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PkgBasePrice", true));
             this.txtPkgPrice.Location = new System.Drawing.Point(209, 219);
             this.txtPkgPrice.Name = "txtPkgPrice";
             this.txtPkgPrice.Size = new System.Drawing.Size(174, 25);
@@ -1296,10 +1296,10 @@
             this.tabPage3.Controls.Add(this.txtPkgName2);
             this.tabPage3.Controls.Add(pkgStartDateLabel1);
             this.tabPage3.Controls.Add(this.txtPkgStart2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 54);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(967, 648);
+            this.tabPage3.Size = new System.Drawing.Size(967, 599);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Create New";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1716,7 +1716,7 @@
             this.twoTabEdit.Location = new System.Drawing.Point(4, 5);
             this.twoTabEdit.Name = "twoTabEdit";
             this.twoTabEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabEdit.Size = new System.Drawing.Size(961, 553);
+            this.twoTabEdit.Size = new System.Drawing.Size(961, 602);
             this.twoTabEdit.TabIndex = 1;
             this.twoTabEdit.Text = "EDIT";
             this.twoTabEdit.UseVisualStyleBackColor = true;
@@ -1777,7 +1777,7 @@
             this.twoTabAdd.Location = new System.Drawing.Point(4, 5);
             this.twoTabAdd.Name = "twoTabAdd";
             this.twoTabAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.twoTabAdd.Size = new System.Drawing.Size(961, 553);
+            this.twoTabAdd.Size = new System.Drawing.Size(961, 602);
             this.twoTabAdd.TabIndex = 2;
             this.twoTabAdd.Text = "ADD";
             this.twoTabAdd.UseVisualStyleBackColor = true;
@@ -1934,7 +1934,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 5);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(961, 551);
+            this.tabPage5.Size = new System.Drawing.Size(961, 600);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "EDIT";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1963,7 +1963,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 5);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(961, 551);
+            this.tabPage6.Size = new System.Drawing.Size(961, 600);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "ADD";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2187,7 +2187,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 5);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(961, 551);
+            this.tabPage8.Size = new System.Drawing.Size(961, 600);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "EDIT";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -2219,7 +2219,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 5);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(961, 551);
+            this.tabPage9.Size = new System.Drawing.Size(961, 600);
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "ADD";
             this.tabPage9.UseVisualStyleBackColor = true;
