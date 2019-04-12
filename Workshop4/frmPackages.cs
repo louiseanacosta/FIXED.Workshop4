@@ -68,23 +68,25 @@ namespace Workshop4
         // update Package
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            // check if price is greater than commission
-            if (Convert.ToInt32(txtPkgCommission2.Text) > Convert.ToInt32(txtPkgPrice2.Text))
-            {
-                MessageBox.Show("Commission cannot be greater than the Base Price. Please enter a valid amount.");
-            }
-            else
+            // check all input values
+            if (IsValidData())
             {
                 // check if package end date is greater than start date
-                if (txtPkgStart.Value > txtPkgEnd.Value || txtPkgStart.Value == txtPkgEnd.Value) 
+                if (txtPkgStart.Value > txtPkgEnd.Value || txtPkgStart.Value == txtPkgEnd.Value)
                 {
-                    MessageBox.Show("End Date should be greater than Start Date. Please choose a valid date.");
+                    MessageBox.Show("End Date should be greater than Start Date. Please choose a valid date.", "Input Error");
                 }
                 else
                 {
-                    // check all input values
-                    if (IsValidData()) 
+                    // check if price is greater than commission
+                    if (Convert.ToDouble(txtPkgCommission.Text) > Convert.ToDouble(txtPkgPrice.Text))
                     {
+                        MessageBox.Show("Commission cannot be greater than the Base Price. Please enter a valid amount.","Input Error");
+                    }
+                    else
+                    {
+
+
                         // get current package from database
                         if (cmbPackageId.Text == "") { return; }
 
@@ -181,58 +183,52 @@ namespace Workshop4
         // create new package
         private void btnSaveNewPackage_Click(object sender, EventArgs e)
         {
-            // check if price is greater than commission
-            if (Convert.ToInt32(txtPkgCommission2.Text) > Convert.ToInt32(txtPkgPrice2.Text))
+            // check all input values
+            if (IsValidDataForCreate())
             {
-                MessageBox.Show("Commission cannot be greater than the Base Price. Please enter a valid amount.");
-            }
-            else
-            {
-                // check if price is greater than commission
-                if (Convert.ToInt32(txtPkgCommission2.Text) > Convert.ToInt32(txtPkgPrice2.Text))
+                // check if package end date is greater than start date
+                if (txtPkgStart2.Value > txtPkgEnd2.Value || txtPkgStart2.Value == txtPkgEnd2.Value)
                 {
-                    MessageBox.Show("Commission cannot be greater than the Base Price. Please enter a valid amount.");
+                    MessageBox.Show("End Date should be greater than Start Date. Please choose a valid date.", "Input Error");
                 }
                 else
                 {
-                    // check if package end date is greater than start date
-                    if (txtPkgStart2.Value > txtPkgEnd2.Value || txtPkgStart2.Value == txtPkgEnd2.Value)
+                    // check if price is greater than commission
+                    if (Convert.ToDouble(txtPkgCommission2.Text) > Convert.ToDouble(txtPkgPrice2.Text))
                     {
-                        MessageBox.Show("End Date should be greater than Start Date. Please choose a valid date.");
+                        MessageBox.Show("Commission cannot be greater than the Base Price. Please enter a valid amount.", "Input Error");
                     }
                     else
                     {
-                        // check all input values
-                        if (IsValidDataForCreate())
+                        try
                         {
-                            try
+                            // set new values
+                            var test = newProductPackageBindingSource.DataSource;
+                            Package newPackage = new Package();
+                            this.NewPackageData(newPackage);
+
+                            // save package
+                            int packageId = PackageDB.AddPackage(newPackage);
+
+
+                            List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)newProductPackageBindingSource.DataSource;
+                            foreach (var productsInPackage in productsInPackages)
                             {
-                                // set new values
-                                var test = newProductPackageBindingSource.DataSource;
-                                Package newPackage = new Package();
-                                this.NewPackageData(newPackage);
-
-                                // save package
-                                int packageId = PackageDB.AddPackage(newPackage);
-
-
-                                List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)newProductPackageBindingSource.DataSource;
-                                foreach (var productsInPackage in productsInPackages)
-                                {
-                                    Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
-                                }
-
-                                MessageBox.Show("New package added succesfully");
-                                ClearControls();
+                                Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
                             }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show(ex.Message);
-                            }
+
+                            MessageBox.Show("New package added succesfully");
+                            ClearControls();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
                         }
                     }
                 }
             }
+            
         }
 
         // control values for adding new package
@@ -284,6 +280,7 @@ namespace Workshop4
                 Validator.IsPresent(txtPkgName) &&
                 Validator.IsPresent(txtPkgDesc) &&
                 Validator.IsPresent(txtPkgPrice) &&
+                Validator.IsPresent(txtPkgCommission) &&
                 Validator.IsNonNegativeDouble(txtPkgPrice) &&
                 Validator.IsNonNegativeDouble(txtPkgCommission);
         }
@@ -295,6 +292,7 @@ namespace Workshop4
                 Validator.IsPresent(txtPkgName2) &&
                 Validator.IsPresent(txtPkgDesc2) &&
                 Validator.IsPresent(txtPkgPrice2) &&
+                Validator.IsPresent(txtPkgCommission2) &&
                 Validator.IsNonNegativeDouble(txtPkgPrice2) &&
                 Validator.IsNonNegativeDouble(txtPkgCommission2);
         }
