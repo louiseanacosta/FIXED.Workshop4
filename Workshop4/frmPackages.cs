@@ -30,7 +30,7 @@ namespace Workshop4
         // form load
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnDashboard_Click(sender,e);
+            btnDashboard_Click(sender, e);
             // display all packages in data grid view
             var _sortablePackages = new SortableBindingList<Package>(packages);
             packageBindingSource.DataSource = _sortablePackages;
@@ -68,52 +68,71 @@ namespace Workshop4
         // update Package
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            // check all input values
             if (IsValidData())
             {
-                // get current package from database
-                if (cmbPackageId.Text == "") { return; }
-
-                int packageId = Convert.ToInt32(cmbPackageId.Text);
-                List<Package> oldPackageList = PackageDB.GetPackages(packageId);
-                Package oldPackage = oldPackageList.First();
-
-                // set new values
-                Package newPackage = new Package();
-                newPackage.PackageId = packageId;
-                this.PutPackageData(newPackage);
-
-
-                // save package
-                try
+                // check if package end date is greater than start date
+                if (txtPkgStart.Value > txtPkgEnd.Value || txtPkgStart.Value == txtPkgEnd.Value)
                 {
-                    package = newPackage;
-                    PackageDB.UpdatePackage(oldPackage, newPackage);
-
-                    // get current product suppliers
-                    List<int> productSupplierIds = new List<int>();
-                    foreach (var product in ProductsInPackageDB.GetProductsFromPackage(packageId))
-                    {
-                        productSupplierIds.Add(product.ProductSupplierId);
-                    }
-
-                    // delete products suppliers linked to package
-                    Packages_products_suppliersDB.Delete(packageId);
-
-                    // add products supliers to package
-                    List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)productsInPackageBindingSource.DataSource;
-                    foreach (var productsInPackage in productsInPackages)
-                    {
-                        Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
-                    }
-
-                    MessageBox.Show("Changes saved for Package ID " + packageId);
-                    tabPackageList.SelectTab(0); // go back to list view
-
+                    MessageBox.Show("End Date should be greater than Start Date. Please choose a valid date.", "Input Error");
                 }
-                catch(Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
-                    
+                    // check if price is greater than commission
+                    if (Convert.ToDouble(txtPkgCommission.Text) > Convert.ToDouble(txtPkgPrice.Text))
+                    {
+                        MessageBox.Show("Commission cannot be greater than the Base Price. Please enter a valid amount.","Input Error");
+                    }
+                    else
+                    {
+
+
+                        // get current package from database
+                        if (cmbPackageId.Text == "") { return; }
+
+                        int packageId = Convert.ToInt32(cmbPackageId.Text);
+                        List<Package> oldPackageList = PackageDB.GetPackages(packageId);
+                        Package oldPackage = oldPackageList.First();
+
+                        // set new values
+                        Package newPackage = new Package();
+                        newPackage.PackageId = packageId;
+                        this.PutPackageData(newPackage);
+
+
+                        // save package
+                        try
+                        {
+                            package = newPackage;
+                            PackageDB.UpdatePackage(oldPackage, newPackage);
+
+                            // get current product suppliers
+                            List<int> productSupplierIds = new List<int>();
+                            foreach (var product in ProductsInPackageDB.GetProductsFromPackage(packageId))
+                            {
+                                productSupplierIds.Add(product.ProductSupplierId);
+                            }
+
+                            // delete products suppliers linked to package
+                            Packages_products_suppliersDB.Delete(packageId);
+
+                            // add products supliers to package
+                            List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)productsInPackageBindingSource.DataSource;
+                            foreach (var productsInPackage in productsInPackages)
+                            {
+                                Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
+                            }
+
+                            MessageBox.Show("Changes saved for Package ID " + packageId);
+                            tabPackageList.SelectTab(0); // go back to list view
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+
+                        }
+                    }
                 }
             }
         }
@@ -164,33 +183,52 @@ namespace Workshop4
         // create new package
         private void btnSaveNewPackage_Click(object sender, EventArgs e)
         {
+            // check all input values
             if (IsValidDataForCreate())
             {
-                try
+                // check if package end date is greater than start date
+                if (txtPkgStart2.Value > txtPkgEnd2.Value || txtPkgStart2.Value == txtPkgEnd2.Value)
                 {
-                    // set new values
-                    var test = newProductPackageBindingSource.DataSource;
-                    Package newPackage = new Package();
-                    this.NewPackageData(newPackage);
-
-                    // save package
-                    int packageId = PackageDB.AddPackage(newPackage);
-
-
-                    List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)newProductPackageBindingSource.DataSource;
-                    foreach (var productsInPackage in productsInPackages)
-                    {
-                        Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
-                    }
-
-                    MessageBox.Show("New package added succesfully");
-                    ClearControls();
+                    MessageBox.Show("End Date should be greater than Start Date. Please choose a valid date.", "Input Error");
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    // check if price is greater than commission
+                    if (Convert.ToDouble(txtPkgCommission2.Text) > Convert.ToDouble(txtPkgPrice2.Text))
+                    {
+                        MessageBox.Show("Commission cannot be greater than the Base Price. Please enter a valid amount.", "Input Error");
+                    }
+                    else
+                    {
+                        try
+                        {
+                            // set new values
+                            var test = newProductPackageBindingSource.DataSource;
+                            Package newPackage = new Package();
+                            this.NewPackageData(newPackage);
+
+                            // save package
+                            int packageId = PackageDB.AddPackage(newPackage);
+
+
+                            List<ProductsInPackage> productsInPackages = (List<ProductsInPackage>)newProductPackageBindingSource.DataSource;
+                            foreach (var productsInPackage in productsInPackages)
+                            {
+                                Packages_products_suppliersDB.Add(packageId, productsInPackage.ProductSupplierId);
+                            }
+
+                            MessageBox.Show("New package added succesfully");
+                            ClearControls();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
                 }
             }
+            
         }
 
         // control values for adding new package
@@ -235,20 +273,26 @@ namespace Workshop4
 
         }
 
+        // validations for user input when modifying package
         private bool IsValidData()
         {
             return
                 Validator.IsPresent(txtPkgName) &&
+                Validator.IsPresent(txtPkgDesc) &&
                 Validator.IsPresent(txtPkgPrice) &&
+                Validator.IsPresent(txtPkgCommission) &&
                 Validator.IsNonNegativeDouble(txtPkgPrice) &&
                 Validator.IsNonNegativeDouble(txtPkgCommission);
         }
 
+        // validations  for user input when creating new package
         private bool IsValidDataForCreate()
         {
             return
                 Validator.IsPresent(txtPkgName2) &&
+                Validator.IsPresent(txtPkgDesc2) &&
                 Validator.IsPresent(txtPkgPrice2) &&
+                Validator.IsPresent(txtPkgCommission2) &&
                 Validator.IsNonNegativeDouble(txtPkgPrice2) &&
                 Validator.IsNonNegativeDouble(txtPkgCommission2);
         }
